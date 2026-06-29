@@ -353,20 +353,25 @@ The mini Trail range requires the same attention to detail as any larger restora
     },
     galleryImages: [
       {
-        src: '/images/projects/1986-honda-z50r/engine.jpg',
-        alt: '1986 Honda Z50R engine — vapour blasted, rebuilt',
-        caption: 'Rebuilt 49cc OHC engine — vapour blasted cases and covers',
+        src: '/images/projects/1986-honda-z50r/hero.jpg',
+        alt: '1986 Honda Z50R — in progress at Lang Restorations',
+        caption: 'In progress — Lang Restorations, Traralgon',
+      },
+      {
+        src: '/images/projects/1986-honda-z50r/before.jpg',
+        alt: '1986 Honda Z50R — as received',
+        caption: 'As received — before restoration',
       },
     ],
     beforeImage: {
       src: '/images/projects/1986-honda-z50r/before.jpg',
-      alt: '1986 Honda Z50R — condition on arrival',
+      alt: '1986 Honda Z50R — as received before restoration',
       caption: 'As received',
     },
     afterImage: {
-      src: '/images/projects/1986-honda-z50r/after.jpg',
-      alt: '1986 Honda Z50R — completed restoration by Lang Restorations',
-      caption: 'Completed — Lang Restorations, Traralgon',
+      src: '/images/projects/1986-honda-z50r/hero.jpg',
+      alt: '1986 Honda Z50R — in progress at Lang Restorations',
+      caption: 'In progress — Lang Restorations, Traralgon',
     },
 
     specifications: [
