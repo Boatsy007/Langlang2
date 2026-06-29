@@ -43,7 +43,7 @@ export function ServicesPage() {
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {filtered.map((service) => (
-              <ServiceCard key={service.id} service={service} expanded />
+              <ServiceCard key={service.id} service={service} />
             ))}
           </div>
         )}

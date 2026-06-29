@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { clsx } from 'clsx'
 import type { Service } from '@/types'
 
@@ -12,6 +13,7 @@ export function ServiceCard({ service, expanded = false, className }: ServiceCar
     <article
       className={clsx(
         'rounded-2xl overflow-hidden bg-zinc-900 ring-1 ring-zinc-800',
+        !expanded && 'hover:ring-red-900/60 transition-all',
         className,
       )}
     >
@@ -35,7 +37,7 @@ export function ServiceCard({ service, expanded = false, className }: ServiceCar
         </div>
 
         <p className="text-sm text-zinc-400 leading-relaxed mb-4">
-          {expanded ? service.fullDescription : service.shortDescription}
+          {service.shortDescription}
         </p>
 
         {expanded && service.includes.length > 0 && (
@@ -55,9 +57,21 @@ export function ServiceCard({ service, expanded = false, className }: ServiceCar
         )}
 
         {service.priceLabel && (
-          <p className="text-sm font-medium text-zinc-300 border-t border-zinc-800 pt-4">
+          <p className="text-sm font-medium text-zinc-300 border-t border-zinc-800 pt-4 mb-4">
             {service.priceLabel}
           </p>
+        )}
+
+        {!expanded && (
+          <Link
+            to={`/services/${service.id}`}
+            className="inline-flex items-center gap-1.5 text-sm font-medium text-red-400 hover:text-red-300 transition-colors"
+          >
+            Learn more
+            <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </Link>
         )}
       </div>
     </article>
