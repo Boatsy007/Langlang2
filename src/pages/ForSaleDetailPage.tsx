@@ -1,5 +1,5 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
-import { getForSaleBikeBySlug, formatPrice } from '@/utils/data'
+import { getForSaleBikeBySlug } from '@/utils/data'
 import { ImageGallery } from '@/components/ImageGallery'
 import { SpecTable } from '@/components/SpecTable'
 import { StatusBadge } from '@/components/Badge'
@@ -34,7 +34,7 @@ export function ForSaleDetailPage() {
             <p className="text-lg text-zinc-400">
               {bike.year} {bike.brand} {bike.model}
             </p>
-            <span className="text-2xl font-bold text-white">{formatPrice(bike.price)}</span>
+            <span className="text-2xl font-bold text-white">{bike.priceLabel}</span>
           </div>
         </div>
       </div>
@@ -87,14 +87,14 @@ export function ForSaleDetailPage() {
             <div className="rounded-2xl bg-zinc-900 ring-1 ring-zinc-800 p-6 sticky top-6">
               <div className="flex items-start justify-between mb-4">
                 <div>
-                  <p className="text-3xl font-bold text-white">{formatPrice(bike.price)}</p>
-                  <p className="text-sm text-zinc-500 mt-0.5">AUD, inc. GST</p>
+                  <p className="text-3xl font-bold text-white">{bike.priceLabel}</p>
+                  <p className="text-sm text-zinc-500 mt-0.5">AUD</p>
                 </div>
                 <StatusBadge status={bike.status} />
               </div>
 
               <a
-                href={`mailto:hello@langlang.com.au?subject=${enquirySubject}`}
+                href={`mailto:info@langrestorations.com?subject=${enquirySubject}`}
                 className={
                   isAvailable
                     ? 'inline-flex items-center justify-center w-full px-5 py-3.5 rounded-xl bg-white text-black text-sm font-semibold hover:bg-zinc-200 transition-colors'
@@ -118,9 +118,9 @@ export function ForSaleDetailPage() {
 
               <div className="mt-5 pt-5 border-t border-zinc-800">
                 <p className="text-xs text-zinc-500 text-center">
-                  Questions? Call us on{' '}
-                  <a href="tel:+61398765432" className="text-zinc-300 hover:text-white">
-                    (03) 9876 5432
+                  Questions? Call Nick on{' '}
+                  <a href="tel:+61439744632" className="text-zinc-300 hover:text-white">
+                    0439 744 632
                   </a>
                 </p>
               </div>

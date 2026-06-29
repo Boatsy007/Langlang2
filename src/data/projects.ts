@@ -2,248 +2,736 @@ import type { Project } from '@/types'
 
 // ─── Featured Builds / Projects ───────────────────────────────────────────────
 //
-// To add a new build: copy one object below and fill in your details.
-// The site automatically generates the card, gallery and detail page from this data.
+// Add or update restoration projects here.
+// Each project automatically generates a card on /builds and a full page at /builds/:slug
 //
-// Required: slug (must be unique, URL-safe, e.g. "1972-honda-cb750")
+// IMAGES: Place project images in /public/images/projects/[slug]/
+// SLUG: Lowercase, hyphens only. e.g. '1996-honda-cr500-mcgrath-tribute'
 // ─────────────────────────────────────────────────────────────────────────────
 
 export const projects: Project[] = [
   {
-    slug: '1972-honda-cb750-cafe-racer',
-    name: 'Desert Storm',
-    year: 1972,
+    slug: '1996-honda-cr500-mcgrath-tribute',
+    name: '1996 Honda CR500 — McGrath Tribute',
+    year: 1996,
     brand: 'Honda',
-    model: 'CB750',
-    category: 'Cafe Racer',
-    completionYear: 2023,
+    model: 'CR500R',
+    category: 'Motocross',
     featured: true,
 
+    metaTitle: '1996 Honda CR500 McGrath Tribute | Motocross Restoration — Lang Restorations, Traralgon VIC',
+    metaDescription:
+      'Ground-up restoration of a 1996 Honda CR500R built as a tribute to Jeremy McGrath. Rebuilt by Lang Restorations in Traralgon, Victoria — every component restored to the highest standard.',
+
     shortDescription:
-      'A full ground-up restoration of a 1972 Honda CB750, rebuilt as a lean cafe racer with modern running gear hidden behind period-correct aesthetics.',
+      'A ground-up restoration of a 1996 Honda CR500R built as a tribute to Jeremy McGrath\'s iconic race bikes. Every component rebuilt or replaced to the highest standard.',
 
-    story: `The CB750 arrived in pieces — decades of neglect packed into two milk crates and a busted frame. What started as a "quick refresh" became an 18-month obsession.
+    story: `The Honda CR500R is one of the most formidable two-stroke motorcycles ever produced — a 491cc single with enough power to humble riders who approached it without respect, and a machine that defined an era of open-class motocross racing. The 1996 model was among the last of the CR500 lineage, and it arrived at the Lang Restorations workshop as a candidate for a tribute build in the style of Jeremy McGrath's Team Honda machines.
 
-The engine was a write-off. Bores were oval, cam lobes worn flat, every seal weeping. We sourced a matching-numbers replacement block and rebuilt it from scratch: new pistons, rebored cylinders, reground crank, complete valve train, and a full port-and-polish on the head. The result breathes through a quartet of re-jetted Keihin carburettors feeding into a custom 4-into-1 stainless exhaust.
+McGrath's connection to the CR500 represents a particular chapter in motocross history — a period when the open-class machine demanded not just skill but commitment, and when the Honda factory colours were synonymous with dominance. Building a tribute to that era required not just correct graphics and colour, but correct engineering beneath them.
 
-The frame was stripped, powder-coated in satin black, and fitted with a Hagon rear shock conversion and period-correct Ceriani-style forks rebuilt with new internals. Braking is handled by a Brembo front caliper on a drilled stainless rotor — the only obvious modern concession.
+The restoration began with complete disassembly. The engine was stripped to the last component, every measurement taken against factory specification. The 491cc reed-valve cylinder was inspected, the crankshaft assessed, and the engine rebuilt with new seals, gaskets, and components throughout. Engine cases and the cylinder were vapour blasted to restore the factory cast finish. The powervalve mechanism — a critical system on the CR500 — was thoroughly inspected and rebuilt.
 
-The bodywork tells the story. The fibreglass cafe seat was hand-formed in-house, the tank sourced from a 1974 donor and filled, blocked, and sprayed in PPG two-stage urethane over two weeks of sanding sessions. The final colour — a deep sand gold — shifts between amber and olive depending on the light.
+Chassis work covered the frame, swingarm, and all suspension components. Forks were rebuilt with new seals and oil. The linkage was disassembled, cleaned, measured, and rebuilt with new bearings throughout. All hardware received the zinc plating treatment appropriate to the model.
 
-Two thousand miles since completion. Not a drop of oil dropped.`,
+The tribute livery was applied with reference to period photography and factory specifications. Every decal placement, every colour boundary, every graphic detail was verified before application.
+
+The result is a CR500 that represents the 1996 model year at its absolute best — a machine that honours both the motorcycle and the rider it was built to reference.`,
 
     heroImage: {
-      src: '/images/projects/cb750-cafe/hero.jpg',
-      alt: '1972 Honda CB750 Desert Storm cafe racer — three-quarter front view',
+      src: '/images/projects/1996-honda-cr500-mcgrath-tribute/hero.jpg',
+      alt: '1996 Honda CR500R McGrath Tribute — ground-up motocross restoration by Lang Restorations, Traralgon Victoria',
     },
     galleryImages: [
-      { src: '/images/projects/cb750-cafe/gallery-01.jpg', alt: 'Engine detail — rebuilt SOHC four', caption: 'Rebuilt 736cc SOHC four with ported head' },
-      { src: '/images/projects/cb750-cafe/gallery-02.jpg', alt: 'Exhaust — custom 4-into-1 stainless', caption: 'Custom 4-into-1 stainless headers' },
-      { src: '/images/projects/cb750-cafe/gallery-03.jpg', alt: 'Tank detail — sand gold', caption: 'PPG two-stage urethane, hand-blocked' },
-      { src: '/images/projects/cb750-cafe/gallery-04.jpg', alt: 'Cockpit — clip-ons and Smiths gauges', caption: 'Aluminium clip-ons, Smiths speedo/tacho' },
-      { src: '/images/projects/cb750-cafe/gallery-05.jpg', alt: 'Rear — cafe seat and rear-sets', caption: 'Hand-formed fibreglass seat unit' },
-      { src: '/images/projects/cb750-cafe/gallery-06.jpg', alt: 'Rolling shot on open road', caption: 'First ride — Barossa Valley, SA' },
+      {
+        src: '/images/projects/1996-honda-cr500-mcgrath-tribute/engine.jpg',
+        alt: '1996 Honda CR500R engine — vapour blasted cases, full rebuild',
+        caption: 'Rebuilt 491cc reed-valve two-stroke — vapour blasted cases, new seals and components throughout',
+      },
+      {
+        src: '/images/projects/1996-honda-cr500-mcgrath-tribute/chassis.jpg',
+        alt: '1996 Honda CR500R chassis — restored frame and suspension',
+        caption: 'Fully restored chassis — frame, suspension, linkage, all bearings replaced',
+      },
+      {
+        src: '/images/projects/1996-honda-cr500-mcgrath-tribute/detail-graphics.jpg',
+        alt: '1996 Honda CR500R McGrath Tribute — period-correct factory graphics',
+        caption: 'Period-correct tribute livery — factory colours, correct decal placement',
+      },
     ],
     beforeImage: {
-      src: '/images/projects/cb750-cafe/before.jpg',
-      alt: 'CB750 as received — stripped and rusted',
-      caption: 'As received — two milk crates and a busted frame',
+      src: '/images/projects/1996-honda-cr500-mcgrath-tribute/before.jpg',
+      alt: '1996 Honda CR500R — condition on arrival at Lang Restorations',
+      caption: 'As received',
     },
     afterImage: {
-      src: '/images/projects/cb750-cafe/after.jpg',
-      alt: 'CB750 Desert Storm completed build',
-      caption: 'Desert Storm — completed December 2023',
+      src: '/images/projects/1996-honda-cr500-mcgrath-tribute/after.jpg',
+      alt: '1996 Honda CR500R McGrath Tribute — completed restoration by Lang Restorations',
+      caption: 'Completed — Lang Restorations, Traralgon',
     },
 
     specifications: [
-      { label: 'Engine', value: '736cc SOHC inline-four' },
-      { label: 'Bore × Stroke', value: '61 × 63mm' },
-      { label: 'Carburettors', value: '4× Keihin 28mm, re-jetted' },
-      { label: 'Exhaust', value: 'Custom 4-into-1 stainless' },
-      { label: 'Gearbox', value: '5-speed constant mesh' },
-      { label: 'Front suspension', value: 'Ceriani-style 35mm forks, rebuilt' },
-      { label: 'Rear suspension', value: 'Hagon twin shocks' },
-      { label: 'Front brake', value: 'Brembo caliper, 296mm drilled rotor' },
-      { label: 'Rear brake', value: 'Original drum, refurbished' },
-      { label: 'Wheels', value: '19" front / 18" rear, laced in stainless' },
-      { label: 'Tyres', value: 'Dunlop TT100 GP' },
-      { label: 'Seat', value: 'Hand-formed fibreglass, period foam' },
-      { label: 'Paint', value: 'PPG Sand Gold, two-stage urethane' },
-      { label: 'Electrics', value: '12V conversion, Motogadget m.unit' },
-      { label: 'Weight', value: '189kg wet' },
+      { label: 'Engine', value: '491cc reed-valve two-stroke single' },
+      { label: 'Carburettor', value: 'Keihin PWK 38mm' },
+      { label: 'Ignition', value: 'CDI' },
+      { label: 'Gearbox', value: '5-speed' },
+      { label: 'Front suspension', value: '43mm USD forks' },
+      { label: 'Rear suspension', value: 'Pro-Link single shock' },
+      { label: 'Front brake', value: 'Single disc' },
+      { label: 'Rear brake', value: 'Single disc' },
+      { label: 'Restoration scope', value: 'Ground-up restoration' },
     ],
 
     workCompleted: [
-      'Full engine rebuild — pistons, rings, rebore, cam, valve train',
-      'Custom 4-into-1 stainless exhaust fabrication',
-      '4× Keihin carburettors rebuilt and re-jetted',
-      'Frame strip, repair and powder coat',
-      'Fork rebuild with progressive springs',
-      'Hagon rear shock conversion',
-      'Brembo front brake conversion',
-      'Stainless wheel lacing front and rear',
-      'Hand-formed fibreglass cafe seat unit',
-      'Tank fill, block and respray — PPG Sand Gold',
-      '12V electrical conversion with Motogadget m.unit',
-      'LED lighting throughout',
-      'Aluminium clip-on handlebars',
-      'Rearset footpeg conversion',
-      'Complete wiring loom rebuild',
+      'Full disassembly and component inspection',
+      'Engine rebuild — cylinder, crankshaft, powervalve, seals and gaskets throughout',
+      'Vapour blasting — engine cases, cylinder, cylinder head',
+      'Fork rebuild — new seals, oil and internals',
+      'Suspension linkage rebuild — all bearings replaced',
+      'Swingarm bearing replacement',
+      'Zinc plating — all applicable steel hardware',
+      'Frame inspection and refinish',
+      'Period-correct tribute graphics and livery',
+      'New plastics, cables, and consumables throughout',
+      'Final assembly and inspection',
     ],
   },
 
   {
-    slug: '1968-triumph-bonneville-scrambler',
-    name: 'The Bushwalker',
-    year: 1968,
-    brand: 'Triumph',
-    model: 'T120 Bonneville',
-    category: 'Scrambler',
-    completionYear: 2022,
-    featured: true,
-
-    shortDescription:
-      'A 1968 Triumph Bonneville transformed into a period-correct scrambler — high pipes, knobbly tyres, and a twin-leading-shoe front drum that means business.',
-
-    story: `The Bonneville came from a shed in McLaren Vale — dry, complete, and wearing the original Aubergine and Silver paint beneath thirty years of grime.
-
-We chose to build the bike the factory should have built: a scrambler in the spirit of the late-sixties desert sled, not a pastiche. Every modification was referenced against period photography from the ISDT and Baja.
-
-The parallel twin was dismantled and measured. Bores were within spec; the head was ported and polished, fitted with Del'Orto PHF carbs and a balance pipe that transformed throttle response. High pipes were fabricated from 304 stainless, ceramic-coated in satin black with polished tips. The note is somewhere between thunder and a rolling storm.
-
-The frame runs a set of Ceriani motocross forks from 1970 — the real thing, sourced through three months of eBay watch-lists — and a custom subframe to accept a fibreglass front fender and Bates-style seat. The twin-leading-shoe drum up front was rebuilt with new shoes and cable, and stops the bike with authority most modern discs wouldn't match in feel.
-
-Paint: British Racing Green over a deep black base. Applied in the shed on a Tuesday with the radio on.`,
-
-    heroImage: {
-      src: '/images/projects/bonneville-scrambler/hero.jpg',
-      alt: '1968 Triumph Bonneville Scrambler — The Bushwalker',
-    },
-    galleryImages: [
-      { src: '/images/projects/bonneville-scrambler/gallery-01.jpg', alt: 'Engine — unit 650cc twin', caption: 'Unit 650cc parallel twin, rebuilt' },
-      { src: '/images/projects/bonneville-scrambler/gallery-02.jpg', alt: 'High pipes — ceramic coated', caption: 'High-rise stainless pipes, ceramic coated' },
-      { src: '/images/projects/bonneville-scrambler/gallery-03.jpg', alt: 'Front drum brake — TLS rebuild', caption: 'Twin-leading-shoe drum, fully rebuilt' },
-      { src: '/images/projects/bonneville-scrambler/gallery-04.jpg', alt: 'Seat — Bates style fibreglass', caption: 'Bates-style seat, period foam and cover' },
-      { src: '/images/projects/bonneville-scrambler/gallery-05.jpg', alt: 'On dirt — action shot', caption: 'First ride in the Barossa ranges' },
-    ],
-    beforeImage: {
-      src: '/images/projects/bonneville-scrambler/before.jpg',
-      alt: 'Triumph Bonneville as found — original Aubergine paint under grime',
-      caption: 'McLaren Vale shed find — thirty years of dust',
-    },
-    afterImage: {
-      src: '/images/projects/bonneville-scrambler/after.jpg',
-      alt: 'The Bushwalker completed — BRG scrambler',
-      caption: 'The Bushwalker — completed March 2022',
-    },
-
-    specifications: [
-      { label: 'Engine', value: '649cc OHV parallel twin' },
-      { label: 'Carburettors', value: 'Dell\'Orto PHF 30mm with balance pipe' },
-      { label: 'Exhaust', value: 'Custom high-rise 304 stainless, ceramic coated' },
-      { label: 'Gearbox', value: '4-speed unit' },
-      { label: 'Front suspension', value: 'Ceriani 38mm motocross forks — 1970' },
-      { label: 'Rear suspension', value: 'Hagon competition shocks' },
-      { label: 'Front brake', value: 'Twin-leading-shoe drum, rebuilt' },
-      { label: 'Rear brake', value: 'Original SLS drum, refurbished' },
-      { label: 'Wheels', value: '21" front / 18" rear, stainless spoke' },
-      { label: 'Tyres', value: 'Mitas E-07 Enduro' },
-      { label: 'Seat', value: 'Fibreglass Bates-style, period cover' },
-      { label: 'Paint', value: 'British Racing Green, two-stage urethane' },
-      { label: 'Electrics', value: 'Original 6V → 12V conversion, Podtronics' },
-    ],
-
-    workCompleted: [
-      'Engine dismantled, measured and reassembled',
-      'Head ported, polished and fitted with stainless valves',
-      'Dell\'Orto PHF carburettor conversion with balance pipe',
-      'Custom high-rise stainless exhaust fabrication and ceramic coating',
-      'Ceriani motocross fork fitment (period correct)',
-      'Hagon competition rear shocks',
-      'Twin-leading-shoe front drum rebuild',
-      'Custom fibreglass front mudguard',
-      'Custom subframe for Bates-style seat',
-      'Bates seat upholstery',
-      '6V to 12V electrical conversion',
-      'Tank restoration — fill, block sand, BRG respray',
-      '21" front wheel rebuild with stainless spokes',
-    ],
-  },
-
-  {
-    slug: '1980-kawasaki-z1000-brat',
-    name: 'Iron Curtain',
-    year: 1980,
+    slug: '1993-kawasaki-kx250',
+    name: '1993 Kawasaki KX250',
+    year: 1993,
     brand: 'Kawasaki',
-    model: 'Z1000',
-    category: 'Brat Style',
-    completionYear: 2024,
+    model: 'KX250',
+    category: 'Motocross',
+    featured: true,
+
+    metaTitle: '1993 Kawasaki KX250 Motocross Restoration | Lang Restorations — Traralgon VIC',
+    metaDescription:
+      'Ground-up restoration of a 1993 Kawasaki KX250 two-stroke motocross bike. Rebuilt by Lang Restorations in Traralgon, Victoria to factory specification.',
+
+    shortDescription:
+      'A ground-up restoration of a 1993 Kawasaki KX250 — one of the strongest two-stroke quarter-litre motocross bikes of its era, rebuilt to factory specification in Traralgon, Victoria.',
+
+    story: `The 1993 Kawasaki KX250 arrived at a point in the machine's development when Kawasaki had refined the KX formula to something approaching its peak. Strong midrange power, a capable chassis, and factory-developed suspension made the '93 KX250 a genuine weapon in competition — and a machine that, three decades on, represents the two-stroke motocross era at its best.
+
+This particular KX250 came to the workshop in well-used but fundamentally sound condition. The kind of bike that has been ridden properly and shows it — which is appropriate, given the machine it is.
+
+The restoration approach was straightforward: rebuild everything to the standard it deserved. Engine cases were stripped and vapour blasted. The bottom end was assessed — crankshaft measured, bearings replaced. The top end was rebuilt with new piston, rings, and gaskets. The powervalve mechanism — KIPS, in Kawasaki's terminology — was inspected, cleaned, and rebuilt to ensure correct operation across the rev range.
+
+Chassis work was equally thorough. Forks were rebuilt, linkage bearings replaced, frame inspected and refinished in correct Kawasaki green. All hardware was zinc plated. New plastics, cables, and consumables were fitted throughout, with period-correct replacements used wherever available.
+
+The 1993 KX250 that left the Lang Restorations workshop is a machine that a factory rider could have lined up on in 1993 without modification. That is the point of a correct restoration.`,
+
+    heroImage: {
+      src: '/images/projects/1993-kawasaki-kx250/hero.jpg',
+      alt: '1993 Kawasaki KX250 — ground-up motocross restoration by Lang Restorations, Traralgon Victoria',
+    },
+    galleryImages: [
+      {
+        src: '/images/projects/1993-kawasaki-kx250/engine.jpg',
+        alt: '1993 Kawasaki KX250 engine — vapour blasted, fully rebuilt',
+        caption: 'Rebuilt 249cc two-stroke — vapour blasted cases, rebuilt KIPS powervalve',
+      },
+      {
+        src: '/images/projects/1993-kawasaki-kx250/chassis.jpg',
+        alt: '1993 Kawasaki KX250 — restored chassis',
+        caption: 'Restored chassis — correct Kawasaki green, all bearings replaced',
+      },
+    ],
+    beforeImage: {
+      src: '/images/projects/1993-kawasaki-kx250/before.jpg',
+      alt: '1993 Kawasaki KX250 — condition on arrival at Lang Restorations',
+      caption: 'As received',
+    },
+    afterImage: {
+      src: '/images/projects/1993-kawasaki-kx250/after.jpg',
+      alt: '1993 Kawasaki KX250 — completed restoration by Lang Restorations',
+      caption: 'Completed — Lang Restorations, Traralgon',
+    },
+
+    specifications: [
+      { label: 'Engine', value: '249cc reed-valve two-stroke single' },
+      { label: 'Powervalve', value: 'KIPS (Kawasaki Integrated Powervalve System)' },
+      { label: 'Carburettor', value: 'Keihin PWK 36mm' },
+      { label: 'Gearbox', value: '5-speed' },
+      { label: 'Front suspension', value: '43mm USD Kayaba forks' },
+      { label: 'Rear suspension', value: 'Kayaba single shock with Uni-Trak linkage' },
+      { label: 'Front brake', value: 'Single disc' },
+      { label: 'Rear brake', value: 'Single disc' },
+      { label: 'Restoration scope', value: 'Ground-up restoration' },
+    ],
+
+    workCompleted: [
+      'Full disassembly and component inspection',
+      'Engine rebuild — piston, rings, bottom end assessment, KIPS powervalve rebuild',
+      'Vapour blasting — engine cases and cylinder',
+      'Fork rebuild with new seals and oil',
+      'Uni-Trak linkage rebuild — all bearings replaced',
+      'Zinc plating — all applicable steel hardware',
+      'Frame inspection and correct colour refinish',
+      'New period-correct plastics, cables, and consumables',
+      'Final assembly and inspection',
+    ],
+  },
+
+  {
+    slug: '1996-honda-cr250',
+    name: '1996 Honda CR250',
+    year: 1996,
+    brand: 'Honda',
+    model: 'CR250R',
+    category: 'Motocross',
+    featured: true,
+
+    metaTitle: '1996 Honda CR250R Motocross Restoration | Lang Restorations — Traralgon VIC',
+    metaDescription:
+      'Ground-up restoration of a 1996 Honda CR250R two-stroke motocross bike. Rebuilt by Lang Restorations in Traralgon, Victoria — engine, chassis, and finish to factory specification.',
+
+    shortDescription:
+      'A ground-up restoration of a 1996 Honda CR250R — Honda\'s quarter-litre motocross weapon at the height of the two-stroke era, rebuilt to factory specification.',
+
+    story: `The Honda CR250R of the mid-1990s represents the two-stroke motocross machine at the apex of its development — decades of refinement translated into a motorcycle that was fast, well-handling, and finished to a standard that reflected the factory team's demands. The 1996 model is one of the most sought-after of the CR250 range, with a revised power delivery and chassis geometry that earned it genuine respect from racers.
+
+This restoration followed the same process as every build at Lang Restorations: complete disassembly, component-by-component assessment, and a rebuild that addresses every element of the machine.
+
+The engine was fully rebuilt. Cases were vapour blasted, the crankshaft measured and rebuilt, the cylinder inspected and fitted with a new piston and rings. The CR250's powervalve — responsible for the broad, usable power characteristic that set the bike apart from peaky competitors — was inspected and rebuilt. New seals, gaskets, and hardware throughout.
+
+Fork internals were replaced. Pro-Link linkage bearings were replaced. The frame was inspected, found sound, and refinished. All steel hardware was zinc plated to factory specification. Period-correct plastics and graphics were sourced and applied with reference to factory documentation.
+
+A 1996 Honda CR250R that leaves the workshop looking and performing the way Honda intended it to in 1996. Nothing more complicated than that.`,
+
+    heroImage: {
+      src: '/images/projects/1996-honda-cr250/hero.jpg',
+      alt: '1996 Honda CR250R — ground-up motocross restoration by Lang Restorations, Traralgon Victoria',
+    },
+    galleryImages: [
+      {
+        src: '/images/projects/1996-honda-cr250/engine.jpg',
+        alt: '1996 Honda CR250R engine — vapour blasted, fully rebuilt',
+        caption: 'Rebuilt 249cc two-stroke — vapour blasted cases, rebuilt powervalve',
+      },
+    ],
+    beforeImage: {
+      src: '/images/projects/1996-honda-cr250/before.jpg',
+      alt: '1996 Honda CR250R — condition on arrival at Lang Restorations',
+      caption: 'As received',
+    },
+    afterImage: {
+      src: '/images/projects/1996-honda-cr250/after.jpg',
+      alt: '1996 Honda CR250R — completed restoration by Lang Restorations',
+      caption: 'Completed — Lang Restorations, Traralgon',
+    },
+
+    specifications: [
+      { label: 'Engine', value: '249cc reed-valve two-stroke single' },
+      { label: 'Powervalve', value: 'ATAC (Automatic Torque Amplification Chamber)' },
+      { label: 'Carburettor', value: 'Keihin PWK 38mm' },
+      { label: 'Gearbox', value: '5-speed' },
+      { label: 'Front suspension', value: '43mm USD forks' },
+      { label: 'Rear suspension', value: 'Pro-Link single shock' },
+      { label: 'Front brake', value: 'Single disc' },
+      { label: 'Rear brake', value: 'Single disc' },
+      { label: 'Restoration scope', value: 'Ground-up restoration' },
+    ],
+
+    workCompleted: [
+      'Full disassembly and component inspection',
+      'Engine rebuild — piston, rings, crankshaft, powervalve, seals and gaskets',
+      'Vapour blasting — engine cases, cylinder',
+      'Fork rebuild with new seals and oil',
+      'Pro-Link linkage rebuild — all bearings replaced',
+      'Zinc plating — all applicable steel hardware',
+      'Frame inspection and refinish',
+      'Period-correct plastics, graphics and consumables',
+      'Final assembly and inspection',
+    ],
+  },
+
+  {
+    slug: '2000-yamaha-yz250-vuillemin-tribute',
+    name: '2000 Yamaha YZ250 — Vuillemin Tribute',
+    year: 2000,
+    brand: 'Yamaha',
+    model: 'YZ250',
+    category: 'Motocross',
+    featured: true,
+
+    metaTitle: '2000 Yamaha YZ250 Vuillemin Tribute | Motocross Restoration — Lang Restorations Traralgon',
+    metaDescription:
+      'A no-compromise restoration of a 2000 Yamaha YZ250 built as a tribute to David Vuillemin\'s factory race bike. Every component restored or replaced. Lang Restorations, Traralgon Victoria.',
+
+    shortDescription:
+      'A no-compromise restoration of a 2000 Yamaha YZ250 built as a tribute to David Vuillemin\'s legendary factory race bike — every component either restored or replaced with new parts.',
+
+    story: `David Vuillemin's 2000 season on the Yamaha YZ250 produced some of the most compelling racing of the two-stroke supercross era. The Frenchman's aggressive style and the blue Yamaha factory livery made for a combination that defined a particular moment in the sport — and it is that moment this build was constructed to honour.
+
+The brief was unambiguous: every component either restored or replaced with new parts. No compromises. The machine that left the workshop had to be indistinguishable from what a factory mechanic would have produced for a gate pick on race day.
+
+The 2000 YZ250 engine received a full rebuild. The reed block was inspected and replaced. The crankshaft was measured, rebuilt with new bearings. The cylinder was inspected, and the top end rebuilt with new piston, rings, and gaskets. Cases and cylinder were vapour blasted. The powervalve was disassembled, measured, and rebuilt.
+
+Chassis work was equally comprehensive. Every bearing in the suspension linkage was replaced. Fork internals were replaced with new components. The frame was inspected and refinished. Every bolt was zinc plated or replaced. New footpegs, cables, chain, and sprockets.
+
+The Vuillemin tribute livery was applied with reference to period factory team photography, ensuring correct colours, graphic placement, and number plate configuration for the 2000 season.
+
+One of our most demanding and rewarding restorations — a machine that captures a specific season in motocross history and does not compromise on a single detail.`,
+
+    heroImage: {
+      src: '/images/projects/2000-yamaha-yz250-vuillemin-tribute/hero.jpg',
+      alt: '2000 Yamaha YZ250 Vuillemin Tribute — ground-up motocross restoration by Lang Restorations, Traralgon Victoria',
+    },
+    galleryImages: [
+      {
+        src: '/images/projects/2000-yamaha-yz250-vuillemin-tribute/engine.jpg',
+        alt: '2000 Yamaha YZ250 engine — vapour blasted, fully rebuilt',
+        caption: 'Rebuilt 249cc two-stroke — vapour blasted cases, full bottom and top end rebuild',
+      },
+      {
+        src: '/images/projects/2000-yamaha-yz250-vuillemin-tribute/livery.jpg',
+        alt: '2000 Yamaha YZ250 Vuillemin Tribute livery — factory team colours',
+        caption: 'Factory team tribute livery — verified against period photography',
+      },
+    ],
+    beforeImage: {
+      src: '/images/projects/2000-yamaha-yz250-vuillemin-tribute/before.jpg',
+      alt: '2000 Yamaha YZ250 — condition on arrival at Lang Restorations',
+      caption: 'As received',
+    },
+    afterImage: {
+      src: '/images/projects/2000-yamaha-yz250-vuillemin-tribute/after.jpg',
+      alt: '2000 Yamaha YZ250 Vuillemin Tribute — completed restoration',
+      caption: 'Completed — Lang Restorations, Traralgon',
+    },
+
+    specifications: [
+      { label: 'Engine', value: '249cc reed-valve two-stroke single' },
+      { label: 'Powervalve', value: 'YPVS (Yamaha Power Valve System)' },
+      { label: 'Carburettor', value: 'Keihin PWK 38mm' },
+      { label: 'Gearbox', value: '5-speed' },
+      { label: 'Front suspension', value: '46mm Kayaba USD forks' },
+      { label: 'Rear suspension', value: 'Kayaba single shock with linkage' },
+      { label: 'Front brake', value: 'Single disc' },
+      { label: 'Rear brake', value: 'Single disc' },
+      { label: 'Restoration scope', value: 'Ground-up restoration — every component restored or replaced' },
+    ],
+
+    workCompleted: [
+      'Full disassembly and component inspection',
+      'Engine rebuild — crankshaft, reed block, piston, rings, YPVS powervalve, all seals and gaskets',
+      'Vapour blasting — engine cases, cylinder, head',
+      'Fork rebuild — new internals throughout',
+      'Suspension linkage rebuild — all bearings replaced',
+      'Zinc plating — all steel hardware replaced or plated',
+      'New footpegs, cables, chain, and sprockets',
+      'Frame inspection and refinish',
+      'Period-correct Vuillemin tribute livery — factory colour reference',
+      'New plastics and consumables throughout',
+      'Final assembly and inspection',
+    ],
+  },
+
+  {
+    slug: '1986-honda-z50r',
+    name: '1986 Honda Z50R',
+    year: 1986,
+    brand: 'Honda',
+    model: 'Z50R',
+    category: 'Classic',
     featured: false,
 
+    metaTitle: '1986 Honda Z50R Restoration | Classic Mini Bike — Lang Restorations Traralgon VIC',
+    metaDescription:
+      'Ground-up restoration of a 1986 Honda Z50R mini bike. Restored by Lang Restorations in Traralgon, Victoria to factory specification. Classic Honda mini bike restoration specialists.',
+
     shortDescription:
-      'A 1980 Kawasaki Z1000 stripped back to essentials — flat tracker bars, minimalist brat seat, and a tuned inline-four that makes 92 horsepower with a straight pipe soundtrack.',
+      'A ground-up restoration of a 1986 Honda Z50R — one of the most loved mini bikes in Honda\'s long Mini Trail production run, rebuilt to factory specification.',
 
-    story: `The Z1000 was a running bike — just ugly. Twenty years of bolt-on accessories, a cracked fairing, and a paint job the colour of old mustard. The bones were there: a healthy motor, straight frame, and 23,000 original kilometres.
+    story: `The Honda Z50R of the mid-1980s is a machine that sits at the intersection of nostalgia and genuine collector interest. Honda's Mini Trail range had evolved significantly since the original Z50 of 1967, and the 1986 R model represented a capable, properly engineered small motorcycle rather than a novelty.
 
-Brat style done properly is harder than it looks. The temptation is to slap on a flat seat and call it done. Iron Curtain took six months of careful editing — removing, not adding.
+This restoration brought a well-used 1986 Z50R back to the standard it left the Honda factory with. The 49cc OHC engine was disassembled, inspected, and rebuilt with new seals and gaskets. The engine case and cover were vapour blasted. The frame was inspected, found sound, and refinished. All hardware was zinc plated.
 
-The motor received a hot cam kit, re-jetted Mikunis, and a custom 4-into-2 exhaust that exits under the seat in a classic UJM style. We kept the original airbox to maintain the intake note.
-
-The frame was de-tabbed, stretched slightly at the rear, and a new subframe welded to accept a hand-shaped aluminium seat pan covered in black suede. The tank was smoothed, the filler neck flipped, and the whole thing shot in satin black with a brushed aluminium panel either side.
-
-Simple. Intentional. Exactly what it needs to be.`,
+The mini Trail range requires the same attention to detail as any larger restoration — in some respects more, given the small scale of the components involved and the fact that originality is critical to the collector value of these machines. Every detail was verified against factory specification before the restoration was signed off.`,
 
     heroImage: {
-      src: '/images/projects/z1000-brat/hero.jpg',
-      alt: '1980 Kawasaki Z1000 Brat — Iron Curtain',
+      src: '/images/projects/1986-honda-z50r/hero.jpg',
+      alt: '1986 Honda Z50R — ground-up classic mini bike restoration by Lang Restorations, Traralgon Victoria',
     },
     galleryImages: [
-      { src: '/images/projects/z1000-brat/gallery-01.jpg', alt: 'Engine — Z1000 inline-four', caption: 'Tuned 1015cc inline-four' },
-      { src: '/images/projects/z1000-brat/gallery-02.jpg', alt: 'Seat — aluminium pan, suede cover', caption: 'Hand-shaped aluminium seat pan' },
-      { src: '/images/projects/z1000-brat/gallery-03.jpg', alt: 'Tank — satin black with brushed panels', caption: 'Satin black with brushed aluminium inlays' },
-      { src: '/images/projects/z1000-brat/gallery-04.jpg', alt: 'Side view — brat style profile', caption: 'Side profile — minimal and purposeful' },
+      {
+        src: '/images/projects/1986-honda-z50r/engine.jpg',
+        alt: '1986 Honda Z50R engine — vapour blasted, rebuilt',
+        caption: 'Rebuilt 49cc OHC engine — vapour blasted cases and covers',
+      },
     ],
     beforeImage: {
-      src: '/images/projects/z1000-brat/before.jpg',
-      alt: 'Z1000 before — cracked fairing, mustard paint',
-      caption: 'Before — mustard yellow and two decades of additions',
+      src: '/images/projects/1986-honda-z50r/before.jpg',
+      alt: '1986 Honda Z50R — condition on arrival',
+      caption: 'As received',
     },
     afterImage: {
-      src: '/images/projects/z1000-brat/after.jpg',
-      alt: 'Iron Curtain completed — satin black brat',
-      caption: 'Iron Curtain — completed January 2024',
+      src: '/images/projects/1986-honda-z50r/after.jpg',
+      alt: '1986 Honda Z50R — completed restoration by Lang Restorations',
+      caption: 'Completed — Lang Restorations, Traralgon',
     },
 
     specifications: [
-      { label: 'Engine', value: '1015cc DOHC inline-four' },
-      { label: 'Carburettors', value: '4× Mikuni VM34, re-jetted with K&N pods' },
-      { label: 'Exhaust', value: 'Custom 4-into-2 under-seat exit' },
-      { label: 'Gearbox', value: '5-speed' },
-      { label: 'Front suspension', value: 'Original forks, rebuilt with heavier springs' },
-      { label: 'Rear suspension', value: 'Progressive Suspension 412 series' },
-      { label: 'Front brake', value: 'Dual disc, rebuilt calipers' },
-      { label: 'Wheels', value: '19" front / 18" rear, powder coated black' },
-      { label: 'Seat', value: 'Hand-shaped aluminium pan, black suede' },
-      { label: 'Paint', value: 'Satin black, brushed aluminium side panels' },
-      { label: 'Power (est.)', value: '92hp at rear wheel' },
+      { label: 'Engine', value: '49cc OHC four-stroke single' },
+      { label: 'Gearbox', value: '3-speed semi-automatic' },
+      { label: 'Front suspension', value: 'Telescopic forks' },
+      { label: 'Rear suspension', value: 'Swingarm with twin shocks' },
+      { label: 'Brakes', value: 'Drum — front and rear' },
+      { label: 'Restoration scope', value: 'Ground-up restoration' },
     ],
 
     workCompleted: [
-      'Full engine service — cam chain, timing, valve clearances',
-      'Hot cam kit installation',
-      'Mikuni VM34 carburettor re-jet and K&N pod filters',
-      'Custom 4-into-2 exhaust fabrication',
-      'Frame de-tabbing and subframe fabrication',
-      'Hand-shaped aluminium brat seat pan',
-      'Black suede upholstery',
-      'Tank smoothing and respray — satin black',
-      'Brushed aluminium panel fabrication and fitment',
-      'Fork rebuild with progressive springs',
-      'Progressive Suspension 412 rear shocks',
-      'Wheel powder coat — gloss black',
-      'LED tail light and indicators',
-      'Motogadget m.tripmeter speedo',
-      'Complete wiring loom tidy',
+      'Full disassembly and inspection',
+      'Engine rebuild — seals, gaskets, inspection of all internal components',
+      'Vapour blasting — engine cases and covers',
+      'Zinc plating — all applicable hardware',
+      'Frame inspection and refinish',
+      'Factory-correct paint and decals',
+      'New cables, tyres, and consumables',
+      'Final assembly and inspection',
+    ],
+  },
+
+  {
+    slug: '1982-honda-z50r',
+    name: '1982 Honda Z50R',
+    year: 1982,
+    brand: 'Honda',
+    model: 'Z50R',
+    category: 'Classic',
+    featured: false,
+
+    metaTitle: '1982 Honda Z50R Restoration | Classic Mini Bike — Lang Restorations Traralgon VIC',
+    metaDescription:
+      'Ground-up restoration of a 1982 Honda Z50R. Restored to factory specification by Lang Restorations in Traralgon, Victoria. Honda Z50 restoration specialists.',
+
+    shortDescription:
+      'A ground-up restoration of a 1982 Honda Z50R mini bike — restored to factory specification with attention to originality throughout.',
+
+    story: `The 1982 Honda Z50R represents the Mini Trail range during Honda's transition to the recognisably modern Z50 format — the folding handlebars and trail-focused specification of the earlier models giving way to a more refined, road-capable small motorcycle that would define the range through the decade.
+
+This Z50R arrived at the workshop as a project that required comprehensive attention. The engine was disassembled and rebuilt with new seals and gaskets. Engine cases and covers were vapour blasted. Frame and suspension components were inspected, assessed, and refinished. All hardware was zinc plated.
+
+Decals and paint were matched to factory specification for the 1982 model year. The finished machine is a correct, detailed restoration of a Honda mini bike that represents one of the more sought-after years in the Z50R timeline.`,
+
+    heroImage: {
+      src: '/images/projects/1982-honda-z50r/hero.jpg',
+      alt: '1982 Honda Z50R — ground-up restoration by Lang Restorations, Traralgon Victoria',
+    },
+    galleryImages: [],
+    beforeImage: {
+      src: '/images/projects/1982-honda-z50r/before.jpg',
+      alt: '1982 Honda Z50R — condition on arrival',
+      caption: 'As received',
+    },
+    afterImage: {
+      src: '/images/projects/1982-honda-z50r/after.jpg',
+      alt: '1982 Honda Z50R — completed restoration',
+      caption: 'Completed — Lang Restorations, Traralgon',
+    },
+
+    specifications: [
+      { label: 'Engine', value: '49cc OHC four-stroke single' },
+      { label: 'Gearbox', value: '3-speed semi-automatic' },
+      { label: 'Front suspension', value: 'Telescopic forks' },
+      { label: 'Rear suspension', value: 'Swingarm with twin shocks' },
+      { label: 'Brakes', value: 'Drum — front and rear' },
+      { label: 'Restoration scope', value: 'Ground-up restoration' },
+    ],
+
+    workCompleted: [
+      'Full disassembly and inspection',
+      'Engine rebuild — seals, gaskets, internal component inspection',
+      'Vapour blasting — engine cases and covers',
+      'Zinc plating — all applicable hardware',
+      'Frame and suspension refinish',
+      'Factory-correct paint and decals — 1982 specification',
+      'New cables, tyres, and consumables',
+      'Final assembly and inspection',
+    ],
+  },
+
+  {
+    slug: '1954-bsa-bantam-d3-plunger',
+    name: '1954 BSA Bantam D3 Plunger',
+    year: 1954,
+    brand: 'BSA',
+    model: 'Bantam D3 Plunger',
+    category: 'Vintage',
+    featured: false,
+
+    metaTitle: '1954 BSA Bantam D3 Plunger Restoration | Vintage Motorcycle — Lang Restorations Traralgon VIC',
+    metaDescription:
+      'Ground-up restoration of a 1954 BSA Bantam D3 Plunger — one of Australia\'s most significant vintage British motorcycle restorations. Lang Restorations, Traralgon Victoria.',
+
+    shortDescription:
+      'A ground-up restoration of a 1954 BSA Bantam D3 Plunger — the oldest machine in the Lang Restorations portfolio and a genuinely significant vintage British motorcycle.',
+
+    story: `The 1954 BSA Bantam D3 Plunger is not just the oldest machine to have passed through the Lang Restorations workshop — it is a motorcycle that carries with it seven decades of history and the weight of a British motorcycle industry that no longer exists in the form it took when this machine was built.
+
+The BSA Bantam D3, with its 150cc two-stroke engine and characteristic plunger rear suspension, was built during a period when BSA was one of the world's largest motorcycle manufacturers. It was a practical, economical machine designed for the British rider of the early 1950s — and, seventy years on, it demands a restoration approach that respects both its age and its significance.
+
+The restoration began, as all Lang Restorations projects do, with complete disassembly and a thorough inspection. The 150cc two-stroke engine was stripped, inspected, and rebuilt with new seals and gaskets. Alloy components were vapour blasted. The plunger rear suspension — the distinctive spring-box units that give this model its name — was disassembled, inspected, and rebuilt.
+
+Every aspect of the restoration was approached with reference to period documentation and factory specifications. Correct paint colours, correct decals, correct hardware finishes — the details that define a genuine restoration rather than a cosmetic exercise.
+
+The 1954 BSA Bantam D3 Plunger that emerged from the workshop is a machine that could have left the Small Heath factory in Birmingham in 1954. Correct, complete, and built to last another seventy years.`,
+
+    heroImage: {
+      src: '/images/projects/1954-bsa-bantam-d3-plunger/hero.jpg',
+      alt: '1954 BSA Bantam D3 Plunger — vintage motorcycle restoration by Lang Restorations, Traralgon Victoria',
+    },
+    galleryImages: [
+      {
+        src: '/images/projects/1954-bsa-bantam-d3-plunger/engine.jpg',
+        alt: '1954 BSA Bantam D3 engine — restored 150cc two-stroke',
+        caption: 'Rebuilt 150cc two-stroke — correct factory finish',
+      },
+      {
+        src: '/images/projects/1954-bsa-bantam-d3-plunger/plunger.jpg',
+        alt: '1954 BSA Bantam D3 Plunger rear suspension — rebuilt',
+        caption: 'Plunger rear suspension units — disassembled and rebuilt',
+      },
+    ],
+    beforeImage: {
+      src: '/images/projects/1954-bsa-bantam-d3-plunger/before.jpg',
+      alt: '1954 BSA Bantam D3 Plunger — condition on arrival at Lang Restorations',
+      caption: 'As received',
+    },
+    afterImage: {
+      src: '/images/projects/1954-bsa-bantam-d3-plunger/after.jpg',
+      alt: '1954 BSA Bantam D3 Plunger — completed restoration',
+      caption: 'Completed — Lang Restorations, Traralgon',
+    },
+
+    specifications: [
+      { label: 'Engine', value: '150cc two-stroke single' },
+      { label: 'Gearbox', value: '3-speed' },
+      { label: 'Front suspension', value: 'BSA telescopic forks' },
+      { label: 'Rear suspension', value: 'Plunger (spring-box) units' },
+      { label: 'Brakes', value: 'Drum — front and rear' },
+      { label: 'Country of manufacture', value: 'United Kingdom' },
+      { label: 'Restoration scope', value: 'Ground-up restoration' },
+    ],
+
+    workCompleted: [
+      'Full disassembly and condition documentation',
+      'Engine rebuild — seals, gaskets, internal assessment',
+      'Vapour blasting — alloy engine components',
+      'Plunger rear suspension rebuild',
+      'Front fork rebuild',
+      'Zinc plating or replating of all hardware as appropriate',
+      'Frame and tinware inspection and refinish — factory colour specification',
+      'Period-correct decals and transfers',
+      'New cables, tyres, and consumables',
+      'Final assembly and inspection',
+    ],
+  },
+
+  {
+    slug: '1978-honda-z50-j1',
+    name: '1978 Honda Z50 J1',
+    year: 1978,
+    brand: 'Honda',
+    model: 'Z50 J1',
+    category: 'Classic',
+    featured: false,
+
+    metaTitle: '1978 Honda Z50 J1 Restoration | Classic Honda Mini Bike — Lang Restorations Traralgon',
+    metaDescription:
+      'Ground-up restoration of a 1978 Honda Z50 J1 mini bike. Restored to factory specification by Lang Restorations in Traralgon, Victoria. Honda Z50 restoration specialists.',
+
+    shortDescription:
+      'A ground-up restoration of a 1978 Honda Z50 J1 — one of the most significant years in the Mini Trail range, restored to factory specification with correct paint and decals.',
+
+    story: `The 1978 Honda Z50 J1 marks a specific point in the long production history of Honda's Mini Trail range — a motorcycle that had by this point established itself as one of the defining small motorcycles in the world, and one that continued to evolve in ways that collectors now track carefully from model year to model year.
+
+This J1 came to the workshop as a restoration project that required careful, methodical work. The engine was disassembled, inspected, and rebuilt with new seals and gaskets. Cases and covers were vapour blasted. Hardware was zinc plated.
+
+The restoration of a 1978 Z50 J1 requires close attention to year-specific details — the correct colour for this model year, the correct decal set, and the correct hardware specification. These details define the difference between a restoration that holds up to collector scrutiny and one that merely looks like a Z50.
+
+This one holds up.`,
+
+    heroImage: {
+      src: '/images/projects/1978-honda-z50-j1/hero.jpg',
+      alt: '1978 Honda Z50 J1 — ground-up restoration by Lang Restorations, Traralgon Victoria',
+    },
+    galleryImages: [],
+    beforeImage: {
+      src: '/images/projects/1978-honda-z50-j1/before.jpg',
+      alt: '1978 Honda Z50 J1 — condition on arrival',
+      caption: 'As received',
+    },
+    afterImage: {
+      src: '/images/projects/1978-honda-z50-j1/after.jpg',
+      alt: '1978 Honda Z50 J1 — completed restoration',
+      caption: 'Completed — Lang Restorations, Traralgon',
+    },
+
+    specifications: [
+      { label: 'Engine', value: '49cc OHC four-stroke single' },
+      { label: 'Gearbox', value: '3-speed semi-automatic' },
+      { label: 'Front suspension', value: 'Telescopic forks' },
+      { label: 'Rear suspension', value: 'Swingarm with twin shocks' },
+      { label: 'Brakes', value: 'Drum — front and rear' },
+      { label: 'Restoration scope', value: 'Ground-up restoration' },
+    ],
+
+    workCompleted: [
+      'Full disassembly and inspection',
+      'Engine rebuild — seals, gaskets, component inspection',
+      'Vapour blasting — engine cases and covers',
+      'Zinc plating — all applicable hardware',
+      'Frame and tinware refinish — year-correct specification',
+      'Year-correct decals and paint',
+      'New cables, tyres, and consumables',
+      'Final assembly and inspection',
+    ],
+  },
+
+  {
+    slug: '1972-honda-z50a-u-type',
+    name: '1972 Honda Z50A U-Type',
+    year: 1972,
+    brand: 'Honda',
+    model: 'Z50A U-Type',
+    category: 'Vintage',
+    featured: false,
+
+    metaTitle: '1972 Honda Z50A U-Type Restoration | Vintage Honda Mini Trail — Lang Restorations Traralgon',
+    metaDescription:
+      'Ground-up restoration of a 1972 Honda Z50A U-Type vintage mini bike. Restored by Lang Restorations in Traralgon, Victoria. Vintage Honda Mini Trail restoration specialists.',
+
+    shortDescription:
+      'A ground-up restoration of a 1972 Honda Z50A U-Type — an early and highly sought-after variant of Honda\'s iconic Mini Trail, restored with a focus on period correctness.',
+
+    story: `The 1972 Honda Z50A U-Type sits at a significant point in the Mini Trail's history. Honda's small folding-handlebar motorcycle had by this point established itself internationally, and the U-Type designation marks a specific variation that collectors track with particular care.
+
+These early-1970s Z50s are among the most challenging to restore correctly — not because of mechanical complexity, but because of the attention to detail required to produce a machine that is genuinely correct for its model year. Paint colours, decal specifications, hardware finishes, and component details changed from year to year, and an incorrectly detailed restoration is visible to anyone who knows the model.
+
+This Z50A U-Type was restored with the same methodical approach applied to every project at Lang Restorations. Complete disassembly, vapour blasting of alloy components, engine rebuild, hardware zinc plating, and frame and tinware refinished in the correct colour for this model year. Decals were sourced to factory specification.
+
+The 1972 Honda Z50A U-Type that left the workshop is a machine that can hold its own against any original — because it has been restored, not merely refinished.`,
+
+    heroImage: {
+      src: '/images/projects/1972-honda-z50a-u-type/hero.jpg',
+      alt: '1972 Honda Z50A U-Type — vintage mini bike restoration by Lang Restorations, Traralgon Victoria',
+    },
+    galleryImages: [],
+    beforeImage: {
+      src: '/images/projects/1972-honda-z50a-u-type/before.jpg',
+      alt: '1972 Honda Z50A U-Type — condition on arrival',
+      caption: 'As received',
+    },
+    afterImage: {
+      src: '/images/projects/1972-honda-z50a-u-type/after.jpg',
+      alt: '1972 Honda Z50A U-Type — completed restoration',
+      caption: 'Completed — Lang Restorations, Traralgon',
+    },
+
+    specifications: [
+      { label: 'Engine', value: '49cc OHC four-stroke single' },
+      { label: 'Gearbox', value: '3-speed semi-automatic' },
+      { label: 'Handlebars', value: 'Folding — U-Type specification' },
+      { label: 'Front suspension', value: 'Telescopic forks' },
+      { label: 'Rear suspension', value: 'Swingarm with twin shocks' },
+      { label: 'Brakes', value: 'Drum — front and rear' },
+      { label: 'Restoration scope', value: 'Ground-up restoration' },
+    ],
+
+    workCompleted: [
+      'Full disassembly and condition documentation',
+      'Engine rebuild — seals, gaskets, internal inspection',
+      'Vapour blasting — engine cases and covers',
+      'Zinc plating — all applicable hardware',
+      'Frame and tinware refinish — year and variant correct specification',
+      'Factory-specification decals sourced and applied',
+      'New cables, tyres, and consumables',
+      'Final assembly and inspection',
+    ],
+  },
+
+  {
+    slug: '1997-99-honda-cr250-lusk-tribute',
+    name: '1997/99 Honda CR250 — Lusk Tribute',
+    year: 1997,
+    brand: 'Honda',
+    model: 'CR250R',
+    category: 'Motocross',
+    featured: true,
+
+    metaTitle: '1997/99 Honda CR250 Lusk Tribute | Motocross Restoration — Lang Restorations Traralgon VIC',
+    metaDescription:
+      'A collaboration build inspired by Ezra Lusk\'s legendary CR250 race bikes of the late 1990s. High-end components, custom finishes, and no-compromise restoration by Lang Restorations, Traralgon Victoria.',
+
+    shortDescription:
+      'A collaboration build inspired by Ezra Lusk\'s legendary Honda CR250 race bikes of the late 1990s — featuring custom finishes and high-end components throughout, built as a tribute to one of motocross\'s most iconic eras.',
+
+    story: `Ezra Lusk's tenure on the Team Honda CR250 through the late 1990s produced some of the most memorable racing of the era. The Georgian's combination of raw speed and commitment to the Honda machine — particularly the CR250 in those transitional years between the 1997 and 1999 models — made him a reference point for the kind of riding that could be extracted from Honda's quarter-litre two-stroke.
+
+This build began as a collaboration — a project where the approach was informed by Lusk's factory machines while the execution added individual touches throughout. The brief called for high-end components, custom finishes, and a standard of completion that would hold up as both a tribute and as a piece of craftsmanship.
+
+The engine was rebuilt completely. Every component was assessed and addressed — crankshaft, top end, powervalve, seals, gaskets. Engine cases and cylinder were vapour blasted. The bottom end received new bearings throughout.
+
+Chassis work went beyond a standard restoration. The frame was refinished. Suspension components were rebuilt and set up correctly. Every bearing in the linkage and headstock was replaced. Hardware was either replaced with new or zinc plated.
+
+The tribute livery — bridging the 1997 and 1999 model years with reference to Lusk's factory team specification — was developed with close attention to period factory documentation. Custom touches were incorporated at specific points to give the build its own identity within the tribute framework.
+
+A collaboration build that represents both a specific rider's legacy and the standard of work the Lang Restorations workshop is capable of producing.`,
+
+    heroImage: {
+      src: '/images/projects/1997-99-honda-cr250-lusk-tribute/hero.jpg',
+      alt: '1997/99 Honda CR250R Lusk Tribute — motocross restoration by Lang Restorations, Traralgon Victoria',
+    },
+    galleryImages: [
+      {
+        src: '/images/projects/1997-99-honda-cr250-lusk-tribute/engine.jpg',
+        alt: '1997/99 Honda CR250R Lusk Tribute — engine detail',
+        caption: 'Fully rebuilt CR250R engine — vapour blasted cases, new components throughout',
+      },
+      {
+        src: '/images/projects/1997-99-honda-cr250-lusk-tribute/livery.jpg',
+        alt: '1997/99 Honda CR250R Lusk Tribute — custom livery detail',
+        caption: 'Tribute livery — developed with reference to Lusk\'s factory team specification',
+      },
+    ],
+    beforeImage: {
+      src: '/images/projects/1997-99-honda-cr250-lusk-tribute/before.jpg',
+      alt: '1997/99 Honda CR250R — condition on arrival',
+      caption: 'As received',
+    },
+    afterImage: {
+      src: '/images/projects/1997-99-honda-cr250-lusk-tribute/after.jpg',
+      alt: '1997/99 Honda CR250R Lusk Tribute — completed restoration',
+      caption: 'Completed — Lang Restorations, Traralgon',
+    },
+
+    specifications: [
+      { label: 'Engine', value: '249cc reed-valve two-stroke single' },
+      { label: 'Powervalve', value: 'ATAC (Automatic Torque Amplification Chamber)' },
+      { label: 'Carburettor', value: 'Keihin PWK 38mm' },
+      { label: 'Gearbox', value: '5-speed' },
+      { label: 'Front suspension', value: '43mm USD forks — rebuilt' },
+      { label: 'Rear suspension', value: 'Pro-Link single shock — rebuilt' },
+      { label: 'Build scope', value: 'Ground-up restoration with custom collaboration elements' },
+    ],
+
+    workCompleted: [
+      'Full disassembly and component inspection',
+      'Engine rebuild — crankshaft, top end, powervalve, all seals and gaskets',
+      'Vapour blasting — engine cases, cylinder, head',
+      'Fork rebuild — new internals',
+      'Pro-Link linkage rebuild — all bearings replaced',
+      'Headstock bearing replacement',
+      'Zinc plating — all hardware replaced or plated',
+      'Frame refinish',
+      'Custom collaboration elements — incorporated at specified points',
+      'Tribute livery — 1997/99 Lusk factory team reference, custom details',
+      'New plastics, cables, chain, and consumables throughout',
+      'Final assembly and inspection',
     ],
   },
 ]

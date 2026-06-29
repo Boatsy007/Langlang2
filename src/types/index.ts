@@ -15,16 +15,7 @@ export interface Specification {
 
 // ─── Projects / Featured Builds ───────────────────────────────────────────────
 
-export type ProjectCategory =
-  | 'Cafe Racer'
-  | 'Scrambler'
-  | 'Tracker'
-  | 'Bobber'
-  | 'Chopper'
-  | 'Brat Style'
-  | 'Street Fighter'
-  | 'Classic Restoration'
-  | 'Custom'
+export type ProjectCategory = 'Motocross' | 'Classic' | 'Vintage'
 
 export interface Project {
   slug: Slug
@@ -33,7 +24,7 @@ export interface Project {
   brand: string
   model: string
   category: ProjectCategory
-  completionYear: number
+  completionYear?: number
   featured: boolean
 
   shortDescription: string
@@ -46,6 +37,9 @@ export interface Project {
 
   specifications: Specification[]
   workCompleted: string[]
+
+  metaTitle: string
+  metaDescription: string
 }
 
 // ─── For Sale Listings ────────────────────────────────────────────────────────
@@ -55,11 +49,12 @@ export type AvailabilityStatus = 'Available' | 'On Hold' | 'Sold'
 export interface ForSaleBike {
   slug: Slug
   name: string
-  year: number
+  year: number | string
   brand: string
   model: string
-  price: number
+  priceLabel: string
   status: AvailabilityStatus
+  condition: 'Restored'
 
   shortDescription: string
   fullDescription: string
@@ -68,20 +63,19 @@ export interface ForSaleBike {
   galleryImages: GalleryImage[]
 
   specifications: Specification[]
-
   enquiryCta: string
+
+  metaTitle: string
+  metaDescription: string
 }
 
 // ─── Services ────────────────────────────────────────────────────────────────
 
 export type ServiceCategory =
   | 'Restoration'
-  | 'Custom Build'
   | 'Mechanical'
   | 'Fabrication'
-  | 'Paint & Finish'
-  | 'Electrical'
-  | 'Consultation'
+  | 'Finishing'
 
 export interface Service {
   id: string
@@ -90,10 +84,12 @@ export interface Service {
   shortDescription: string
   fullDescription: string
   includes: string[]
-  priceFrom?: number
   priceLabel?: string
   featured: boolean
   image?: GalleryImage
+
+  metaTitle: string
+  metaDescription: string
 }
 
 // ─── Filter helpers ───────────────────────────────────────────────────────────
@@ -101,4 +97,20 @@ export interface Service {
 export type FilterOption<T extends string = string> = {
   label: string
   value: T | 'all'
+}
+
+// ─── Process steps ────────────────────────────────────────────────────────────
+
+export interface ProcessStep {
+  number: number
+  name: string
+  description: string
+}
+
+// ─── Testimonials ─────────────────────────────────────────────────────────────
+
+export interface Testimonial {
+  quote: string
+  author: string
+  role: string
 }

@@ -1,7 +1,6 @@
 import { Link } from 'react-router-dom'
 import { clsx } from 'clsx'
 import { StatusBadge } from '@/components/Badge'
-import { formatPrice } from '@/utils/data'
 import type { ForSaleBike } from '@/types'
 
 interface ForSaleCardProps {
@@ -33,7 +32,7 @@ export function ForSaleCard({ bike, className }: ForSaleCardProps) {
         </div>
 
         <span className="absolute bottom-3 right-3 text-base font-bold text-white bg-black/60 px-3 py-1.5 rounded-lg backdrop-blur-sm">
-          {formatPrice(bike.price)}
+          {bike.priceLabel}
         </span>
       </div>
 

@@ -60,9 +60,6 @@ export function getForSaleStatusOptions(): FilterOption<AvailabilityStatus>[] {
   ]
 }
 
-export function formatPrice(price: number): string {
-  return new Intl.NumberFormat('en-AU', { style: 'currency', currency: 'AUD', maximumFractionDigits: 0 }).format(price)
-}
 
 // ─── Service helpers ──────────────────────────────────────────────────────────
 
