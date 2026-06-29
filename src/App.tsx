@@ -1,7 +1,11 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, lazy, Suspense } from 'react'
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
 import { clsx } from 'clsx'
 import { HomePage } from '@/pages/HomePage'
+
+const WorkshopGame = lazy(() =>
+  import('@/components/WorkshopGame/WorkshopGame').then((m) => ({ default: m.WorkshopGame }))
+)
 import { ProjectsPage } from '@/pages/ProjectsPage'
 import { ProjectDetailPage } from '@/pages/ProjectDetailPage'
 import { ForSalePage } from '@/pages/ForSalePage'
@@ -32,8 +36,41 @@ const linkBase = 'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors w
 const linkActive = 'text-red-400 bg-red-950/60'
 const linkInactive = 'text-zinc-400 hover:text-white hover:bg-zinc-900'
 
+function BikeIcon({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 32 20"
+      fill="none"
+      xmlns="http://www.w3.org/2000/svg"
+      className={className}
+      aria-hidden="true"
+    >
+      {/* Body */}
+      <rect x="8" y="6" width="16" height="8" fill="#DC2626" />
+      {/* Seat */}
+      <rect x="11" y="3" width="9" height="4" fill="#18181b" />
+      {/* Handlebars */}
+      <rect x="22" y="2" width="2" height="6" fill="#a1a1aa" />
+      {/* Forks */}
+      <rect x="20" y="6" width="2" height="8" fill="#71717a" />
+      {/* Exhaust */}
+      <rect x="5" y="12" width="8" height="2" fill="#78716c" />
+      {/* Front wheel */}
+      <circle cx="22" cy="16" r="4" fill="#27272a" />
+      <circle cx="22" cy="16" r="2" fill="#52525b" />
+      {/* Rear wheel */}
+      <circle cx="8" cy="16" r="4" fill="#27272a" />
+      <circle cx="8" cy="16" r="2" fill="#52525b" />
+      {/* Rider */}
+      <rect x="13" y="0" width="7" height="5" fill="#DC2626" />
+      <rect x="14" y="1" width="5" height="2" fill="#fcd34d" />
+    </svg>
+  )
+}
+
 function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const [gameOpen, setGameOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -42,6 +79,7 @@ function Nav() {
   }, [])
 
   return (
+    <>
     <header className={`sticky top-0 z-40 transition-colors duration-300 ${scrolled ? 'bg-zinc-950 border-b border-zinc-900' : ''}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center gap-3">
 
@@ -54,6 +92,16 @@ function Nav() {
             draggable={false}
           />
         </NavLink>
+
+        {/* Easter egg — Workshop Runner */}
+        <button
+          onClick={() => setGameOpen(true)}
+          className="shrink-0 p-1.5 rounded-md opacity-30 hover:opacity-100 transition-opacity duration-300 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+          aria-label="Open Workshop Game"
+          title="Workshop Runner"
+        >
+          <BikeIcon className="w-8 h-5" />
+        </button>
 
         {/* Mobile nav — horizontally scrollable, priority links on the right */}
         <nav className="md:hidden flex-1 overflow-x-auto scrollbar-none min-w-0">
@@ -96,6 +144,13 @@ function Nav() {
 
       </div>
     </header>
+
+    {gameOpen && (
+      <Suspense fallback={null}>
+        <WorkshopGame onClose={() => setGameOpen(false)} />
+      </Suspense>
+    )}
+  </>
   )
 }
 
