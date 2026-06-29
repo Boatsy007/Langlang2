@@ -31,7 +31,7 @@ export function ForSaleCard({ bike, className }: ForSaleCardProps) {
           <StatusBadge status={bike.status} />
         </div>
 
-        <span className="absolute bottom-3 right-3 text-base font-bold text-white bg-black/60 px-3 py-1.5 rounded-lg backdrop-blur-sm">
+        <span className="absolute bottom-3 right-3 text-base font-bold text-white bg-red-700/80 px-3 py-1.5 rounded-lg backdrop-blur-sm">
           {bike.priceLabel}
         </span>
       </div>
@@ -52,7 +52,7 @@ export function ForSaleCard({ bike, className }: ForSaleCardProps) {
           {bike.shortDescription}
         </p>
 
-        <div className="mt-4 flex items-center gap-1 text-sm font-medium text-zinc-400 group-hover:text-white transition-colors">
+        <div className="mt-4 flex items-center gap-1 text-sm font-medium text-zinc-400 group-hover:text-red-400 transition-colors">
           View listing
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">
             <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

@@ -14,6 +14,7 @@ import {
 import { ProjectCard } from '@/components/ProjectCard'
 import { ForSaleCard } from '@/components/ForSaleCard'
 import { BeforeAfterSlider } from '@/components/BeforeAfterSlider'
+import { CinematicHero } from '@/components/CinematicHero'
 import { useInView } from '@/hooks/useInView'
 
 // ─── Utility: Scroll-triggered fade-in wrapper ───────────────────────────────
@@ -45,9 +46,10 @@ function FadeIn({
 
 function Label({ children }: { children: React.ReactNode }) {
   return (
-    <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-4">
-      {children}
-    </p>
+    <div className="flex items-center gap-3 mb-4">
+      <span className="w-5 h-px bg-red-600 shrink-0" aria-hidden="true" />
+      <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400">{children}</p>
+    </div>
   )
 }
 
@@ -65,7 +67,7 @@ function FaqItem({ question, answer, delay = 0 }: { question: string; answer: st
         >
           <span className="text-base sm:text-lg font-medium text-white leading-snug">{question}</span>
           <span
-            className={`shrink-0 mt-0.5 w-6 h-6 flex items-center justify-center rounded-full ring-1 ring-zinc-800 bg-zinc-900 transition-transform duration-300 ${open ? 'rotate-45' : ''}`}
+            className={`shrink-0 mt-0.5 w-6 h-6 flex items-center justify-center rounded-full ring-1 transition-all duration-300 ${open ? 'rotate-45 ring-red-800 bg-red-950' : 'ring-zinc-800 bg-zinc-900'}`}
             aria-hidden="true"
           >
             <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
@@ -97,67 +99,7 @@ export function HomePage() {
     <main className="min-h-screen bg-zinc-950">
 
       {/* ─── 1. Cinematic Hero ──────────────────────────────────────────────── */}
-      <section
-        className="relative min-h-screen flex flex-col justify-end pb-20 sm:pb-28"
-        aria-label="Hero"
-      >
-        {/* Background */}
-        <div className="absolute inset-0 bg-zinc-900">
-          <img
-            src={showcaseBuild?.afterImage.src ?? '/images/hero.jpg'}
-            alt="Lang Restorations — Traralgon motorcycle restoration workshop"
-            className="w-full h-full object-cover opacity-50"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/30 to-zinc-950/10" />
-          <div className="absolute inset-0 bg-gradient-to-r from-zinc-950/60 to-transparent" />
-        </div>
-
-        {/* Content */}
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-          <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-8">
-            {business.name} · {business.suburb}, {business.state} · Est. {business.established}
-          </p>
-
-          <h1 className="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold text-white tracking-tight leading-none mb-8 max-w-5xl">
-            Motorcycle
-            <br />
-            Restorations
-            <br />
-            <span className="text-zinc-400">Without Compromise.</span>
-          </h1>
-
-          <p className="text-lg sm:text-xl text-zinc-300 max-w-2xl leading-relaxed mb-12">
-            Collector-quality restorations of vintage motocross, classic road motorcycles and iconic
-            minibikes, meticulously rebuilt in Traralgon, Victoria.
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <Link
-              to="/builds"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-white text-black text-sm font-semibold hover:bg-zinc-100 transition-colors"
-            >
-              View Featured Builds
-              <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-                <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
-              </svg>
-            </Link>
-            <Link
-              to="/for-sale"
-              className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl bg-transparent text-white text-sm font-semibold ring-1 ring-white/30 hover:ring-white/60 hover:bg-white/5 transition-all"
-            >
-              Motorcycles For Sale
-            </Link>
-          </div>
-        </div>
-
-        {/* Scroll indicator */}
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 animate-bounce">
-          <span className="text-xs text-zinc-600 uppercase tracking-widest font-medium">Scroll</span>
-          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-            <path d="M10 4v12M10 16L5 11M10 16L15 11" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-zinc-600" />
-          </svg>
-        </div>
-      </section>
+      <CinematicHero src="/images/hero.jpg" />
 
       {/* ─── 2. Introduction ────────────────────────────────────────────────── */}
       <section className="py-28 sm:py-36 border-b border-zinc-900">
@@ -197,7 +139,7 @@ export function HomePage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
               {homepageIntroStats.map((stat) => (
                 <div key={stat.label}>
-                  <p className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-1">
+                  <p className="text-4xl sm:text-5xl font-bold text-red-400 tracking-tight mb-1">
                     {stat.value}
                   </p>
                   <p className="text-sm text-zinc-500 uppercase tracking-widest font-medium">
@@ -269,8 +211,8 @@ export function HomePage() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {whyItems.map((item, i) => (
               <FadeIn key={item.title} delay={i * 80}>
-                <div className="rounded-2xl bg-zinc-900 ring-1 ring-zinc-800 p-7 h-full hover:ring-zinc-700 transition-colors">
-                  <span className="text-4xl font-bold text-zinc-800 block mb-5 leading-none">
+                <div className="rounded-2xl bg-zinc-900 ring-1 ring-zinc-800 p-7 h-full hover:ring-red-900/60 transition-colors">
+                  <span className="text-4xl font-bold text-red-950 block mb-5 leading-none">
                     {String(i + 1).padStart(2, '0')}
                   </span>
                   <h3 className="text-lg font-semibold text-white mb-3 leading-snug">
@@ -312,7 +254,7 @@ export function HomePage() {
               <FadeIn key={service.id} delay={i * 80}>
                 <Link
                   to="/services"
-                  className="group block rounded-2xl bg-zinc-900 ring-1 ring-zinc-800 p-7 h-full hover:ring-zinc-600 transition-all"
+                  className="group block rounded-2xl bg-zinc-900 ring-1 ring-zinc-800 p-7 h-full hover:ring-red-900/60 transition-all"
                 >
                   <div className="flex items-start justify-between gap-4 mb-4">
                     <h3 className="text-xl font-semibold text-white leading-tight group-hover:text-zinc-100 transition-colors">
@@ -323,7 +265,7 @@ export function HomePage() {
                     </span>
                   </div>
                   <p className="text-sm text-zinc-400 leading-relaxed mb-5">{service.shortDescription}</p>
-                  <div className="flex items-center gap-1 text-sm font-medium text-zinc-500 group-hover:text-white transition-colors">
+                  <div className="flex items-center gap-1 text-sm font-medium text-zinc-500 group-hover:text-red-400 transition-colors">
                     Learn more
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">
                       <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
@@ -390,7 +332,7 @@ export function HomePage() {
               <FadeIn key={item.word} delay={i * 60}>
                 <div className="group py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-12 items-start hover:bg-zinc-900/30 -mx-4 px-4 transition-colors rounded-xl">
                   <div className="flex items-baseline gap-5">
-                    <span className="text-sm font-medium text-zinc-700 w-6 shrink-0">
+                    <span className="text-sm font-medium text-red-800 w-6 shrink-0">
                       {String(i + 1).padStart(2, '0')}
                     </span>
                     <h3 className="text-3xl sm:text-4xl font-bold text-white tracking-tight">
@@ -486,7 +428,7 @@ export function HomePage() {
                       viewBox="0 0 36 26"
                       fill="none"
                       aria-hidden="true"
-                      className="mb-6 text-zinc-700"
+                      className="mb-6 text-red-900"
                     >
                       <path
                         d="M0 26V15.636C0 13.394 0.395833 11.2576 1.1875 9.22727C1.97917 7.19697 3.0625 5.37879 4.4375 3.77273C5.8125 2.16667 7.41667 0.848485 9.25 -0.181818L13.5 3.63636C12.0417 4.57576 10.7604 5.78788 9.65625 7.27273C8.55208 8.75758 7.875 10.4545 7.625 12.3636H14V26H0ZM22 26V15.636C22 13.394 22.3958 11.2576 23.1875 9.22727C23.9792 7.19697 25.0625 5.37879 26.4375 3.77273C27.8125 2.16667 29.4167 0.848485 31.25 -0.181818L35.5 3.63636C34.0417 4.57576 32.7604 5.78788 31.6563 7.27273C30.5521 8.75758 29.875 10.4545 29.625 12.3636H36V26H22Z"
@@ -528,9 +470,11 @@ export function HomePage() {
 
       {/* ─── 11. Final CTA ───────────────────────────────────────────────────── */}
       <section className="relative py-36 sm:py-48 overflow-hidden">
-        {/* Subtle background gradient */}
+        {/* Red ambient glow */}
         <div className="absolute inset-0 pointer-events-none">
           <div className="absolute inset-0 bg-gradient-to-br from-zinc-900/30 via-transparent to-transparent" />
+          <div className="absolute bottom-0 left-0 w-[600px] h-[400px] bg-red-950/40 rounded-full blur-3xl -translate-x-1/3 translate-y-1/3" />
+          <div className="absolute top-0 right-0 w-[400px] h-[300px] bg-red-950/20 rounded-full blur-3xl translate-x-1/4 -translate-y-1/4" />
         </div>
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -546,7 +490,7 @@ export function HomePage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-white text-black text-sm font-semibold hover:bg-zinc-100 transition-colors"
+                className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-red-600 text-white text-sm font-semibold hover:bg-red-500 transition-colors"
               >
                 Start Your Restoration
                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">

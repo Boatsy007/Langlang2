@@ -27,7 +27,7 @@ const desktopLinks = [
 ]
 
 const linkBase = 'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors whitespace-nowrap block'
-const linkActive = 'text-red-500 bg-zinc-800'
+const linkActive = 'text-red-400 bg-red-950/60'
 const linkInactive = 'text-zinc-400 hover:text-white hover:bg-zinc-900'
 
 function Nav() {
@@ -36,7 +36,8 @@ function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center gap-3">
 
         {/* Logo — links to home, always visible */}
-        <NavLink to="/" className="shrink-0 text-sm font-bold text-white tracking-tight">
+        <NavLink to="/" className="shrink-0 flex items-center gap-2 text-sm font-bold text-white tracking-tight">
+          <span className="w-2 h-2 rounded-full bg-red-600 shrink-0" aria-hidden="true" />
           Lang Restorations
         </NavLink>
 
@@ -68,7 +69,7 @@ function Nav() {
                   className={({ isActive }) =>
                     clsx(
                       'px-3.5 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap block',
-                      isActive ? linkActive : linkInactive,
+                      isActive ? 'text-red-400 bg-red-950/60' : linkInactive,
                     )
                   }
                 >

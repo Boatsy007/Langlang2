@@ -34,7 +34,7 @@ export function ProjectCard({ project, featured = false, className }: ProjectCar
         </span>
 
         {project.featured && (
-          <span className="absolute top-3 left-3 text-xs font-semibold text-black bg-white px-2.5 py-1 rounded-full">
+          <span className="absolute top-3 left-3 text-xs font-semibold text-white bg-red-600 px-2.5 py-1 rounded-full">
             Featured
           </span>
         )}
@@ -57,7 +57,7 @@ export function ProjectCard({ project, featured = false, className }: ProjectCar
           {project.shortDescription}
         </p>
 
-        <div className="mt-4 flex items-center gap-1 text-sm font-medium text-zinc-400 group-hover:text-white transition-colors">
+        <div className="mt-4 flex items-center gap-1 text-sm font-medium text-zinc-400 group-hover:text-red-400 transition-colors">
           View build
           <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="transition-transform duration-200 group-hover:translate-x-1">
             <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />

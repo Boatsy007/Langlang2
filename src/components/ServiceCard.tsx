@@ -44,7 +44,7 @@ export function ServiceCard({ service, expanded = false, className }: ServiceCar
             <ul className="space-y-1.5">
               {service.includes.map((item) => (
                 <li key={item} className="flex items-start gap-2 text-sm text-zinc-400">
-                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="shrink-0 mt-0.5 text-emerald-500">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="shrink-0 mt-0.5 text-red-500">
                     <path d="M3 8L6.5 11.5L13 5" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                   {item}

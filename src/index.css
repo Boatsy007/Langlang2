@@ -10,6 +10,68 @@
   }
 }
 
+/* ─── Cinematic Hero ─────────────────────────────────────────────────────────
+ *  All animations are GPU-accelerated (transform/opacity only).
+ *  No layout properties touched — maintains 60fps.                            */
+
+/* Slow cinematic zoom — starts zoomed, breathes gently */
+@keyframes hero-zoom {
+  0%   { transform: scale(1.06) translate(0%, 0%); }
+  33%  { transform: scale(1.04) translate(-0.5%, 0.3%); }
+  66%  { transform: scale(1.05) translate(0.3%, -0.2%); }
+  100% { transform: scale(1.06) translate(0%, 0%); }
+}
+
+.hero-zoom {
+  animation: hero-zoom 30s ease-in-out infinite;
+  will-change: transform;
+}
+
+/* Responsive object-position — keeps full bike visible on every screen */
+.hero-img {
+  object-position: 55% 52%; /* mobile: centre the bike profile */
+}
+
+@media (min-width: 640px) {
+  .hero-img { object-position: 58% 50%; }
+}
+
+@media (min-width: 1024px) {
+  .hero-img { object-position: 62% 48%; }
+}
+
+@media (min-width: 1280px) {
+  .hero-img { object-position: 64% 46%; }
+}
+
+/* Light ray sweep — diagonal shimmer across metallic surfaces */
+@keyframes hero-ray {
+  0%   { opacity: 0;   transform: translateX(-110%) skewX(-20deg); }
+  18%  { opacity: 1; }
+  82%  { opacity: 0.7; }
+  100% { opacity: 0;   transform: translateX(280%)  skewX(-20deg); }
+}
+
+.hero-ray {
+  position: absolute;
+  top: -30%;
+  left: var(--ray-left, 40%);
+  width: var(--ray-w, 80px);
+  height: 180%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.006) 20%,
+    rgba(255, 255, 255, 0.022) 50%,
+    rgba(255, 255, 255, 0.006) 80%,
+    transparent 100%
+  );
+  filter: blur(7px);
+  transform: translateX(-110%) skewX(-20deg);
+  animation: hero-ray var(--ray-dur, 18s) ease-in-out var(--ray-delay, 0s) infinite;
+  pointer-events: none;
+}
+
 @layer base {
   *, *::before, *::after {
     box-sizing: border-box;
