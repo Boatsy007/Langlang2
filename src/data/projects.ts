@@ -570,7 +570,18 @@ This one holds up.`,
       src: '/images/projects/1978-honda-z50-j1/hero.jpg',
       alt: '1978 Honda Z50 J1 — ground-up restoration by Lang Restorations, Traralgon Victoria',
     },
-    galleryImages: [],
+    galleryImages: [
+      {
+        src: '/images/projects/1978-honda-z50-j1/after.jpg',
+        alt: '1978 Honda Z50 J1 — completed restoration by Lang Restorations',
+        caption: 'Completed restoration — factory yellow, chrome details, Lang Restorations Traralgon',
+      },
+      {
+        src: '/images/projects/1978-honda-z50-j1/before.jpg',
+        alt: '1978 Honda Z50 J1 — as received before restoration',
+        caption: 'As received — heavy rust and wear throughout',
+      },
+    ],
     beforeImage: {
       src: '/images/projects/1978-honda-z50-j1/before.jpg',
       alt: '1978 Honda Z50 J1 — condition on arrival',
@@ -578,7 +589,7 @@ This one holds up.`,
     },
     afterImage: {
       src: '/images/projects/1978-honda-z50-j1/after.jpg',
-      alt: '1978 Honda Z50 J1 — completed restoration',
+      alt: '1978 Honda Z50 J1 — completed restoration by Lang Restorations',
       caption: 'Completed — Lang Restorations, Traralgon',
     },
 
