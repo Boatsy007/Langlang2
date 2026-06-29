@@ -1,6 +1,16 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getFeaturedProjects, getFeaturedServices, getAvailableForSale } from '@/utils/data'
-import { testimonials, business } from '@/data/siteContent'
+import {
+  testimonials,
+  business,
+  whyItems,
+  philosophyItems,
+  homepageIntroParagraphs,
+  homepageIntroStats,
+  homepageFaq,
+  homepageBeforeAfter,
+} from '@/data/siteContent'
 import { ProjectCard } from '@/components/ProjectCard'
 import { ForSaleCard } from '@/components/ForSaleCard'
 import { BeforeAfterSlider } from '@/components/BeforeAfterSlider'
@@ -41,59 +51,37 @@ function Label({ children }: { children: React.ReactNode }) {
   )
 }
 
-// ─── Why Lang Restorations data ───────────────────────────────────────────────
+// ─── FAQ accordion item ───────────────────────────────────────────────────────
 
-const whyItems = [
-  {
-    title: 'Factory-Correct Restorations',
-    body: 'Every specification — torque values, material finishes, hardware grades — is verified against factory documentation. The result is a machine rebuilt to the standard it left the factory.',
-  },
-  {
-    title: 'Collector-Quality Finishes',
-    body: 'Vapour blasting, zinc plating, period-correct paint and decals. The finishes used here are chosen for authenticity and longevity — not visual shortcuts.',
-  },
-  {
-    title: 'Documented Process',
-    body: 'Every restoration is photographed at every stage. You receive a documented record of what was found, what was done, and how it was resolved.',
-  },
-  {
-    title: 'Traditional Craftsmanship',
-    body: 'Two decades of hands-on experience with the machines that matter. Not a production shop. Every project receives the full attention it demands.',
-  },
-  {
-    title: 'Premium Components',
-    body: 'Genuine OEM parts where available. Quality aftermarket where not. No budget compromises on components that affect function, longevity or correctness.',
-  },
-  {
-    title: '20+ Years Experience',
-    body: 'Operating from Traralgon, Victoria since 2004. Built on a reputation for restoration work that holds up under scrutiny — from collectors and riders who know the difference.',
-  },
-]
-
-// ─── Philosophy data ──────────────────────────────────────────────────────────
-
-const philosophyItems = [
-  {
-    word: 'Passion',
-    body: 'The machines that come through this workshop are not commodities. They are pieces of motorcycle history — and they are treated that way.',
-  },
-  {
-    word: 'Precision',
-    body: 'Factory torque specifications. Correct clearances. The right lubricant in the right location. Precision is not optional — it is the baseline.',
-  },
-  {
-    word: 'Heritage',
-    body: 'Vintage motorcycles carry the design decisions, engineering solutions and aesthetic choices of their era. A correct restoration preserves all of that.',
-  },
-  {
-    word: 'Craftsmanship',
-    body: 'There are no shortcuts here. The work that cannot be seen when the bike is assembled matters just as much as the finish that can.',
-  },
-  {
-    word: 'Trust',
-    body: 'An honest assessment before any work is committed. A complete account of what was found and what was done. That is the standard.',
-  },
-]
+function FaqItem({ question, answer, delay = 0 }: { question: string; answer: string; delay?: number }) {
+  const [open, setOpen] = useState(false)
+  return (
+    <FadeIn delay={delay}>
+      <div className="group">
+        <button
+          onClick={() => setOpen((o) => !o)}
+          aria-expanded={open}
+          className="w-full py-6 sm:py-7 flex items-start justify-between gap-6 text-left hover:text-white transition-colors"
+        >
+          <span className="text-base sm:text-lg font-medium text-white leading-snug">{question}</span>
+          <span
+            className={`shrink-0 mt-0.5 w-6 h-6 flex items-center justify-center rounded-full ring-1 ring-zinc-800 bg-zinc-900 transition-transform duration-300 ${open ? 'rotate-45' : ''}`}
+            aria-hidden="true"
+          >
+            <svg width="12" height="12" viewBox="0 0 12 12" fill="none">
+              <path d="M6 1v10M1 6h10" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" className="text-zinc-400" />
+            </svg>
+          </span>
+        </button>
+        {open && (
+          <div className="pb-7 pr-10">
+            <p className="text-base text-zinc-400 leading-relaxed">{answer}</p>
+          </div>
+        )}
+      </div>
+    </FadeIn>
+  )
+}
 
 // ─── Component ───────────────────────────────────────────────────────────────
 
@@ -184,17 +172,11 @@ export function HomePage() {
 
             <FadeIn delay={150}>
               <div className="space-y-5 pt-2 lg:pt-10">
-                <p className="text-lg text-zinc-400 leading-relaxed">
-                  Lang Restorations has operated from Traralgon, Victoria since 2004. Over two decades, the
-                  workshop has built a reputation across Victoria and interstate for restoration work that
-                  holds up under scrutiny — machines rebuilt to factory standards, documented at every
-                  stage, and finished with the kind of precision that collectors recognise immediately.
-                </p>
-                <p className="text-lg text-zinc-400 leading-relaxed">
-                  This is not a volume operation. Each project receives the full attention it demands — from
-                  complete disassembly and inspection through to final assembly and documentation. The
-                  result is a motorcycle restored properly, not polished to look right, but rebuilt to be right.
-                </p>
+                {homepageIntroParagraphs.map((para, i) => (
+                  <p key={i} className="text-lg text-zinc-400 leading-relaxed">
+                    {para}
+                  </p>
+                ))}
                 <div className="pt-4">
                   <Link
                     to="/about"
@@ -213,12 +195,7 @@ export function HomePage() {
           {/* Stats bar */}
           <FadeIn delay={200} className="mt-20 pt-10 border-t border-zinc-900">
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-8">
-              {[
-                { value: '20+', label: 'Years operating' },
-                { value: '100+', label: 'Restorations completed' },
-                { value: '3', label: 'Restoration disciplines' },
-                { value: 'VIC', label: 'Gippsland, Victoria' },
-              ].map((stat) => (
+              {homepageIntroStats.map((stat) => (
                 <div key={stat.label}>
                   <p className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-1">
                     {stat.value}
@@ -364,12 +341,12 @@ export function HomePage() {
         <section className="py-28 sm:py-36 bg-zinc-900/20 border-b border-zinc-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn className="mb-12">
-              <Label>Restoration Quality</Label>
+              <Label>{homepageBeforeAfter.label}</Label>
               <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight mb-4">
-                Before & After.
+                {homepageBeforeAfter.headline}
               </h2>
               <p className="text-zinc-500 text-lg max-w-2xl leading-relaxed">
-                Drag the slider to see the transformation. Every machine that leaves this workshop has been through the same process — complete disassembly, full inspection, and a ground-up rebuild.
+                {homepageBeforeAfter.body}
               </p>
             </FadeIn>
 
@@ -531,7 +508,25 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* ─── 10. Final CTA ───────────────────────────────────────────────────── */}
+      {/* ─── 10. FAQ ─────────────────────────────────────────────────────────── */}
+      <section className="py-28 sm:py-36 border-b border-zinc-900" aria-label="Frequently Asked Questions">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn className="mb-16">
+            <Label>Common Questions</Label>
+            <h2 className="text-4xl sm:text-5xl font-bold text-white tracking-tight max-w-2xl">
+              Frequently Asked Questions.
+            </h2>
+          </FadeIn>
+
+          <div className="max-w-4xl space-y-0 divide-y divide-zinc-900">
+            {homepageFaq.map((item, i) => (
+              <FaqItem key={i} question={item.question} answer={item.answer} delay={i * 40} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ─── 11. Final CTA ───────────────────────────────────────────────────── */}
       <section className="relative py-36 sm:py-48 overflow-hidden">
         {/* Subtle background gradient */}
         <div className="absolute inset-0 pointer-events-none">

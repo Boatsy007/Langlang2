@@ -114,3 +114,10 @@ export interface Testimonial {
   author: string
   role: string
 }
+
+// ─── FAQ ──────────────────────────────────────────────────────────────────────
+
+export interface FaqItem {
+  question: string
+  answer: string
+}
