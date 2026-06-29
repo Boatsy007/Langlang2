@@ -164,18 +164,13 @@ For the serious vintage motocross collector or display enthusiast who wants a pi
     galleryImages: [
       {
         src: '/images/for-sale/2000-yamaha-yz250-vuillemin-tribute/left.jpg',
-        alt: '2000 Yamaha YZ250 Vuillemin Tribute — left side',
-        caption: 'Factory race team colour scheme and graphics',
+        alt: '2000 Yamaha YZ250 Vuillemin Tribute — completed restoration, left side',
+        caption: 'Completed — Vuillemin tribute livery, gold rims, number 334',
       },
       {
-        src: '/images/for-sale/2000-yamaha-yz250-vuillemin-tribute/engine.jpg',
-        alt: '2000 Yamaha YZ250 Vuillemin Tribute — engine',
-        caption: 'Rebuilt engine detail',
-      },
-      {
-        src: '/images/for-sale/2000-yamaha-yz250-vuillemin-tribute/front.jpg',
-        alt: '2000 Yamaha YZ250 Vuillemin Tribute — front detail',
-        caption: 'Front end detail',
+        src: '/images/for-sale/2000-yamaha-yz250-vuillemin-tribute/before.jpg',
+        alt: '2000 Yamaha YZ250 — frame and components before restoration',
+        caption: 'Before — frame and components as received',
       },
     ],
 
@@ -550,24 +545,14 @@ Presented ready to ride or display. One of the more considered tribute builds fr
     },
     galleryImages: [
       {
-        src: '/images/for-sale/1997-99-honda-cr250-lusk-tribute/left.jpg',
-        alt: '1997/99 Honda CR250 Lusk Tribute — left side',
-        caption: 'Factory race specification colour scheme and graphics',
-      },
-      {
-        src: '/images/for-sale/1997-99-honda-cr250-lusk-tribute/right.jpg',
-        alt: '1997/99 Honda CR250 Lusk Tribute — right side',
-        caption: 'Right side profile',
+        src: '/images/for-sale/1997-99-honda-cr250-lusk-tribute/hero.jpg',
+        alt: '1997/99 Honda CR250 Lusk Tribute — tribute livery and plastics',
+        caption: 'In progress — Lusk tribute livery, number 95, Honda Racing plastics',
       },
       {
         src: '/images/for-sale/1997-99-honda-cr250-lusk-tribute/engine.jpg',
-        alt: '1997/99 Honda CR250 — engine detail',
-        caption: 'Rebuilt engine',
-      },
-      {
-        src: '/images/for-sale/1997-99-honda-cr250-lusk-tribute/front.jpg',
-        alt: '1997/99 Honda CR250 Lusk Tribute — front detail',
-        caption: 'Front end and fork detail',
+        alt: '1997/99 Honda CR250 — rebuilt engine back in frame',
+        caption: 'Rebuilt CR250R engine in frame — Honda Racing cover',
       },
     ],
 
