@@ -642,7 +642,18 @@ The 1972 Honda Z50A U-Type that left the workshop is a machine that can hold its
       src: '/images/projects/1972-honda-z50a-u-type/hero.jpg',
       alt: '1972 Honda Z50A U-Type — vintage mini bike restoration by Lang Restorations, Traralgon Victoria',
     },
-    galleryImages: [],
+    galleryImages: [
+      {
+        src: '/images/projects/1972-honda-z50a-u-type/after.jpg',
+        alt: '1972 Honda Z50A U-Type — completed restoration by Lang Restorations',
+        caption: 'Completed restoration — factory red, chrome details, Lang Restorations Traralgon',
+      },
+      {
+        src: '/images/projects/1972-honda-z50a-u-type/before.jpg',
+        alt: '1972 Honda Z50A U-Type — as received before restoration',
+        caption: 'As received — bare seat pan, heavy rust throughout',
+      },
+    ],
     beforeImage: {
       src: '/images/projects/1972-honda-z50a-u-type/before.jpg',
       alt: '1972 Honda Z50A U-Type — condition on arrival',
@@ -650,7 +661,7 @@ The 1972 Honda Z50A U-Type that left the workshop is a machine that can hold its
     },
     afterImage: {
       src: '/images/projects/1972-honda-z50a-u-type/after.jpg',
-      alt: '1972 Honda Z50A U-Type — completed restoration',
+      alt: '1972 Honda Z50A U-Type — completed restoration by Lang Restorations',
       caption: 'Completed — Lang Restorations, Traralgon',
     },
 
