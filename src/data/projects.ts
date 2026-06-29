@@ -277,24 +277,24 @@ One of our most demanding and rewarding restorations — a machine that captures
     },
     galleryImages: [
       {
-        src: '/images/projects/2000-yamaha-yz250-vuillemin-tribute/engine.jpg',
-        alt: '2000 Yamaha YZ250 engine — vapour blasted, fully rebuilt',
-        caption: 'Rebuilt 249cc two-stroke — vapour blasted cases, full bottom and top end rebuild',
+        src: '/images/projects/2000-yamaha-yz250-vuillemin-tribute/hero.jpg',
+        alt: '2000 Yamaha YZ250 Vuillemin Tribute — completed restoration by Lang Restorations',
+        caption: 'Completed — Vuillemin tribute livery, gold rims, number 934',
       },
       {
-        src: '/images/projects/2000-yamaha-yz250-vuillemin-tribute/livery.jpg',
-        alt: '2000 Yamaha YZ250 Vuillemin Tribute livery — factory team colours',
-        caption: 'Factory team tribute livery — verified against period photography',
+        src: '/images/projects/2000-yamaha-yz250-vuillemin-tribute/before.jpg',
+        alt: '2000 Yamaha YZ250 — disassembled on arrival at Lang Restorations',
+        caption: 'As received — frame, plastics and components stripped for assessment',
       },
     ],
     beforeImage: {
       src: '/images/projects/2000-yamaha-yz250-vuillemin-tribute/before.jpg',
-      alt: '2000 Yamaha YZ250 — condition on arrival at Lang Restorations',
+      alt: '2000 Yamaha YZ250 — disassembled on arrival at Lang Restorations',
       caption: 'As received',
     },
     afterImage: {
       src: '/images/projects/2000-yamaha-yz250-vuillemin-tribute/after.jpg',
-      alt: '2000 Yamaha YZ250 Vuillemin Tribute — completed restoration',
+      alt: '2000 Yamaha YZ250 Vuillemin Tribute — completed restoration by Lang Restorations',
       caption: 'Completed — Lang Restorations, Traralgon',
     },
 
