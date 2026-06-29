@@ -32,7 +32,7 @@ const linkInactive = 'text-zinc-400 hover:text-white hover:bg-zinc-900'
 
 function Nav() {
   return (
-    <header className="sticky top-0 z-40 bg-zinc-950/90 backdrop-blur-md border-b border-zinc-900">
+    <header className="sticky top-0 z-40">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center gap-3">
 
         {/* Logo — links to home, always visible */}
