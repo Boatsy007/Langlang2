@@ -1,0 +1,32 @@
+{
+  "defaultStack": {
+    "framework": "React",
+    "language": "TypeScript",
+    "buildTool": "Vite",
+    "styling": "Tailwind CSS",
+    "routing": "React Router",
+    "threeD": ["React Three Fiber", "Three.js"],
+    "animation": ["GSAP", "Framer Motion"],
+    "quality": ["ESLint", "Prettier"]
+  },
+  "qualityStandards": {
+    "typescript": "strict",
+    "lighthouse": 95,
+    "animationFps": 60,
+    "accessibility": "WCAG 2.1 AA",
+    "gpuAccelerated": true,
+    "lazyLoading": true,
+    "codeSplitting": true
+  },
+  "skills": [
+    "ui-ux-pro-max",
+    "impeccable",
+    "threejs-expert",
+    "r3f-expert",
+    "gsap-master",
+    "framer-motion-expert",
+    "performance-optimizer",
+    "creative-director",
+    "awwwards-designer"
+  ]
+}
