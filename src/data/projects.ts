@@ -124,23 +124,23 @@ The 1993 KX250 that left the Lang Restorations workshop is a machine that a fact
     },
     galleryImages: [
       {
-        src: '/images/projects/1993-kawasaki-kx250/engine.jpg',
-        alt: '1993 Kawasaki KX250 engine — vapour blasted, fully rebuilt',
-        caption: 'Rebuilt 249cc two-stroke — vapour blasted cases, rebuilt KIPS powervalve',
+        src: '/images/projects/1993-kawasaki-kx250/hero.jpg',
+        alt: '1993 Kawasaki KX250 — completed restoration by Lang Restorations',
+        caption: 'Completed restoration — Lang Restorations, Traralgon',
       },
       {
-        src: '/images/projects/1993-kawasaki-kx250/chassis.jpg',
-        alt: '1993 Kawasaki KX250 — restored chassis',
-        caption: 'Restored chassis — correct Kawasaki green, all bearings replaced',
+        src: '/images/projects/1993-kawasaki-kx250/gallery-workshop.jpg',
+        alt: '1993 Kawasaki KX250 in the workshop after restoration',
+        caption: 'In the workshop — Pro Circuit forks, DID chain, rebuilt throughout',
       },
     ],
     beforeImage: {
-      src: '/images/projects/1993-kawasaki-kx250/before.jpg',
-      alt: '1993 Kawasaki KX250 — condition on arrival at Lang Restorations',
-      caption: 'As received',
+      src: '/images/projects/1993-kawasaki-kx250/hero.jpg',
+      alt: '1993 Kawasaki KX250 — completed restoration by Lang Restorations',
+      caption: 'Completed — Lang Restorations, Traralgon',
     },
     afterImage: {
-      src: '/images/projects/1993-kawasaki-kx250/after.jpg',
+      src: '/images/projects/1993-kawasaki-kx250/hero.jpg',
       alt: '1993 Kawasaki KX250 — completed restoration by Lang Restorations',
       caption: 'Completed — Lang Restorations, Traralgon',
     },
