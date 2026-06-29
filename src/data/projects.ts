@@ -717,29 +717,29 @@ A collaboration build that represents both a specific rider's legacy and the sta
 
     heroImage: {
       src: '/images/projects/1997-99-honda-cr250-lusk-tribute/hero.jpg',
-      alt: '1997/99 Honda CR250R Lusk Tribute — motocross restoration by Lang Restorations, Traralgon Victoria',
+      alt: '1997/99 Honda CR250R Lusk Tribute — tribute livery and plastics in progress, Lang Restorations Traralgon Victoria',
     },
     galleryImages: [
       {
-        src: '/images/projects/1997-99-honda-cr250-lusk-tribute/engine.jpg',
-        alt: '1997/99 Honda CR250R Lusk Tribute — engine detail',
-        caption: 'Fully rebuilt CR250R engine — vapour blasted cases, new components throughout',
+        src: '/images/projects/1997-99-honda-cr250-lusk-tribute/hero.jpg',
+        alt: '1997/99 Honda CR250R Lusk Tribute — tribute livery laid out in progress',
+        caption: 'In progress — Lusk tribute livery, number 95, Honda Racing plastics',
       },
       {
-        src: '/images/projects/1997-99-honda-cr250-lusk-tribute/livery.jpg',
-        alt: '1997/99 Honda CR250R Lusk Tribute — custom livery detail',
-        caption: 'Tribute livery — developed with reference to Lusk\'s factory team specification',
+        src: '/images/projects/1997-99-honda-cr250-lusk-tribute/engine.jpg',
+        alt: '1997/99 Honda CR250R Lusk Tribute — fully rebuilt engine in frame',
+        caption: 'In progress — rebuilt CR250R engine back in frame, Honda Racing cover',
       },
     ],
     beforeImage: {
-      src: '/images/projects/1997-99-honda-cr250-lusk-tribute/before.jpg',
-      alt: '1997/99 Honda CR250R — condition on arrival',
-      caption: 'As received',
+      src: '/images/projects/1997-99-honda-cr250-lusk-tribute/engine.jpg',
+      alt: '1997/99 Honda CR250R Lusk Tribute — engine in frame during build',
+      caption: 'In progress — engine assembly',
     },
     afterImage: {
-      src: '/images/projects/1997-99-honda-cr250-lusk-tribute/after.jpg',
-      alt: '1997/99 Honda CR250R Lusk Tribute — completed restoration',
-      caption: 'Completed — Lang Restorations, Traralgon',
+      src: '/images/projects/1997-99-honda-cr250-lusk-tribute/hero.jpg',
+      alt: '1997/99 Honda CR250R Lusk Tribute — tribute livery in progress',
+      caption: 'In progress — Lang Restorations, Traralgon',
     },
 
     specifications: [
