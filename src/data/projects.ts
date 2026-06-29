@@ -493,29 +493,29 @@ The 1954 BSA Bantam D3 Plunger that emerged from the workshop is a machine that 
 
     heroImage: {
       src: '/images/projects/1954-bsa-bantam-d3-plunger/hero.jpg',
-      alt: '1954 BSA Bantam D3 Plunger — vintage motorcycle restoration by Lang Restorations, Traralgon Victoria',
+      alt: '1954 BSA Bantam D3 Plunger — vintage motorcycle restoration in progress, Lang Restorations Traralgon Victoria',
     },
     galleryImages: [
       {
-        src: '/images/projects/1954-bsa-bantam-d3-plunger/engine.jpg',
-        alt: '1954 BSA Bantam D3 engine — restored 150cc two-stroke',
-        caption: 'Rebuilt 150cc two-stroke — correct factory finish',
+        src: '/images/projects/1954-bsa-bantam-d3-plunger/hero.jpg',
+        alt: '1954 BSA Bantam D3 Plunger — engine in frame, in progress at Lang Restorations',
+        caption: 'In progress — engine back in frame, Lang Restorations Traralgon',
       },
       {
-        src: '/images/projects/1954-bsa-bantam-d3-plunger/plunger.jpg',
-        alt: '1954 BSA Bantam D3 Plunger rear suspension — rebuilt',
-        caption: 'Plunger rear suspension units — disassembled and rebuilt',
+        src: '/images/projects/1954-bsa-bantam-d3-plunger/gallery-stripped.jpg',
+        alt: '1954 BSA Bantam D3 Plunger — stripped frame and front end during restoration',
+        caption: 'Stripped — frame and forks during restoration',
       },
     ],
     beforeImage: {
-      src: '/images/projects/1954-bsa-bantam-d3-plunger/before.jpg',
-      alt: '1954 BSA Bantam D3 Plunger — condition on arrival at Lang Restorations',
-      caption: 'As received',
+      src: '/images/projects/1954-bsa-bantam-d3-plunger/gallery-stripped.jpg',
+      alt: '1954 BSA Bantam D3 Plunger — stripped frame during restoration',
+      caption: 'In progress — stripped and assessed',
     },
     afterImage: {
-      src: '/images/projects/1954-bsa-bantam-d3-plunger/after.jpg',
-      alt: '1954 BSA Bantam D3 Plunger — completed restoration',
-      caption: 'Completed — Lang Restorations, Traralgon',
+      src: '/images/projects/1954-bsa-bantam-d3-plunger/hero.jpg',
+      alt: '1954 BSA Bantam D3 Plunger — engine in frame, in progress at Lang Restorations',
+      caption: 'In progress — Lang Restorations, Traralgon',
     },
 
     specifications: [
