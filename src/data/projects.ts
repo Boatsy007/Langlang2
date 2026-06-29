@@ -421,7 +421,18 @@ Decals and paint were matched to factory specification for the 1982 model year. 
       src: '/images/projects/1982-honda-z50r/hero.jpg',
       alt: '1982 Honda Z50R — ground-up restoration by Lang Restorations, Traralgon Victoria',
     },
-    galleryImages: [],
+    galleryImages: [
+      {
+        src: '/images/projects/1982-honda-z50r/after.jpg',
+        alt: '1982 Honda Z50R — completed restoration by Lang Restorations',
+        caption: 'Completed restoration — Lang Restorations, Traralgon',
+      },
+      {
+        src: '/images/projects/1982-honda-z50r/before.jpg',
+        alt: '1982 Honda Z50R — as received before restoration',
+        caption: 'As received — before restoration',
+      },
+    ],
     beforeImage: {
       src: '/images/projects/1982-honda-z50r/before.jpg',
       alt: '1982 Honda Z50R — condition on arrival',
@@ -429,7 +440,7 @@ Decals and paint were matched to factory specification for the 1982 model year. 
     },
     afterImage: {
       src: '/images/projects/1982-honda-z50r/after.jpg',
-      alt: '1982 Honda Z50R — completed restoration',
+      alt: '1982 Honda Z50R — completed restoration by Lang Restorations',
       caption: 'Completed — Lang Restorations, Traralgon',
     },
 
