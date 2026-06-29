@@ -36,9 +36,13 @@ function Nav() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center gap-3">
 
         {/* Logo — links to home, always visible */}
-        <NavLink to="/" className="shrink-0 flex items-center gap-2 text-sm font-bold text-white tracking-tight">
-          <span className="w-2 h-2 rounded-full bg-red-600 shrink-0" aria-hidden="true" />
-          Lang Restorations
+        <NavLink to="/" className="shrink-0" aria-label="Lang Restorations — Home">
+          <img
+            src="/images/logo.png"
+            alt="Lang Restorations"
+            className="h-10 w-auto"
+            draggable={false}
+          />
         </NavLink>
 
         {/* Mobile nav — horizontally scrollable, priority links on the right */}
