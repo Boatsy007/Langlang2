@@ -202,20 +202,20 @@ A 1996 Honda CR250R that leaves the workshop looking and performing the way Hond
     },
     galleryImages: [
       {
-        src: '/images/projects/1996-honda-cr250/engine.jpg',
-        alt: '1996 Honda CR250R engine — vapour blasted, fully rebuilt',
-        caption: 'Rebuilt 249cc two-stroke — vapour blasted cases, rebuilt powervalve',
+        src: '/images/projects/1996-honda-cr250/hero.jpg',
+        alt: '1996 Honda CR250R — frame and engine during restoration, Lang Restorations',
+        caption: 'In progress — powdercoated frame, vapour blasted engine cases',
       },
     ],
     beforeImage: {
-      src: '/images/projects/1996-honda-cr250/before.jpg',
-      alt: '1996 Honda CR250R — condition on arrival at Lang Restorations',
-      caption: 'As received',
+      src: '/images/projects/1996-honda-cr250/hero.jpg',
+      alt: '1996 Honda CR250R — in progress at Lang Restorations',
+      caption: 'In progress — Lang Restorations, Traralgon',
     },
     afterImage: {
-      src: '/images/projects/1996-honda-cr250/after.jpg',
-      alt: '1996 Honda CR250R — completed restoration by Lang Restorations',
-      caption: 'Completed — Lang Restorations, Traralgon',
+      src: '/images/projects/1996-honda-cr250/hero.jpg',
+      alt: '1996 Honda CR250R — in progress at Lang Restorations',
+      caption: 'In progress — Lang Restorations, Traralgon',
     },
 
     specifications: [
