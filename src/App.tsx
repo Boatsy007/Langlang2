@@ -1,3 +1,4 @@
+import { useState, useEffect } from 'react'
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router-dom'
 import { clsx } from 'clsx'
 import { HomePage } from '@/pages/HomePage'
@@ -31,8 +32,16 @@ const linkActive = 'text-red-400 bg-red-950/60'
 const linkInactive = 'text-zinc-400 hover:text-white hover:bg-zinc-900'
 
 function Nav() {
+  const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
+
   return (
-    <header className="sticky top-0 z-40">
+    <header className={`sticky top-0 z-40 transition-colors duration-300 ${scrolled ? 'bg-zinc-950 border-b border-zinc-900' : ''}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center gap-3">
 
         {/* Logo — links to home, always visible */}
