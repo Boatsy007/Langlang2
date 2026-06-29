@@ -44,19 +44,14 @@ The result is a CR500 that represents the 1996 model year at its absolute best �
     },
     galleryImages: [
       {
-        src: '/images/projects/1996-honda-cr500-mcgrath-tribute/engine.jpg',
-        alt: '1996 Honda CR500R engine — vapour blasted cases, full rebuild',
-        caption: 'Rebuilt 491cc reed-valve two-stroke — vapour blasted cases, new seals and components throughout',
+        src: '/images/projects/1996-honda-cr500-mcgrath-tribute/gallery-restored.jpg',
+        alt: '1996 Honda CR500R McGrath Tribute — completed restoration by Lang Restorations',
+        caption: 'Completed restoration — McGrath Tribute livery, Traralgon VIC',
       },
       {
-        src: '/images/projects/1996-honda-cr500-mcgrath-tribute/chassis.jpg',
-        alt: '1996 Honda CR500R chassis — restored frame and suspension',
-        caption: 'Fully restored chassis — frame, suspension, linkage, all bearings replaced',
-      },
-      {
-        src: '/images/projects/1996-honda-cr500-mcgrath-tribute/detail-graphics.jpg',
-        alt: '1996 Honda CR500R McGrath Tribute — period-correct factory graphics',
-        caption: 'Period-correct tribute livery — factory colours, correct decal placement',
+        src: '/images/projects/1996-honda-cr500-mcgrath-tribute/gallery-showroom.jpg',
+        alt: '1996 Honda CR500R McGrath Tribute on display',
+        caption: 'On display after completion',
       },
     ],
     beforeImage: {
