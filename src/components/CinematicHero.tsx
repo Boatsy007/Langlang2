@@ -142,7 +142,7 @@ export function CinematicHero({ src }: { src: string }) {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex flex-col justify-end pb-20 sm:pb-28 overflow-hidden"
+      className="relative min-h-screen flex flex-col justify-end pb-[18vh] sm:pb-[22vh] overflow-hidden"
       aria-label="Hero"
     >
       {/* ── Image system ──────────────────────────────────────────────────────── */}
