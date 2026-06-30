@@ -142,7 +142,7 @@ export function CinematicHero({ src }: { src: string }) {
   return (
     <section
       ref={sectionRef}
-      className="relative min-h-screen flex flex-col justify-end pb-[18vh] sm:pb-[22vh] overflow-hidden -mt-20"
+      className="relative min-h-screen flex flex-col justify-end pb-[18vh] sm:pb-[20vh] lg:pb-[15vh] overflow-hidden -mt-20"
       aria-label="Hero"
     >
       {/* ── Image system ──────────────────────────────────────────────────────── */}
@@ -286,7 +286,7 @@ export function CinematicHero({ src }: { src: string }) {
           {business.established}
         </p>
 
-        <h1 className="text-5xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold text-white tracking-tight leading-none mb-8 max-w-5xl">
+        <h1 className="text-5xl sm:text-7xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white tracking-tight leading-none mb-8 max-w-5xl">
           Motorcycle
           <br />
           Restorations
