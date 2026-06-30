@@ -134,12 +134,18 @@ function Nav() {
 
         {/* Logo — links to home, always visible */}
         <NavLink to="/" className="shrink-0" aria-label="Lang Restorations — Home">
-          <img
-            src="/images/logo.png"
-            alt="Lang Restorations"
-            className="h-20 w-auto"
-            draggable={false}
-          />
+          <picture>
+            <source type="image/webp" srcSet="/images/logo.webp" />
+            <img
+              src="/images/logo.png"
+              alt="Lang Restorations"
+              className="h-20 w-auto"
+              draggable={false}
+              width="80"
+              height="80"
+              fetchPriority="high"
+            />
+          </picture>
         </NavLink>
 
         {/* Mobile nav — horizontally scrollable, priority links on the right */}

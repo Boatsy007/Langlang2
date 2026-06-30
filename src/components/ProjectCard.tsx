@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { clsx } from 'clsx'
 import { CategoryBadge } from '@/components/Badge'
+import { Picture } from '@/components/Picture'
 import type { Project } from '@/types'
 
 interface ProjectCardProps {
@@ -20,7 +21,7 @@ export function ProjectCard({ project, featured = false, className }: ProjectCar
     >
       {/* Image */}
       <div className={clsx('relative overflow-hidden bg-zinc-800', featured ? 'aspect-[16/10]' : 'aspect-[4/3]')}>
-        <img
+        <Picture
           src={project.heroImage.src}
           alt={project.heroImage.alt}
           className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"

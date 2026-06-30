@@ -153,17 +153,25 @@ export function CinematicHero({ src }: { src: string }) {
 
           {/* Zoom inner — CSS-animated scale, independent of parallax layer */}
           <div className="hero-zoom absolute -inset-[6%]" style={{ transformOrigin: '50% 50%' }}>
-            <img
-              src={src}
-              alt="Restored Yamaha YZ250 — Lang Restorations, Traralgon Victoria"
-              className="hero-img w-full h-full object-cover select-none"
-              draggable={false}
-              fetchPriority="high"
-              decoding="async"
-              style={{
-                filter: 'contrast(1.08) brightness(0.82) saturate(1.15)',
-              }}
-            />
+            <picture>
+              {/* Responsive WebP sources — mobile gets the smallest, saving ~1.4MB vs the original */}
+              <source
+                type="image/webp"
+                srcSet="/images/hero-400.webp 400w, /images/hero-600.webp 600w, /images/hero-769.webp 769w"
+                sizes="100vw"
+              />
+              <img
+                src={src}
+                alt="Restored Yamaha YZ250 — Lang Restorations, Traralgon Victoria"
+                className="hero-img w-full h-full object-cover select-none"
+                draggable={false}
+                fetchPriority="high"
+                decoding="async"
+                style={{
+                  filter: 'contrast(1.08) brightness(0.82) saturate(1.15)',
+                }}
+              />
+            </picture>
           </div>
         </div>
 

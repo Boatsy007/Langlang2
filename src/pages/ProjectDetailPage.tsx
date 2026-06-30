@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from 'react-router-dom'
 import { getProjectBySlug, getRelatedProjects } from '@/utils/data'
 import { ImageGallery } from '@/components/ImageGallery'
 import { BeforeAfter } from '@/components/BeforeAfter'
+import { Picture } from '@/components/Picture'
 import { SpecTable } from '@/components/SpecTable'
 import { ProjectCard } from '@/components/ProjectCard'
 import { CategoryBadge } from '@/components/Badge'
@@ -47,10 +48,12 @@ export function ProjectDetailPage() {
 
       {/* Hero */}
       <div className="relative aspect-[21/9] overflow-hidden bg-zinc-900">
-        <img
+        <Picture
           src={project.heroImage.src}
           alt={project.heroImage.alt}
           className="w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
 

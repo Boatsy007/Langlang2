@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { getForSaleBikeBySlug } from '@/utils/data'
 import { ImageGallery } from '@/components/ImageGallery'
+import { Picture } from '@/components/Picture'
 import { SpecTable } from '@/components/SpecTable'
 import { StatusBadge } from '@/components/Badge'
 import { Seo } from '@/components/Seo'
@@ -46,10 +47,12 @@ export function ForSaleDetailPage() {
 
       {/* Hero */}
       <div className="relative aspect-[21/9] overflow-hidden bg-zinc-900">
-        <img
+        <Picture
           src={bike.heroImage.src}
           alt={bike.heroImage.alt}
           className="w-full h-full object-cover"
+          loading="eager"
+          fetchPriority="high"
         />
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
 

@@ -1,4 +1,5 @@
 import { useState, useRef, useCallback } from 'react'
+import { Picture } from '@/components/Picture'
 import type { GalleryImage } from '@/types'
 
 interface BeforeAfterProps {
@@ -43,11 +44,11 @@ export function BeforeAfter({ before, after, className }: BeforeAfterProps) {
         aria-valuemax={100}
       >
         {/* After (bottom layer — full width) */}
-        <img src={after.src} alt={after.alt} className="absolute inset-0 w-full h-full object-cover" draggable={false} />
+        <Picture src={after.src} alt={after.alt} className="absolute inset-0 w-full h-full object-cover" loading="lazy" draggable={false} />
 
         {/* Before (top layer — clipped) */}
         <div className="absolute inset-0 overflow-hidden" style={{ width: `${position}%` }}>
-          <img src={before.src} alt={before.alt} className="absolute inset-0 h-full object-cover" style={{ width: containerRef.current ? `${containerRef.current.offsetWidth}px` : '100%' }} draggable={false} />
+          <Picture src={before.src} alt={before.alt} className="absolute inset-0 h-full object-cover" style={{ width: containerRef.current ? `${containerRef.current.offsetWidth}px` : '100%' }} loading="lazy" draggable={false} />
         </div>
 
         {/* Divider */}

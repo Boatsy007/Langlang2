@@ -1,6 +1,7 @@
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { getServiceById } from '@/utils/data'
 import { services } from '@/data/services'
+import { Picture } from '@/components/Picture'
 import { Seo } from '@/components/Seo'
 import { buildGraph, businessNode, webPageNode, serviceNode, breadcrumbNode } from '@/data/schema'
 
@@ -58,10 +59,12 @@ export function ServiceDetailPage() {
       {/* Hero */}
       <div className={`relative overflow-hidden bg-zinc-900 ${service.image ? 'aspect-[21/9]' : 'py-32'}`}>
         {service.image && (
-          <img
+          <Picture
             src={service.image.src}
             alt={service.image.alt}
             className="w-full h-full object-cover"
+            loading="eager"
+            fetchPriority="high"
           />
         )}
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/40 to-transparent" />

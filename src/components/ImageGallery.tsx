@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { clsx } from 'clsx'
+import { Picture } from '@/components/Picture'
 import type { GalleryImage } from '@/types'
 
 interface ImageGalleryProps {
@@ -24,10 +25,11 @@ export function ImageGallery({ images, className }: ImageGalleryProps) {
           onClick={() => setLightboxOpen(true)}
           aria-label={`Open ${current.alt} in fullscreen`}
         >
-          <img
+          <Picture
             src={current.src}
             alt={current.alt}
             className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            loading="lazy"
           />
         </button>
 
@@ -51,7 +53,7 @@ export function ImageGallery({ images, className }: ImageGalleryProps) {
                 )}
                 aria-label={img.alt}
               >
-                <img src={img.src} alt={img.alt} className="w-full h-full object-cover" />
+                <Picture src={img.src} alt={img.alt} className="w-full h-full object-cover" loading="lazy" />
               </button>
             ))}
           </div>
@@ -86,10 +88,11 @@ export function ImageGallery({ images, className }: ImageGalleryProps) {
             </button>
           )}
 
-          <img
+          <Picture
             src={current.src}
             alt={current.alt}
             className="max-h-[85vh] max-w-[90vw] object-contain rounded-lg"
+            loading="eager"
             onClick={(e) => e.stopPropagation()}
           />
 

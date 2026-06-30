@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Picture } from '@/components/Picture'
 import type { GalleryImage } from '@/types'
 
 interface BeforeAfterSliderProps {
@@ -16,20 +17,22 @@ export function BeforeAfterSlider({ before, after, className = '' }: BeforeAfter
       style={{ cursor: 'ew-resize' }}
     >
       {/* Before image */}
-      <img
+      <Picture
         src={before.src}
         alt={before.alt}
         draggable={false}
         className="absolute inset-0 w-full h-full object-cover"
+        loading="lazy"
       />
 
       {/* After image — clipped to reveal from left */}
-      <img
+      <Picture
         src={after.src}
         alt={after.alt}
         draggable={false}
         className="absolute inset-0 w-full h-full object-cover"
         style={{ clipPath: `inset(0 ${100 - position}% 0 0)` }}
+        loading="lazy"
       />
 
       {/* Divider line */}

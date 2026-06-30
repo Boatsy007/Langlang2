@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { clsx } from 'clsx'
+import { Picture } from '@/components/Picture'
 import type { Service } from '@/types'
 
 interface ServiceCardProps {
@@ -19,7 +20,7 @@ export function ServiceCard({ service, expanded = false, className }: ServiceCar
     >
       {service.image && (
         <div className="aspect-video overflow-hidden bg-zinc-800">
-          <img
+          <Picture
             src={service.image.src}
             alt={service.image.alt}
             className="w-full h-full object-cover"

@@ -45,7 +45,13 @@
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
 
     <!-- ── Performance: preload critical assets ─────────────────────────── -->
-    <link rel="preload" as="image" href="/images/hero.jpg" fetchpriority="high" />
+    <!-- Responsive WebP hero: mobile gets 41KB instead of 1.5MB JPG -->
+    <link rel="preload" as="image"
+      href="/images/hero-400.webp"
+      imagesrcset="/images/hero-400.webp 400w, /images/hero-600.webp 600w, /images/hero-769.webp 769w"
+      imagesizes="100vw"
+      type="image/webp"
+      fetchpriority="high" />
     <link rel="dns-prefetch" href="https://langrestorations.com.au" />
   </head>
   <body>
