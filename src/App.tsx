@@ -20,6 +20,7 @@ const mobileLinks = [
   { to: '/builds', label: 'Builds', end: false },
   { to: '/for-sale', label: 'For Sale', end: false },
   { to: '/services', label: 'Services', end: false },
+  { to: '/contact', label: 'Contact', end: false },
 ]
 
 // Full link list for desktop
