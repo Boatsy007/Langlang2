@@ -70,7 +70,6 @@ function BikeIcon({ className }: { className?: string }) {
 
 function Nav() {
   const [scrolled, setScrolled] = useState(false)
-  const [gameOpen, setGameOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -79,7 +78,6 @@ function Nav() {
   }, [])
 
   return (
-    <>
     <header className={`sticky top-0 z-40 transition-colors duration-300 ${scrolled ? 'bg-zinc-950 border-b border-zinc-900' : ''}`}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center gap-3">
 
@@ -92,16 +90,6 @@ function Nav() {
             draggable={false}
           />
         </NavLink>
-
-        {/* Easter egg — Workshop Runner */}
-        <button
-          onClick={() => setGameOpen(true)}
-          className="shrink-0 p-1.5 rounded-md opacity-30 hover:opacity-100 transition-opacity duration-300 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
-          aria-label="Open Workshop Game"
-          title="Workshop Runner"
-        >
-          <BikeIcon className="w-8 h-5" />
-        </button>
 
         {/* Mobile nav — horizontally scrollable, priority links on the right */}
         <nav className="md:hidden flex-1 overflow-x-auto scrollbar-none min-w-0">
@@ -144,32 +132,55 @@ function Nav() {
 
       </div>
     </header>
+  )
+}
 
-    {gameOpen && (
-      <Suspense fallback={null}>
-        <WorkshopGame onClose={() => setGameOpen(false)} />
-      </Suspense>
-    )}
-  </>
+function Footer({ onOpenGame }: { onOpenGame: () => void }) {
+  return (
+    <footer className="border-t border-zinc-900 bg-zinc-950 py-8 px-4 sm:px-6 lg:px-8 mt-auto">
+      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+        <p className="text-sm text-zinc-600">
+          © {new Date().getFullYear()} Lang Restorations. All rights reserved.
+        </p>
+        <button
+          onClick={onOpenGame}
+          className="p-1.5 rounded-md opacity-25 hover:opacity-100 transition-opacity duration-300 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
+          aria-label="Open Workshop Game"
+          title="Workshop Runner"
+        >
+          <BikeIcon className="w-8 h-5" />
+        </button>
+      </div>
+    </footer>
   )
 }
 
 export default function App() {
+  const [gameOpen, setGameOpen] = useState(false)
+
   return (
     <BrowserRouter>
-      <div className="min-h-screen bg-zinc-950">
+      <div className="min-h-screen bg-zinc-950 flex flex-col">
         <Nav />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/builds" element={<ProjectsPage />} />
-          <Route path="/builds/:slug" element={<ProjectDetailPage />} />
-          <Route path="/for-sale" element={<ForSalePage />} />
-          <Route path="/for-sale/:slug" element={<ForSaleDetailPage />} />
-          <Route path="/services" element={<ServicesPage />} />
-          <Route path="/services/:id" element={<ServiceDetailPage />} />
-          <Route path="/about" element={<AboutPage />} />
-          <Route path="/contact" element={<ContactPage />} />
-        </Routes>
+        <div className="flex-1">
+          <Routes>
+            <Route path="/" element={<HomePage />} />
+            <Route path="/builds" element={<ProjectsPage />} />
+            <Route path="/builds/:slug" element={<ProjectDetailPage />} />
+            <Route path="/for-sale" element={<ForSalePage />} />
+            <Route path="/for-sale/:slug" element={<ForSaleDetailPage />} />
+            <Route path="/services" element={<ServicesPage />} />
+            <Route path="/services/:id" element={<ServiceDetailPage />} />
+            <Route path="/about" element={<AboutPage />} />
+            <Route path="/contact" element={<ContactPage />} />
+          </Routes>
+        </div>
+        <Footer onOpenGame={() => setGameOpen(true)} />
+        {gameOpen && (
+          <Suspense fallback={null}>
+            <WorkshopGame onClose={() => setGameOpen(false)} />
+          </Suspense>
+        )}
       </div>
     </BrowserRouter>
   )
