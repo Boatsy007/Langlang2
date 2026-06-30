@@ -1,34 +1,46 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- Static pages -->
   <url>
     <loc>https://langrestorations.com.au/</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/hero.jpg</image:loc>
+      <image:title>Lang Restorations — Vintage Motorcycle Restoration, Traralgon Victoria</image:title>
+      <image:caption>Specialist vintage and classic motorcycle restoration workshop, Traralgon, Gippsland Victoria</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://langrestorations.com.au/builds</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://langrestorations.com.au/for-sale</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://langrestorations.com.au/services</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://langrestorations.com.au/about</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://langrestorations.com.au/contact</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
@@ -36,51 +48,61 @@
   <!-- Featured builds -->
   <url>
     <loc>https://langrestorations.com.au/builds/1996-honda-cr500-mcgrath-tribute</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://langrestorations.com.au/builds/1993-kawasaki-kx250</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://langrestorations.com.au/builds/1996-honda-cr250</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://langrestorations.com.au/builds/2000-yamaha-yz250-vuillemin-tribute</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://langrestorations.com.au/builds/1986-honda-z50r</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://langrestorations.com.au/builds/1982-honda-z50r</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://langrestorations.com.au/builds/1954-bsa-bantam-d3-plunger</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://langrestorations.com.au/builds/1978-honda-z50-j1</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://langrestorations.com.au/builds/1972-honda-z50a-u-type</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://langrestorations.com.au/builds/1997-99-honda-cr250-lusk-tribute</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -88,85 +110,165 @@
   <!-- Motorcycles for sale -->
   <url>
     <loc>https://langrestorations.com.au/for-sale/2017-honda-z50-monkey-50th-anniversary-chrome</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/for-sale/2017-honda-z50-monkey-50th-anniversary-chrome/hero.jpg</image:loc>
+      <image:title>2017 Honda Z50 Monkey 50th Anniversary Chrome Edition — For Sale</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://langrestorations.com.au/for-sale/2017-honda-z50-monkey-50th-anniversary</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/for-sale/2017-honda-z50-monkey-50th-anniversary/hero.jpg</image:loc>
+      <image:title>2017 Honda Z50 Monkey 50th Anniversary Edition — For Sale</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://langrestorations.com.au/for-sale/2000-yamaha-yz250-vuillemin-tribute</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/for-sale/2000-yamaha-yz250-vuillemin-tribute/hero.jpg</image:loc>
+      <image:title>2000 Yamaha YZ250 Vuillemin Tribute — For Sale</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://langrestorations.com.au/for-sale/1990-yamaha-yz250wr</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/for-sale/1990-yamaha-yz250wr/hero.jpg</image:loc>
+      <image:title>1990 Yamaha YZ250WR — For Sale</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://langrestorations.com.au/for-sale/1976-honda-z50-j1-parakeet-yellow</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/for-sale/1976-honda-z50-j1-parakeet-yellow/hero.jpg</image:loc>
+      <image:title>1976 Honda Z50 J1 Parakeet Yellow — For Sale</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://langrestorations.com.au/for-sale/1972-honda-z50a-u-type-mex-yellow</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/for-sale/1972-honda-z50a-u-type-mex-yellow/hero.jpg</image:loc>
+      <image:title>1972 Honda Z50 A U-Type Mex Yellow — For Sale</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://langrestorations.com.au/for-sale/1970-honda-z50a-k2-ge-yellow</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/for-sale/1970-honda-z50a-k2-ge-yellow/hero.jpg</image:loc>
+      <image:title>1970 Honda Z50 A K2 GE Yellow — For Sale</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://langrestorations.com.au/for-sale/1970-honda-z50a-k2-ge-red</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/for-sale/1970-honda-z50a-k2-ge-red/hero.jpg</image:loc>
+      <image:title>1970 Honda Z50 A K2 GE Red — For Sale</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://langrestorations.com.au/for-sale/1997-99-honda-cr250-lusk-tribute</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/for-sale/1997-99-honda-cr250-lusk-tribute/hero.jpg</image:loc>
+      <image:title>1997/99 Honda CR250 Lusk Tribute — For Sale</image:title>
+    </image:image>
   </url>
 
   <!-- Services -->
   <url>
     <loc>https://langrestorations.com.au/services/vintage-motorcycle-restoration</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/services/vintage-restoration.jpg</image:loc>
+      <image:title>Vintage Motorcycle Restoration — Lang Restorations, Traralgon</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://langrestorations.com.au/services/engine-rebuilds</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/services/engine-rebuild.jpg</image:loc>
+      <image:title>Motorcycle Engine Rebuilds — Lang Restorations, Traralgon</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://langrestorations.com.au/services/parts-restoration</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/services/parts-restoration.jpg</image:loc>
+      <image:title>Motorcycle Parts Restoration — Lang Restorations, Victoria</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://langrestorations.com.au/services/vapour-blasting</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/services/vapour-blasting.jpg</image:loc>
+      <image:title>Motorcycle Vapour Blasting — Lang Restorations, Traralgon Victoria</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://langrestorations.com.au/services/aluminium-repairs</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/services/aluminium-repairs.jpg</image:loc>
+      <image:title>Motorcycle Aluminium TIG Welding — Lang Restorations, Victoria</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://langrestorations.com.au/services/zinc-plating</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/services/zinc-plating.jpg</image:loc>
+      <image:title>Motorcycle Zinc Plating — Lang Restorations, Victoria</image:title>
+    </image:image>
   </url>
   <url>
     <loc>https://langrestorations.com.au/services/frame-repairs</loc>
+    <lastmod>2026-06-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/services/frame-repairs.jpg</image:loc>
+      <image:title>Motorcycle Frame Repairs — Lang Restorations, Traralgon Victoria</image:title>
+    </image:image>
   </url>
 
 </urlset>

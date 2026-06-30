@@ -5,6 +5,7 @@ import { Picture } from '@/components/Picture'
 import { SpecTable } from '@/components/SpecTable'
 import { StatusBadge } from '@/components/Badge'
 import { Seo } from '@/components/Seo'
+import { Breadcrumb } from '@/components/Breadcrumb'
 import { buildGraph, businessNode, webPageNode, productNode, breadcrumbNode } from '@/data/schema'
 
 const BASE = 'https://langrestorations.com.au'
@@ -71,6 +72,15 @@ export function ForSaleDetailPage() {
       </div>
 
       <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-16">
+
+        <Breadcrumb
+          className="mb-6"
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Motorcycles For Sale', href: '/for-sale' },
+            { label: bike.name },
+          ]}
+        />
 
         {/* Back */}
         <Link

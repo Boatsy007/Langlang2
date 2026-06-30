@@ -81,7 +81,7 @@ export function ServicesPage() {
             and what it will cost — no obligation.
           </p>
           <a
-            href="mailto:hello@langlang.com.au?subject=Service Enquiry"
+            href="mailto:info@langrestorations.com.au?subject=Service Enquiry"
             className="inline-flex items-center px-8 py-4 rounded-xl bg-white text-black text-base font-semibold hover:bg-zinc-200 transition-colors"
           >
             Get in touch

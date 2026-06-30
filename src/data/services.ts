@@ -51,8 +51,8 @@ The finished restoration is accompanied by full photographic documentation of th
       alt: 'Vintage Japanese motorcycle ground-up restoration — Lang Restorations, Traralgon, Gippsland Victoria',
     },
 
-    metaTitle: 'Vintage Motorcycle Restoration | Lang Restorations — Traralgon VIC',
-    metaDescription: 'Ground-up vintage and classic motorcycle restoration in Traralgon, Victoria. Honda, Yamaha, Kawasaki and Suzuki specialists. Factory-correct restorations for collectors across Australia.',
+    metaTitle: 'Vintage & Classic Motorcycle Restoration | Lang Restorations — Traralgon VIC',
+    metaDescription: 'Vintage motorcycle ground-up restoration in Traralgon, Victoria. Honda, Yamaha, Kawasaki & Suzuki specialists. Factory-correct, fully documented — collectors across Australia.',
   },
 
   // ── Engine Rebuilds ────────────────────────────────────────────────────────
@@ -103,8 +103,8 @@ Engine rebuilds are accepted as standalone projects — the complete motorcycle 
       alt: 'Vintage motorcycle engine rebuild — two-stroke and four-stroke specialist, Lang Restorations Traralgon',
     },
 
-    metaTitle: 'Motorcycle Engine Rebuilds | Lang Restorations — Traralgon, Victoria',
-    metaDescription: 'Complete vintage motorcycle engine rebuilds in Traralgon, Victoria. Two-stroke and four-stroke specialists. Honda, Yamaha, Kawasaki, Suzuki. Precision measurement, factory-spec reassembly.',
+    metaTitle: 'Motorcycle Engine Rebuilds | Two-Stroke & Four-Stroke Specialists | Lang Restorations',
+    metaDescription: 'Motorcycle engine rebuilds in Traralgon, Victoria — two-stroke & four-stroke. Honda, Yamaha, Kawasaki & Suzuki. Precision measurement, factory-spec reassembly. Freight accepted.',
   },
 
   // ── Parts Restoration ──────────────────────────────────────────────────────
@@ -148,8 +148,8 @@ Components from across Australia are accepted by post or freight. Quote requests
       alt: 'Motorcycle parts restoration — alloy components, carburettors, hardware, Lang Restorations Victoria',
     },
 
-    metaTitle: 'Motorcycle Parts Restoration | Lang Restorations — Traralgon, Victoria',
-    metaDescription: 'Individual motorcycle component restoration in Victoria — alloy parts, carburettors, engine cases, hardware. Vapour blasting, zinc plating, TIG welding. Posted components accepted.',
+    metaTitle: 'Motorcycle Parts Restoration | Alloy, Carburettors & Hardware | Lang Restorations',
+    metaDescription: 'Motorcycle parts restoration in Victoria — vapour blasting, carburettor rebuilds, zinc plating & TIG welding. Post individual components from anywhere in Australia.',
   },
 
   // ── Vapour Blasting ────────────────────────────────────────────────────────
@@ -192,8 +192,8 @@ Vapour blasting is offered as part of a complete restoration and as a standalone
       alt: 'Motorcycle vapour blasting service — engine cases, cylinder heads, alloy components, Traralgon Victoria',
     },
 
-    metaTitle: 'Motorcycle Vapour Blasting | Lang Restorations — Traralgon, Victoria',
-    metaDescription: 'Professional motorcycle vapour blasting in Traralgon, Victoria. Engine cases, cylinder heads, hubs, carburettors. Factory cast finish restored. Accept posted components from across Australia.',
+    metaTitle: 'Motorcycle Vapour Blasting Traralgon | Engine Cases, Hubs & Alloy Parts | Lang Restorations',
+    metaDescription: 'Motorcycle vapour blasting in Traralgon, Victoria. Engine cases, cylinder heads, hubs & carburettors — factory cast alloy finish. Posted components accepted from across Australia.',
   },
 
   // ── Aluminium Repairs ──────────────────────────────────────────────────────
@@ -240,8 +240,8 @@ Components for assessment and repair can be posted from across Australia.`,
       alt: 'Motorcycle aluminium TIG welding and repair — engine cases, fins, frames, Lang Restorations Victoria',
     },
 
-    metaTitle: 'Motorcycle Aluminium Repairs | Lang Restorations — Traralgon, Victoria',
-    metaDescription: 'Aluminium TIG welding and repair for vintage motorcycle components in Victoria. Engine cases, cylinder fins, frames. Crack repair, fin replacement, thread repair. Posted components accepted.',
+    metaTitle: 'Motorcycle Aluminium TIG Welding & Repairs | Lang Restorations — Traralgon VIC',
+    metaDescription: 'Aluminium TIG welding & repair for motorcycle components in Traralgon, Victoria. Engine cases, fins, frames — crack repair, thread repair. Posted components accepted.',
   },
 
   // ── Zinc Plating ───────────────────────────────────────────────────────────
@@ -282,8 +282,8 @@ Components submitted for zinc plating as a standalone service should arrive clea
       alt: 'Motorcycle zinc plating service — hardware, bolts, brackets, factory finish restoration, Victoria',
     },
 
-    metaTitle: 'Motorcycle Zinc Plating | Lang Restorations — Traralgon, Victoria',
-    metaDescription: 'Factory-correct zinc plating for vintage motorcycle hardware in Victoria. Bolts, studs, brackets, clips. Standalone service — posted batches from across Australia accepted.',
+    metaTitle: 'Motorcycle Zinc Plating | Factory-Correct Hardware Finishing | Lang Restorations',
+    metaDescription: 'Factory-correct motorcycle zinc plating in Traralgon, Victoria. Bolts, studs, brackets & clips. Standalone service — post hardware batches from across Australia.',
   },
 
   // ── Frame Repairs ──────────────────────────────────────────────────────────
@@ -328,8 +328,8 @@ Frames for assessment and repair can be freight-shipped from across Victoria and
       alt: 'Motorcycle frame repair, crack welding and structural assessment — Lang Restorations, Traralgon Victoria',
     },
 
-    metaTitle: 'Motorcycle Frame Repairs | Lang Restorations — Traralgon, Victoria',
-    metaDescription: 'Motorcycle frame inspection, crack repair, TIG welding and straightening in Traralgon, Victoria. Structural assessment included. Contact Lang Restorations for a quote.',
+    metaTitle: 'Motorcycle Frame Inspection & Repair | TIG Welding & Straightening | Lang Restorations',
+    metaDescription: 'Motorcycle frame inspection, crack repair & TIG welding in Traralgon, Victoria. Structural assessment, gusset fabrication & straightening. Freight frames accepted.',
   },
 ]
 

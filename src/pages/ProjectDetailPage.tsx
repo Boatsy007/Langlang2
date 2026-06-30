@@ -7,6 +7,7 @@ import { SpecTable } from '@/components/SpecTable'
 import { ProjectCard } from '@/components/ProjectCard'
 import { CategoryBadge } from '@/components/Badge'
 import { Seo } from '@/components/Seo'
+import { Breadcrumb } from '@/components/Breadcrumb'
 import { buildGraph, businessNode, webPageNode, articleNode, breadcrumbNode } from '@/data/schema'
 
 const BASE = 'https://langrestorations.com.au'
@@ -69,6 +70,15 @@ export function ProjectDetailPage() {
       </div>
 
       <div className="px-4 sm:px-6 lg:px-8 max-w-7xl mx-auto py-16">
+
+        <Breadcrumb
+          className="mb-6"
+          items={[
+            { label: 'Home', href: '/' },
+            { label: 'Featured Builds', href: '/builds' },
+            { label: project.name },
+          ]}
+        />
 
         {/* Back */}
         <Link
@@ -143,7 +153,7 @@ export function ProjectDetailPage() {
               <p className="text-white font-semibold mb-1">Interested in a similar build?</p>
               <p className="text-sm text-zinc-500 mb-4">We'd love to talk about your project.</p>
               <a
-                href="mailto:hello@langlang.com.au"
+                href="mailto:info@langrestorations.com.au"
                 className="inline-flex items-center justify-center w-full px-5 py-3 rounded-xl bg-white text-black text-sm font-semibold hover:bg-zinc-200 transition-colors"
               >
                 Get in touch

@@ -14,6 +14,7 @@ import { ServicesPage } from '@/pages/ServicesPage'
 import { ServiceDetailPage } from '@/pages/ServiceDetailPage'
 import { AboutPage } from '@/pages/AboutPage'
 import { ContactPage } from '@/pages/ContactPage'
+import { NotFoundPage } from '@/pages/NotFoundPage'
 
 // Priority links shown on mobile (short labels, horizontally scrollable)
 const mobileLinks = [
@@ -236,6 +237,7 @@ export default function App() {
             <Route path="/services/:id" element={<ServiceDetailPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
+            <Route path="*" element={<NotFoundPage />} />
           </Routes>
         </div>
         <Footer onOpenGame={() => setGameOpen(true)} />
