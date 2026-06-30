@@ -3,7 +3,7 @@ import { contact, business } from '@/data/siteContent'
 import { useInView } from '@/hooks/useInView'
 import { Seo } from '@/components/Seo'
 import { pageSeo } from '@/data/seo'
-import { localBusinessSchema, breadcrumbSchema } from '@/data/schema'
+import { buildGraph, businessNode, contactPageNode, breadcrumbNode } from '@/data/schema'
 
 function FadeIn({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
   const { ref, inView } = useInView()
@@ -46,10 +46,18 @@ export function ContactPage() {
         canonical="https://langrestorations.com.au/contact"
         ogTitle={seo.ogTitle}
         ogDescription={seo.ogDescription}
-        jsonLd={[localBusinessSchema, breadcrumbSchema([
-          { name: 'Home', url: 'https://langrestorations.com.au/' },
-          { name: 'Contact', url: 'https://langrestorations.com.au/contact' },
-        ])]}
+        jsonLd={buildGraph([
+          businessNode,
+          contactPageNode(
+            'https://langrestorations.com.au/contact',
+            seo.title,
+            seo.metaDescription,
+          ),
+          breadcrumbNode([
+            { name: 'Home', url: 'https://langrestorations.com.au/' },
+            { name: 'Contact', url: 'https://langrestorations.com.au/contact' },
+          ]),
+        ])}
       />
 
       {/* Hero */}

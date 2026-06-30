@@ -2,7 +2,7 @@ import { useParams, Link, Navigate } from 'react-router-dom'
 import { getServiceById } from '@/utils/data'
 import { services } from '@/data/services'
 import { Seo } from '@/components/Seo'
-import { localBusinessSchema, breadcrumbSchema, serviceSchema } from '@/data/schema'
+import { buildGraph, businessNode, webPageNode, serviceNode, breadcrumbNode } from '@/data/schema'
 
 const BASE = 'https://langrestorations.com.au'
 
@@ -38,20 +38,21 @@ export function ServiceDetailPage() {
         description={service.metaDescription}
         canonical={canonical}
         ogImage={service.image ? `${BASE}${service.image.src}` : undefined}
-        jsonLd={[
-          localBusinessSchema,
-          breadcrumbSchema([
+        jsonLd={buildGraph([
+          businessNode,
+          webPageNode({
+            url: canonical,
+            name: service.metaTitle,
+            description: service.metaDescription,
+            image: service.image ? `${BASE}${service.image.src}` : undefined,
+          }),
+          serviceNode(service),
+          breadcrumbNode([
             { name: 'Home', url: `${BASE}/` },
             { name: 'Services', url: `${BASE}/services` },
             { name: service.name, url: canonical },
           ]),
-          serviceSchema({
-            name: service.name,
-            description: service.shortDescription,
-            url: canonical,
-            image: service.image ? `${BASE}${service.image.src}` : undefined,
-          }),
-        ]}
+        ])}
       />
 
       {/* Hero */}

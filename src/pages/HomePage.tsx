@@ -18,7 +18,7 @@ import { CinematicHero } from '@/components/CinematicHero'
 import { useInView } from '@/hooks/useInView'
 import { Seo } from '@/components/Seo'
 import { pageSeo } from '@/data/seo'
-import { localBusinessSchema, webSiteSchema, faqSchema } from '@/data/schema'
+import { buildGraph, businessNode, webSiteNode, webPageNode, faqNode } from '@/data/schema'
 
 // ─── Utility: Scroll-triggered fade-in wrapper ───────────────────────────────
 
@@ -109,7 +109,17 @@ export function HomePage() {
         canonical="https://langrestorations.com.au/"
         ogTitle={seo.ogTitle}
         ogDescription={seo.ogDescription}
-        jsonLd={[localBusinessSchema, webSiteSchema, faqSchema(homepageFaq)]}
+        jsonLd={buildGraph([
+          businessNode,
+          webSiteNode,
+          webPageNode({
+            url: 'https://langrestorations.com.au/',
+            name: seo.title,
+            description: seo.metaDescription,
+            image: 'https://langrestorations.com.au/images/hero.jpg',
+          }),
+          faqNode(homepageFaq),
+        ])}
       />
 
       {/* ─── 1. Cinematic Hero ──────────────────────────────────────────────── */}

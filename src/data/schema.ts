@@ -1,25 +1,67 @@
-// ─── Shared JSON-LD schema builders ──────────────────────────────────────────
+/**
+ * Schema.org JSON-LD graph node builders.
+ *
+ * All builder functions return plain objects suitable for inclusion in a
+ * JSON-LD @graph array.  The @context is added once at the top level by
+ * buildGraph() — individual nodes must NOT include @context.
+ *
+ * Canonical domain: https://langrestorations.com.au
+ */
 
-const BASE_URL = 'https://langrestorations.com.au'
+import type { Project, ForSaleBike, Service, FaqItem } from '@/types'
 
-// ── LocalBusiness — injected on every page ─────────────────────────────────
+const BASE = 'https://langrestorations.com.au'
+const BUSINESS_ID = `${BASE}/#business`
+const WEBSITE_ID = `${BASE}/#website`
 
-export const localBusinessSchema = {
-  '@context': 'https://schema.org',
-  '@type': ['LocalBusiness', 'AutoRepair'],
-  '@id': `${BASE_URL}/#business`,
+// ─── Core: wrap nodes into a single @graph block ───────────────────────────
+
+export function buildGraph(nodes: object[]) {
+  return {
+    '@context': 'https://schema.org',
+    '@graph': nodes,
+  }
+}
+
+// ─── Reusable entity references (no duplication) ──────────────────────────
+
+const businessRef = { '@id': BUSINESS_ID }
+const websiteRef = { '@id': WEBSITE_ID }
+
+// ─── 1. AutoRepair (primary business entity) ──────────────────────────────
+// AutoRepair inherits all LocalBusiness properties via schema.org hierarchy.
+// Used on every page as the authority entity.
+
+export const businessNode = {
+  '@type': 'AutoRepair',
+  '@id': BUSINESS_ID,
   name: 'Lang Restorations',
+  alternateName: 'Lang Restorations Motorcycle Restoration',
   description:
     'Specialist vintage and classic motorcycle restoration workshop in Traralgon, Gippsland, Victoria. Engine rebuilds, vapour blasting, aluminium TIG welding, zinc plating, frame repairs and ground-up restorations. Serving Victoria and Australia since 2004.',
-  url: BASE_URL,
-  logo: `${BASE_URL}/images/logo.png`,
-  image: `${BASE_URL}/images/hero.jpg`,
+  url: BASE,
+  logo: {
+    '@type': 'ImageObject',
+    '@id': `${BASE}/#logo`,
+    url: `${BASE}/images/logo.png`,
+    contentUrl: `${BASE}/images/logo.png`,
+    caption: 'Lang Restorations',
+  },
+  image: {
+    '@type': 'ImageObject',
+    '@id': `${BASE}/#heroimage`,
+    url: `${BASE}/images/hero.jpg`,
+    contentUrl: `${BASE}/images/hero.jpg`,
+    width: 1200,
+    height: 800,
+    caption:
+      'Lang Restorations workshop — vintage and classic motorcycle restoration specialists, Traralgon, Gippsland Victoria',
+  },
   telephone: '+61439744632',
   email: 'info@langrestorations.com.au',
   foundingDate: '2004',
   address: {
     '@type': 'PostalAddress',
-    streetAddress: 'Traralgon',
     addressLocality: 'Traralgon',
     addressRegion: 'VIC',
     postalCode: '3844',
@@ -47,39 +89,110 @@ export const localBusinessSchema = {
     '@type': 'OfferCatalog',
     name: 'Motorcycle Restoration Services',
     itemListElement: [
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Vintage Motorcycle Restoration' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Motorcycle Engine Rebuilds' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Motorcycle Vapour Blasting' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Aluminium TIG Welding and Repairs' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Zinc Plating' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Frame Repairs' } },
-      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Parts Restoration' } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Vintage Motorcycle Restoration', provider: businessRef } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Motorcycle Engine Rebuilds', provider: businessRef } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Motorcycle Vapour Blasting', provider: businessRef } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Aluminium TIG Welding and Repairs', provider: businessRef } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Zinc Plating', provider: businessRef } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Frame Repairs', provider: businessRef } },
+      { '@type': 'Offer', itemOffered: { '@type': 'Service', name: 'Parts Restoration', provider: businessRef } },
     ],
   },
 }
 
-// ── WebSite — homepage only ────────────────────────────────────────────────
+// ─── 2. WebSite ────────────────────────────────────────────────────────────
+// Homepage only. No SearchAction — site has no working search endpoint.
 
-export const webSiteSchema = {
-  '@context': 'https://schema.org',
+export const webSiteNode = {
   '@type': 'WebSite',
-  '@id': `${BASE_URL}/#website`,
+  '@id': WEBSITE_ID,
   name: 'Lang Restorations',
-  url: BASE_URL,
-  description: 'Specialist vintage and classic motorcycle restoration — Traralgon, Gippsland, Victoria',
-  publisher: { '@id': `${BASE_URL}/#business` },
-  potentialAction: {
-    '@type': 'SearchAction',
-    target: { '@type': 'EntryPoint', urlTemplate: `${BASE_URL}/builds?q={search_term_string}` },
-    'query-input': 'required name=search_term_string',
-  },
+  url: BASE,
+  description:
+    'Specialist vintage and classic motorcycle restoration — Traralgon, Gippsland, Victoria',
+  publisher: businessRef,
+  inLanguage: 'en-AU',
 }
 
-// ── Breadcrumb builder ─────────────────────────────────────────────────────
+// ─── 3. WebPage builders ───────────────────────────────────────────────────
 
-export function breadcrumbSchema(items: Array<{ name: string; url: string }>) {
+export function webPageNode(opts: {
+  type?: string
+  url: string
+  name: string
+  description: string
+  image?: string
+}) {
   return {
-    '@context': 'https://schema.org',
+    '@type': opts.type ?? 'WebPage',
+    '@id': `${opts.url}#webpage`,
+    url: opts.url,
+    name: opts.name,
+    description: opts.description,
+    isPartOf: websiteRef,
+    about: businessRef,
+    inLanguage: 'en-AU',
+    ...(opts.image ? { primaryImageOfPage: { '@type': 'ImageObject', url: opts.image } } : {}),
+  }
+}
+
+// Specific subtypes
+export const aboutPageNode = (url: string, name: string, description: string) =>
+  webPageNode({ type: 'AboutPage', url, name, description })
+
+export const contactPageNode = (url: string, name: string, description: string) =>
+  webPageNode({ type: 'ContactPage', url, name, description })
+
+export function collectionPageNode(opts: {
+  url: string
+  name: string
+  description: string
+  hasPart?: Array<{ url: string; name: string }>
+}) {
+  return {
+    '@type': 'CollectionPage',
+    '@id': `${opts.url}#webpage`,
+    url: opts.url,
+    name: opts.name,
+    description: opts.description,
+    isPartOf: websiteRef,
+    about: businessRef,
+    inLanguage: 'en-AU',
+    ...(opts.hasPart
+      ? {
+          hasPart: opts.hasPart.map((p) => ({
+            '@type': 'WebPage',
+            url: p.url,
+            name: p.name,
+          })),
+        }
+      : {}),
+  }
+}
+
+// ─── 4. ImageObject ────────────────────────────────────────────────────────
+
+export function imageObjectNode(opts: {
+  url: string
+  contentUrl?: string
+  caption: string
+  width?: number
+  height?: number
+}) {
+  return {
+    '@type': 'ImageObject',
+    url: opts.url,
+    contentUrl: opts.contentUrl ?? opts.url,
+    caption: opts.caption,
+    ...(opts.width ? { width: opts.width } : {}),
+    ...(opts.height ? { height: opts.height } : {}),
+  }
+}
+
+// ─── 5. BreadcrumbList ─────────────────────────────────────────────────────
+
+export function breadcrumbNode(items: Array<{ name: string; url: string }>) {
+  return {
     '@type': 'BreadcrumbList',
     itemListElement: items.map((item, i) => ({
       '@type': 'ListItem',
@@ -90,65 +203,125 @@ export function breadcrumbSchema(items: Array<{ name: string; url: string }>) {
   }
 }
 
-// ── Service schema builder ─────────────────────────────────────────────────
+// ─── 6. Article — for project/build detail pages ───────────────────────────
 
-export function serviceSchema(opts: {
-  name: string
-  description: string
-  url: string
-  image?: string
-}) {
+export function articleNode(project: Project) {
+  const url = `${BASE}/builds/${project.slug}`
+  const imageUrl = `${BASE}${project.heroImage.src}`
+  const authorOrg = {
+    '@type': 'Organization',
+    name: 'Lang Restorations',
+    url: BASE,
+    logo: { '@type': 'ImageObject', url: `${BASE}/images/logo.png` },
+  }
+
   return {
-    '@context': 'https://schema.org',
-    '@type': 'Service',
-    name: opts.name,
-    description: opts.description,
-    url: opts.url,
-    image: opts.image,
-    provider: { '@id': `${BASE_URL}/#business` },
-    areaServed: { '@type': 'Country', name: 'Australia' },
+    '@type': 'Article',
+    '@id': `${url}#article`,
+    headline: project.name,
+    description: project.shortDescription,
+    url,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${url}#webpage` },
+    image: imageObjectNode({
+      url: imageUrl,
+      caption: project.heroImage.alt,
+    }),
+    author: authorOrg,
+    publisher: {
+      ...authorOrg,
+      '@id': BUSINESS_ID,
+    },
+    about: [
+      { '@type': 'MotorizedBicycle', name: `${project.year} ${project.brand} ${project.model}` },
+    ],
+    keywords: [
+      `${project.brand} ${project.model} restoration`,
+      `${project.year} ${project.brand} ${project.model}`,
+      'vintage motorcycle restoration',
+      'motorcycle restoration Australia',
+    ].join(', '),
+    datePublished: `${project.year}-01-01`,
+    inLanguage: 'en-AU',
   }
 }
 
-// ── FAQ schema builder ─────────────────────────────────────────────────────
+// ─── 7. Service — for service detail pages ────────────────────────────────
 
-export function faqSchema(faqs: Array<{ question: string; answer: string }>) {
+export function serviceNode(service: Service) {
+  const url = `${BASE}/services/${service.id}`
   return {
-    '@context': 'https://schema.org',
+    '@type': 'Service',
+    '@id': `${url}#service`,
+    name: service.name,
+    description: service.shortDescription,
+    url,
+    provider: businessRef,
+    serviceType: 'Motorcycle Restoration',
+    areaServed: [
+      { '@type': 'State', name: 'Victoria' },
+      { '@type': 'Country', name: 'Australia' },
+    ],
+    ...(service.image
+      ? {
+          image: imageObjectNode({
+            url: `${BASE}${service.image.src}`,
+            caption: service.image.alt,
+          }),
+        }
+      : {}),
+  }
+}
+
+// ─── 8. Product — for for-sale motorcycle listings ─────────────────────────
+// Price is intentionally omitted: all listings use "Contact for Price" (POA).
+// Including a non-numeric price string would fail validator checks.
+
+export function productNode(bike: ForSaleBike) {
+  const url = `${BASE}/for-sale/${bike.slug}`
+  const imageUrl = `${BASE}${bike.heroImage.src}`
+
+  return {
+    '@type': 'Product',
+    '@id': `${url}#product`,
+    name: bike.name,
+    description: bike.shortDescription,
+    url,
+    image: imageObjectNode({
+      url: imageUrl,
+      caption: bike.heroImage.alt,
+    }),
+    brand: { '@type': 'Brand', name: bike.brand },
+    model: bike.model,
+    vehicleModelDate: String(bike.year),
+    itemCondition: 'https://schema.org/RefurbishedCondition',
+    offers: {
+      '@type': 'Offer',
+      availability:
+        bike.status === 'Available'
+          ? 'https://schema.org/InStock'
+          : bike.status === 'On Hold'
+          ? 'https://schema.org/LimitedAvailability'
+          : 'https://schema.org/SoldOut',
+      seller: businessRef,
+      url,
+      priceCurrency: 'AUD',
+    },
+  }
+}
+
+// ─── 9. FAQPage ────────────────────────────────────────────────────────────
+
+export function faqNode(faqs: FaqItem[]) {
+  return {
     '@type': 'FAQPage',
+    '@id': `${BASE}/#faq`,
     mainEntity: faqs.map((f) => ({
       '@type': 'Question',
       name: f.question,
-      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: f.answer,
+      },
     })),
-  }
-}
-
-// ── Product / listing schema builder ──────────────────────────────────────
-
-export function listingSchema(opts: {
-  name: string
-  description: string
-  url: string
-  image: string
-  price?: string
-  availability: 'InStock' | 'SoldOut' | 'PreOrder'
-}) {
-  return {
-    '@context': 'https://schema.org',
-    '@type': 'Product',
-    name: opts.name,
-    description: opts.description,
-    url: opts.url,
-    image: opts.image,
-    brand: { '@type': 'Brand', name: 'Lang Restorations' },
-    offers: {
-      '@type': 'Offer',
-      priceCurrency: 'AUD',
-      price: opts.price ?? undefined,
-      availability: `https://schema.org/${opts.availability}`,
-      seller: { '@id': `${BASE_URL}/#business` },
-      url: opts.url,
-    },
   }
 }

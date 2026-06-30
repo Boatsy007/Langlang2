@@ -6,7 +6,7 @@ import { SpecTable } from '@/components/SpecTable'
 import { ProjectCard } from '@/components/ProjectCard'
 import { CategoryBadge } from '@/components/Badge'
 import { Seo } from '@/components/Seo'
-import { localBusinessSchema, breadcrumbSchema } from '@/data/schema'
+import { buildGraph, businessNode, webPageNode, articleNode, breadcrumbNode } from '@/data/schema'
 
 const BASE = 'https://langrestorations.com.au'
 
@@ -28,11 +28,21 @@ export function ProjectDetailPage() {
         canonical={canonical}
         ogImage={`${BASE}${project.heroImage.src}`}
         ogType="article"
-        jsonLd={[localBusinessSchema, breadcrumbSchema([
-          { name: 'Home', url: `${BASE}/` },
-          { name: 'Featured Builds', url: `${BASE}/builds` },
-          { name: project.name, url: canonical },
-        ])]}
+        jsonLd={buildGraph([
+          businessNode,
+          webPageNode({
+            url: canonical,
+            name: project.metaTitle,
+            description: project.metaDescription,
+            image: `${BASE}${project.heroImage.src}`,
+          }),
+          articleNode(project),
+          breadcrumbNode([
+            { name: 'Home', url: `${BASE}/` },
+            { name: 'Featured Builds', url: `${BASE}/builds` },
+            { name: project.name, url: canonical },
+          ]),
+        ])}
       />
 
       {/* Hero */}

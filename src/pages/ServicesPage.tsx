@@ -6,7 +6,7 @@ import { services } from '@/data/services'
 import type { ServiceCategory } from '@/types'
 import { Seo } from '@/components/Seo'
 import { pageSeo } from '@/data/seo'
-import { localBusinessSchema, breadcrumbSchema } from '@/data/schema'
+import { buildGraph, businessNode, collectionPageNode, breadcrumbNode } from '@/data/schema'
 
 export function ServicesPage() {
   const [activeFilter, setActiveFilter] = useState<ServiceCategory | 'all'>('all')
@@ -26,10 +26,18 @@ export function ServicesPage() {
         canonical="https://langrestorations.com.au/services"
         ogTitle={seo.ogTitle}
         ogDescription={seo.ogDescription}
-        jsonLd={[localBusinessSchema, breadcrumbSchema([
-          { name: 'Home', url: 'https://langrestorations.com.au/' },
-          { name: 'Services', url: 'https://langrestorations.com.au/services' },
-        ])]}
+        jsonLd={buildGraph([
+          businessNode,
+          collectionPageNode({
+            url: 'https://langrestorations.com.au/services',
+            name: seo.title,
+            description: seo.metaDescription,
+          }),
+          breadcrumbNode([
+            { name: 'Home', url: 'https://langrestorations.com.au/' },
+            { name: 'Services', url: 'https://langrestorations.com.au/services' },
+          ]),
+        ])}
       />
 
       <div className="max-w-7xl mx-auto py-16 sm:py-24">

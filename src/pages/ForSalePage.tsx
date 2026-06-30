@@ -6,7 +6,7 @@ import { forSaleBikes } from '@/data/forSale'
 import type { AvailabilityStatus } from '@/types'
 import { Seo } from '@/components/Seo'
 import { pageSeo } from '@/data/seo'
-import { localBusinessSchema, breadcrumbSchema } from '@/data/schema'
+import { buildGraph, businessNode, collectionPageNode, breadcrumbNode } from '@/data/schema'
 
 export function ForSalePage() {
   const [activeFilter, setActiveFilter] = useState<AvailabilityStatus | 'all'>('all')
@@ -26,10 +26,18 @@ export function ForSalePage() {
         canonical="https://langrestorations.com.au/for-sale"
         ogTitle={seo.ogTitle}
         ogDescription={seo.ogDescription}
-        jsonLd={[localBusinessSchema, breadcrumbSchema([
-          { name: 'Home', url: 'https://langrestorations.com.au/' },
-          { name: 'Motorcycles For Sale', url: 'https://langrestorations.com.au/for-sale' },
-        ])]}
+        jsonLd={buildGraph([
+          businessNode,
+          collectionPageNode({
+            url: 'https://langrestorations.com.au/for-sale',
+            name: seo.title,
+            description: seo.metaDescription,
+          }),
+          breadcrumbNode([
+            { name: 'Home', url: 'https://langrestorations.com.au/' },
+            { name: 'Motorcycles For Sale', url: 'https://langrestorations.com.au/for-sale' },
+          ]),
+        ])}
       />
 
       <div className="max-w-7xl mx-auto py-16 sm:py-24">

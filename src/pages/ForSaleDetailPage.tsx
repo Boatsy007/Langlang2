@@ -4,7 +4,7 @@ import { ImageGallery } from '@/components/ImageGallery'
 import { SpecTable } from '@/components/SpecTable'
 import { StatusBadge } from '@/components/Badge'
 import { Seo } from '@/components/Seo'
-import { localBusinessSchema, breadcrumbSchema, listingSchema } from '@/data/schema'
+import { buildGraph, businessNode, webPageNode, productNode, breadcrumbNode } from '@/data/schema'
 
 const BASE = 'https://langrestorations.com.au'
 
@@ -27,21 +27,21 @@ export function ForSaleDetailPage() {
         canonical={canonical}
         ogImage={`${BASE}${bike.heroImage.src}`}
         ogType="article"
-        jsonLd={[
-          localBusinessSchema,
-          breadcrumbSchema([
+        jsonLd={buildGraph([
+          businessNode,
+          webPageNode({
+            url: canonical,
+            name: bike.metaTitle,
+            description: bike.metaDescription,
+            image: `${BASE}${bike.heroImage.src}`,
+          }),
+          productNode(bike),
+          breadcrumbNode([
             { name: 'Home', url: `${BASE}/` },
             { name: 'Motorcycles For Sale', url: `${BASE}/for-sale` },
             { name: bike.name, url: canonical },
           ]),
-          listingSchema({
-            name: bike.name,
-            description: bike.shortDescription,
-            url: canonical,
-            image: `${BASE}${bike.heroImage.src}`,
-            availability: bike.status === 'Available' ? 'InStock' : 'SoldOut',
-          }),
-        ]}
+        ])}
       />
 
       {/* Hero */}
