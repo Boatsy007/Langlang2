@@ -37,6 +37,56 @@ const linkBase = 'px-3 py-1.5 rounded-lg text-sm font-medium transition-colors w
 const linkActive = 'text-red-400 bg-red-950/60'
 const linkInactive = 'text-zinc-400 hover:text-white hover:bg-zinc-900'
 
+const SOCIAL = [
+  {
+    href: 'https://www.instagram.com/langrestorations/',
+    label: 'Lang Restorations on Instagram',
+    title: 'Instagram',
+    icon: (
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+        <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+        <circle cx="12" cy="12" r="4.5" />
+        <circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none" />
+      </svg>
+    ),
+  },
+  {
+    href: 'https://www.facebook.com/langrestorations/',
+    label: 'Lang Restorations on Facebook',
+    title: 'Facebook',
+    icon: (
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+        <path d="M22.676 0H1.324C.593 0 0 .593 0 1.324v21.352C0 23.408.593 24 1.324 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24h-1.918c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.592 1.323-1.324V1.324C24 .593 23.408 0 22.676 0z" />
+      </svg>
+    ),
+  },
+]
+
+function SocialIcons({ size = 'md' }: { size?: 'sm' | 'md' }) {
+  const btn = size === 'sm'
+    ? 'w-7 h-7 flex items-center justify-center rounded-lg text-zinc-500 hover:text-white hover:bg-zinc-800 transition-colors'
+    : 'w-8 h-8 flex items-center justify-center rounded-lg text-zinc-500 hover:text-white hover:bg-zinc-800 transition-colors'
+
+  return (
+    <div className="flex items-center gap-1" role="list" aria-label="Social media profiles">
+      {SOCIAL.map(({ href, label, title, icon }) => (
+        <a
+          key={href}
+          href={href}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={label}
+          title={title}
+          className={btn}
+          role="listitem"
+        >
+          {icon}
+        </a>
+      ))}
+    </div>
+  )
+}
+
 function BikeIcon({ className }: { className?: string }) {
   return (
     <svg
@@ -109,27 +159,32 @@ function Nav() {
           </ul>
         </nav>
 
-        {/* Desktop nav — full link list aligned right */}
-        <nav className="hidden md:block flex-1">
-          <ul className="flex items-center justify-end gap-0.5 list-none m-0 p-0">
-            {desktopLinks.map(({ to, label, end }) => (
-              <li key={to}>
-                <NavLink
-                  to={to}
-                  end={end}
-                  className={({ isActive }) =>
-                    clsx(
-                      'px-3.5 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap block',
-                      isActive ? 'text-red-400 bg-red-950/60' : linkInactive,
-                    )
-                  }
-                >
-                  {label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
+        {/* Desktop nav — full link list + social icons aligned right */}
+        <div className="hidden md:flex flex-1 items-center justify-end gap-2">
+          <nav>
+            <ul className="flex items-center gap-0.5 list-none m-0 p-0">
+              {desktopLinks.map(({ to, label, end }) => (
+                <li key={to}>
+                  <NavLink
+                    to={to}
+                    end={end}
+                    className={({ isActive }) =>
+                      clsx(
+                        'px-3.5 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap block',
+                        isActive ? 'text-red-400 bg-red-950/60' : linkInactive,
+                      )
+                    }
+                  >
+                    {label}
+                  </NavLink>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="pl-2 border-l border-zinc-800">
+            <SocialIcons size="sm" />
+          </div>
+        </div>
 
       </div>
     </header>
@@ -143,6 +198,7 @@ function Footer({ onOpenGame }: { onOpenGame: () => void }) {
         <p className="text-sm text-zinc-600">
           © {new Date().getFullYear()} Lang Restorations. All rights reserved.
         </p>
+        <SocialIcons />
         <button
           onClick={onOpenGame}
           className="p-1.5 rounded-md opacity-25 hover:opacity-100 transition-opacity duration-300 focus-visible:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500"
