@@ -281,18 +281,18 @@ export function CinematicHero({ src }: { src: string }) {
 
       {/* ── Hero content ──────────────────────────────────────────────────────── */}
       <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
-        <p className="text-xs font-semibold uppercase tracking-widest text-zinc-400 mb-8">
-          {business.name} · {business.suburb}, {business.state} · Est.{' '}
-          {business.established}
-        </p>
-
-        <h1 className="text-5xl sm:text-7xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white tracking-tight leading-none mb-8 max-w-5xl">
+        <h1 className="text-5xl sm:text-7xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold text-white tracking-tight leading-none mb-6 max-w-5xl">
           Motorcycle
           <br />
           Restorations
           <br />
           <span className="text-zinc-400">Without Compromise.</span>
         </h1>
+
+        <p className="text-xs font-semibold uppercase tracking-widest text-zinc-500 mb-6">
+          {business.name} · {business.suburb}, {business.state} · Est.{' '}
+          {business.established}
+        </p>
 
         <p className="text-lg sm:text-xl text-zinc-300 max-w-2xl leading-relaxed mb-12">
           Collector-quality restorations of vintage motocross, classic road motorcycles and iconic
