@@ -23,15 +23,15 @@ export interface GameSnapshot {
 }
 
 const BEST_KEY = 'workshop-runner-best'
-const GRAVITY = 0.55
-const JUMP_VEL = -12
-const INITIAL_SPEED = 5
-const SPEED_INCREMENT = 0.0008
+const GRAVITY = 0.5
+const JUMP_VEL = -13
+const INITIAL_SPEED = 3.5
+const SPEED_INCREMENT = 0.0004
 const FLOOR_RATIO = 0.75
 const BIKE_W = 52
 const BIKE_H = 36
-const MIN_GAP = 60
-const MAX_GAP = 200
+const MIN_GAP = 100
+const MAX_GAP = 280
 
 const OBSTACLE_TYPES: Obstacle['type'][] = [
   'tyre', 'toolbox', 'engine', 'oilcan', 'crate', 'stand',
