@@ -4,6 +4,9 @@ import { FilterBar } from '@/components/FilterBar'
 import { getForSaleStatusOptions } from '@/utils/data'
 import { forSaleBikes } from '@/data/forSale'
 import type { AvailabilityStatus } from '@/types'
+import { Seo } from '@/components/Seo'
+import { pageSeo } from '@/data/seo'
+import { localBusinessSchema, breadcrumbSchema } from '@/data/schema'
 
 export function ForSalePage() {
   const [activeFilter, setActiveFilter] = useState<AvailabilityStatus | 'all'>('all')
@@ -13,8 +16,22 @@ export function ForSalePage() {
     ? forSaleBikes
     : forSaleBikes.filter((b) => b.status === activeFilter)
 
+  const seo = pageSeo.forSale
+
   return (
     <main className="min-h-screen bg-zinc-950 px-4 sm:px-6 lg:px-8">
+      <Seo
+        title={seo.title}
+        description={seo.metaDescription}
+        canonical="https://langrestorations.com.au/for-sale"
+        ogTitle={seo.ogTitle}
+        ogDescription={seo.ogDescription}
+        jsonLd={[localBusinessSchema, breadcrumbSchema([
+          { name: 'Home', url: 'https://langrestorations.com.au/' },
+          { name: 'Motorcycles For Sale', url: 'https://langrestorations.com.au/for-sale' },
+        ])]}
+      />
+
       <div className="max-w-7xl mx-auto py-16 sm:py-24">
 
         {/* Header */}

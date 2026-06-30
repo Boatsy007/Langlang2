@@ -4,6 +4,9 @@ import { FilterBar } from '@/components/FilterBar'
 import { getProjectCategories } from '@/utils/data'
 import { projects } from '@/data/projects'
 import type { ProjectCategory } from '@/types'
+import { Seo } from '@/components/Seo'
+import { pageSeo } from '@/data/seo'
+import { localBusinessSchema, breadcrumbSchema } from '@/data/schema'
 
 export function ProjectsPage() {
   const [activeFilter, setActiveFilter] = useState<ProjectCategory | 'all'>('all')
@@ -13,8 +16,22 @@ export function ProjectsPage() {
     ? projects
     : projects.filter((p) => p.category === activeFilter)
 
+  const seo = pageSeo.builds
+
   return (
     <main className="min-h-screen bg-zinc-950 px-4 sm:px-6 lg:px-8">
+      <Seo
+        title={seo.title}
+        description={seo.metaDescription}
+        canonical="https://langrestorations.com.au/builds"
+        ogTitle={seo.ogTitle}
+        ogDescription={seo.ogDescription}
+        jsonLd={[localBusinessSchema, breadcrumbSchema([
+          { name: 'Home', url: 'https://langrestorations.com.au/' },
+          { name: 'Featured Builds', url: 'https://langrestorations.com.au/builds' },
+        ])]}
+      />
+
       <div className="max-w-7xl mx-auto py-16 sm:py-24">
 
         {/* Header */}

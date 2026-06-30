@@ -5,6 +5,10 @@ import { BeforeAfter } from '@/components/BeforeAfter'
 import { SpecTable } from '@/components/SpecTable'
 import { ProjectCard } from '@/components/ProjectCard'
 import { CategoryBadge } from '@/components/Badge'
+import { Seo } from '@/components/Seo'
+import { localBusinessSchema, breadcrumbSchema } from '@/data/schema'
+
+const BASE = 'https://langrestorations.com.au'
 
 export function ProjectDetailPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -13,9 +17,23 @@ export function ProjectDetailPage() {
   if (!project) return <Navigate to="/builds" replace />
 
   const related = getRelatedProjects(project)
+  const canonical = `${BASE}/builds/${project.slug}`
 
   return (
     <main className="min-h-screen bg-zinc-950">
+
+      <Seo
+        title={project.metaTitle}
+        description={project.metaDescription}
+        canonical={canonical}
+        ogImage={`${BASE}${project.heroImage.src}`}
+        ogType="article"
+        jsonLd={[localBusinessSchema, breadcrumbSchema([
+          { name: 'Home', url: `${BASE}/` },
+          { name: 'Featured Builds', url: `${BASE}/builds` },
+          { name: project.name, url: canonical },
+        ])]}
+      />
 
       {/* Hero */}
       <div className="relative aspect-[21/9] overflow-hidden bg-zinc-900">

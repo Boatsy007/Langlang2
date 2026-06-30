@@ -16,6 +16,9 @@ import { ForSaleCard } from '@/components/ForSaleCard'
 import { BeforeAfterSlider } from '@/components/BeforeAfterSlider'
 import { CinematicHero } from '@/components/CinematicHero'
 import { useInView } from '@/hooks/useInView'
+import { Seo } from '@/components/Seo'
+import { pageSeo } from '@/data/seo'
+import { localBusinessSchema, webSiteSchema, faqSchema } from '@/data/schema'
 
 // ─── Utility: Scroll-triggered fade-in wrapper ───────────────────────────────
 
@@ -95,8 +98,19 @@ export function HomePage() {
   // Use the first featured build's before/after images for the showcase
   const showcaseBuild = getFeaturedProjects()[0]
 
+  const seo = pageSeo.home
+
   return (
     <main className="min-h-screen bg-zinc-950">
+
+      <Seo
+        title={seo.title}
+        description={seo.metaDescription}
+        canonical="https://langrestorations.com.au/"
+        ogTitle={seo.ogTitle}
+        ogDescription={seo.ogDescription}
+        jsonLd={[localBusinessSchema, webSiteSchema, faqSchema(homepageFaq)]}
+      />
 
       {/* ─── 1. Cinematic Hero ──────────────────────────────────────────────── */}
       <CinematicHero src="/images/hero.jpg" />

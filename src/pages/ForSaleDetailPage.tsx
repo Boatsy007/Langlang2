@@ -3,6 +3,10 @@ import { getForSaleBikeBySlug } from '@/utils/data'
 import { ImageGallery } from '@/components/ImageGallery'
 import { SpecTable } from '@/components/SpecTable'
 import { StatusBadge } from '@/components/Badge'
+import { Seo } from '@/components/Seo'
+import { localBusinessSchema, breadcrumbSchema, listingSchema } from '@/data/schema'
+
+const BASE = 'https://langrestorations.com.au'
 
 export function ForSaleDetailPage() {
   const { slug } = useParams<{ slug: string }>()
@@ -12,9 +16,33 @@ export function ForSaleDetailPage() {
 
   const isAvailable = bike.status === 'Available'
   const enquirySubject = encodeURIComponent(`Enquiry — ${bike.name} (${bike.year} ${bike.brand} ${bike.model})`)
+  const canonical = `${BASE}/for-sale/${bike.slug}`
 
   return (
     <main className="min-h-screen bg-zinc-950">
+
+      <Seo
+        title={bike.metaTitle}
+        description={bike.metaDescription}
+        canonical={canonical}
+        ogImage={`${BASE}${bike.heroImage.src}`}
+        ogType="article"
+        jsonLd={[
+          localBusinessSchema,
+          breadcrumbSchema([
+            { name: 'Home', url: `${BASE}/` },
+            { name: 'Motorcycles For Sale', url: `${BASE}/for-sale` },
+            { name: bike.name, url: canonical },
+          ]),
+          listingSchema({
+            name: bike.name,
+            description: bike.shortDescription,
+            url: canonical,
+            image: `${BASE}${bike.heroImage.src}`,
+            availability: bike.status === 'Available' ? 'InStock' : 'SoldOut',
+          }),
+        ]}
+      />
 
       {/* Hero */}
       <div className="relative aspect-[21/9] overflow-hidden bg-zinc-900">
@@ -94,7 +122,7 @@ export function ForSaleDetailPage() {
               </div>
 
               <a
-                href={`mailto:info@langrestorations.com?subject=${enquirySubject}`}
+                href={`mailto:info@langrestorations.com.au?subject=${enquirySubject}`}
                 className={
                   isAvailable
                     ? 'inline-flex items-center justify-center w-full px-5 py-3.5 rounded-xl bg-white text-black text-sm font-semibold hover:bg-zinc-200 transition-colors'

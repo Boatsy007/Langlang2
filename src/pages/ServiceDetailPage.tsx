@@ -1,7 +1,10 @@
-import { useEffect } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { getServiceById } from '@/utils/data'
 import { services } from '@/data/services'
+import { Seo } from '@/components/Seo'
+import { localBusinessSchema, breadcrumbSchema, serviceSchema } from '@/data/schema'
+
+const BASE = 'https://langrestorations.com.au'
 
 function renderDescription(text: string) {
   return text.split('\n\n').map((para, i) => {
@@ -22,17 +25,34 @@ export function ServiceDetailPage() {
   const { id } = useParams<{ id: string }>()
   const service = id ? getServiceById(id) : undefined
 
-  useEffect(() => {
-    if (service) document.title = service.metaTitle
-    return () => { document.title = 'Lang Restorations' }
-  }, [service])
-
   if (!service) return <Navigate to="/services" replace />
 
   const others = services.filter((s) => s.id !== service.id).slice(0, 3)
+  const canonical = `${BASE}/services/${service.id}`
 
   return (
     <main className="min-h-screen bg-zinc-950">
+
+      <Seo
+        title={service.metaTitle}
+        description={service.metaDescription}
+        canonical={canonical}
+        ogImage={service.image ? `${BASE}${service.image.src}` : undefined}
+        jsonLd={[
+          localBusinessSchema,
+          breadcrumbSchema([
+            { name: 'Home', url: `${BASE}/` },
+            { name: 'Services', url: `${BASE}/services` },
+            { name: service.name, url: canonical },
+          ]),
+          serviceSchema({
+            name: service.name,
+            description: service.shortDescription,
+            url: canonical,
+            image: service.image ? `${BASE}${service.image.src}` : undefined,
+          }),
+        ]}
+      />
 
       {/* Hero */}
       <div className={`relative overflow-hidden bg-zinc-900 ${service.image ? 'aspect-[21/9]' : 'py-32'}`}>

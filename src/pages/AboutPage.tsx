@@ -1,6 +1,9 @@
 import { Link } from 'react-router-dom'
 import { about, business, processSteps } from '@/data/siteContent'
 import { useInView } from '@/hooks/useInView'
+import { Seo } from '@/components/Seo'
+import { pageSeo } from '@/data/seo'
+import { localBusinessSchema, breadcrumbSchema } from '@/data/schema'
 
 function FadeIn({ children, delay = 0, className = '' }: { children: React.ReactNode; delay?: number; className?: string }) {
   const { ref, inView } = useInView()
@@ -16,8 +19,21 @@ function FadeIn({ children, delay = 0, className = '' }: { children: React.React
 }
 
 export function AboutPage() {
+  const seo = pageSeo.about
   return (
     <main className="min-h-screen bg-zinc-950">
+
+      <Seo
+        title={seo.title}
+        description={seo.metaDescription}
+        canonical="https://langrestorations.com.au/about"
+        ogTitle={seo.ogTitle}
+        ogDescription={seo.ogDescription}
+        jsonLd={[localBusinessSchema, breadcrumbSchema([
+          { name: 'Home', url: 'https://langrestorations.com.au/' },
+          { name: 'About', url: 'https://langrestorations.com.au/about' },
+        ])]}
+      />
 
       {/* Hero */}
       <section className="relative py-32 sm:py-40 border-b border-zinc-900">

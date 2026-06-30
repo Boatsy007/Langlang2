@@ -12,10 +12,10 @@ export const business = {
   established: 2004,
   yearsExperience: '20+',
   phone: '0439 744 632',
-  email: 'info@langrestorations.com',
+  email: 'info@langrestorations.com.au',
   instagram: 'https://www.instagram.com/langrestorations/',
   facebook: 'https://www.facebook.com/langrestorations/',
-  website: 'https://www.langrestorations.com',
+  website: 'https://langrestorations.com.au',
 }
 
 // ─── Homepage Hero ────────────────────────────────────────────────────────────

@@ -14,7 +14,7 @@ export interface PageSeo {
   internalLinks: Array<{ anchor: string; href: string }>
 }
 
-const BASE_URL = 'https://www.langrestorations.com'
+const BASE_URL = 'https://langrestorations.com.au'
 
 export const pageSeo: Record<string, PageSeo> = {
 
@@ -203,9 +203,9 @@ export const schemaLocalBusiness = {
   description:
     'Specialist vintage and classic motorcycle restoration workshop in Traralgon, Gippsland, Victoria. Engine rebuilds, vapour blasting, aluminium repairs, zinc plating, frame repairs and ground-up restorations. Serving Victoria and Australia since 2004.',
   url: BASE_URL,
-  image: `${BASE_URL}/images/og-default.jpg`,
-  telephone: '0439744632',
-  email: 'info@langrestorations.com',
+  image: `${BASE_URL}/images/hero.jpg`,
+  telephone: '+61439744632',
+  email: 'info@langrestorations.com.au',
   address: {
     '@type': 'PostalAddress',
     addressLocality: 'Traralgon',
@@ -222,6 +222,7 @@ export const schemaLocalBusiness = {
   sameAs: [
     'https://www.facebook.com/langrestorations/',
     'https://www.instagram.com/langrestorations/',
+    'https://langrestorations.com.au',
   ],
   priceRange: '$$',
   currenciesAccepted: 'AUD',
