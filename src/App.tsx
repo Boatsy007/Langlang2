@@ -18,12 +18,17 @@ import { NotFoundPage } from '@/pages/NotFoundPage'
 import { BlogPage } from '@/pages/BlogPage'
 import { BlogDetailPage } from '@/pages/BlogDetailPage'
 
-// Priority links shown on mobile (short labels, horizontally scrollable)
+// Priority links shown on mobile nav bar
 const mobileLinks = [
   { to: '/builds', label: 'Builds', end: false },
   { to: '/for-sale', label: 'For Sale', end: false },
   { to: '/services', label: 'Services', end: false },
+]
+
+// Links in the mobile hamburger menu
+const mobileMenuLinks = [
   { to: '/blog', label: 'Blog', end: false },
+  { to: '/about', label: 'About', end: false },
   { to: '/contact', label: 'Contact', end: false },
 ]
 
@@ -126,6 +131,7 @@ function BikeIcon({ className }: { className?: string }) {
 
 function Nav() {
   const [scrolled, setScrolled] = useState(false)
+  const [menuOpen, setMenuOpen] = useState(false)
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)
@@ -133,72 +139,144 @@ function Nav() {
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
+  // Close menu on route change
+  const closeMenu = () => setMenuOpen(false)
+
   return (
-    <header className={`sticky top-0 z-40 transition-colors duration-300 ${scrolled ? 'bg-zinc-950 border-b border-zinc-900' : ''}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center gap-3">
+    <>
+      <header className={`sticky top-0 z-40 transition-colors duration-300 ${scrolled ? 'bg-zinc-950 border-b border-zinc-900' : ''}`}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center gap-3">
 
-        {/* Logo — links to home, always visible */}
-        <NavLink to="/" className="shrink-0" aria-label="Lang Restorations — Home">
-          <picture>
-            <source type="image/webp" srcSet="/images/logo.webp" />
-            <img
-              src="/images/logo.png"
-              alt="Lang Restorations"
-              className="h-20 w-auto"
-              draggable={false}
-              width="80"
-              height="80"
-              fetchPriority="high"
-            />
-          </picture>
-        </NavLink>
+          {/* Logo — links to home, always visible */}
+          <NavLink to="/" className="shrink-0" aria-label="Lang Restorations — Home" onClick={closeMenu}>
+            <picture>
+              <source type="image/webp" srcSet="/images/logo.webp" />
+              <img
+                src="/images/logo.png"
+                alt="Lang Restorations"
+                className="h-20 w-auto"
+                draggable={false}
+                width="80"
+                height="80"
+                fetchPriority="high"
+              />
+            </picture>
+          </NavLink>
 
-        {/* Mobile nav — horizontally scrollable, priority links on the right */}
-        <nav className="md:hidden flex-1 overflow-x-auto scrollbar-none min-w-0">
-          <ul className="flex items-center gap-1 list-none m-0 p-0 w-max ml-auto">
-            {mobileLinks.map(({ to, label, end }) => (
-              <li key={to}>
-                <NavLink
-                  to={to}
-                  end={end}
-                  className={({ isActive }) => clsx(linkBase, isActive ? linkActive : linkInactive)}
-                >
-                  {label}
-                </NavLink>
-              </li>
-            ))}
-          </ul>
-        </nav>
+          {/* Mobile nav — primary links + hamburger */}
+          <div className="md:hidden flex-1 flex items-center justify-end gap-1">
+            <nav>
+              <ul className="flex items-center gap-1 list-none m-0 p-0">
+                {mobileLinks.map(({ to, label, end }) => (
+                  <li key={to}>
+                    <NavLink
+                      to={to}
+                      end={end}
+                      onClick={closeMenu}
+                      className={({ isActive }) => clsx(linkBase, isActive ? linkActive : linkInactive)}
+                    >
+                      {label}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
 
-        {/* Desktop nav — full link list + social icons aligned right */}
-        <div className="hidden md:flex flex-1 items-center justify-end gap-2">
-          <nav>
-            <ul className="flex items-center gap-0.5 list-none m-0 p-0">
-              {desktopLinks.map(({ to, label, end }) => (
+            {/* Hamburger button */}
+            <button
+              type="button"
+              onClick={() => setMenuOpen((o) => !o)}
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              className="ml-1 w-9 h-9 flex flex-col items-center justify-center gap-1.5 rounded-lg text-zinc-400 hover:text-white hover:bg-zinc-900 transition-colors shrink-0"
+            >
+              {menuOpen ? (
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" aria-hidden="true">
+                  <path d="M3 3l10 10M13 3L3 13" />
+                </svg>
+              ) : (
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" aria-hidden="true">
+                  <path d="M2 4h12M2 8h12M2 12h12" />
+                </svg>
+              )}
+            </button>
+          </div>
+
+          {/* Desktop nav — full link list + social icons aligned right */}
+          <div className="hidden md:flex flex-1 items-center justify-end gap-2">
+            <nav>
+              <ul className="flex items-center gap-0.5 list-none m-0 p-0">
+                {desktopLinks.map(({ to, label, end }) => (
+                  <li key={to}>
+                    <NavLink
+                      to={to}
+                      end={end}
+                      className={({ isActive }) =>
+                        clsx(
+                          'px-3.5 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap block',
+                          isActive ? 'text-red-400 bg-red-950/60' : linkInactive,
+                        )
+                      }
+                    >
+                      {label}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            <div className="pl-2 border-l border-zinc-800">
+              <SocialIcons size="sm" />
+            </div>
+          </div>
+
+        </div>
+      </header>
+
+      {/* Mobile hamburger menu — drops below the header */}
+      {menuOpen && (
+        <>
+          {/* Backdrop */}
+          <div
+            className="md:hidden fixed inset-0 z-30 bg-zinc-950/80 backdrop-blur-sm"
+            onClick={closeMenu}
+            aria-hidden="true"
+          />
+          {/* Menu panel */}
+          <nav
+            className="md:hidden fixed top-20 right-0 z-40 w-56 bg-zinc-900 border border-zinc-800 rounded-bl-2xl shadow-2xl"
+            aria-label="Additional navigation"
+          >
+            <ul className="py-2 list-none m-0 p-0">
+              {mobileMenuLinks.map(({ to, label, end }) => (
                 <li key={to}>
                   <NavLink
                     to={to}
                     end={end}
+                    onClick={closeMenu}
                     className={({ isActive }) =>
                       clsx(
-                        'px-3.5 py-2 rounded-lg text-sm font-medium transition-colors whitespace-nowrap block',
-                        isActive ? 'text-red-400 bg-red-950/60' : linkInactive,
+                        'flex items-center gap-3 px-4 py-3 text-sm font-medium transition-colors',
+                        isActive ? 'text-red-400' : 'text-zinc-300 hover:text-white hover:bg-zinc-800',
                       )
                     }
                   >
-                    {label}
+                    {({ isActive }) => (
+                      <>
+                        {isActive && (
+                          <span className="w-1 h-1 rounded-full bg-red-500 shrink-0" aria-hidden="true" />
+                        )}
+                        {!isActive && <span className="w-1 shrink-0" aria-hidden="true" />}
+                        {label}
+                      </>
+                    )}
                   </NavLink>
                 </li>
               ))}
             </ul>
           </nav>
-          <div className="pl-2 border-l border-zinc-800">
-            <SocialIcons size="sm" />
-          </div>
-        </div>
-
-      </div>
-    </header>
+        </>
+      )}
+    </>
   )
 }
 
