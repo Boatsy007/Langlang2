@@ -121,3 +121,52 @@ export interface FaqItem {
   question: string
   answer: string
 }
+
+// ─── Blog ─────────────────────────────────────────────────────────────────────
+
+export type BlogCategory =
+  | 'Restoration Guides'
+  | 'Service Deep-Dives'
+  | 'Workshop Notes'
+  | 'Buying Advice'
+  | 'Brand Spotlights'
+
+export interface TocItem {
+  id: string
+  text: string
+  level: 2 | 3
+}
+
+export type ContentBlock =
+  | { type: 'p'; html: string }
+  | { type: 'h2'; id: string; text: string }
+  | { type: 'h3'; id: string; text: string }
+  | { type: 'ul'; items: string[] }
+  | { type: 'ol'; items: string[] }
+  | { type: 'callout'; variant: 'tip' | 'insight' | 'warning'; title?: string; html: string }
+  | { type: 'table'; caption?: string; rows: Array<{ label: string; value: string }> }
+  | { type: 'cta' }
+  | { type: 'divider' }
+
+export interface BlogPost {
+  slug: string
+  title: string
+  excerpt: string
+  content: ContentBlock[]
+  category: BlogCategory
+  tags: string[]
+  publishedAt: string
+  updatedAt: string
+  readingTime: number
+  heroImage: {
+    src: string
+    alt: string
+    width: number
+    height: number
+    caption?: string
+  }
+  metaTitle: string
+  metaDescription: string
+  faqs: FaqItem[]
+  toc: TocItem[]
+}

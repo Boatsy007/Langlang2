@@ -15,12 +15,15 @@ import { ServiceDetailPage } from '@/pages/ServiceDetailPage'
 import { AboutPage } from '@/pages/AboutPage'
 import { ContactPage } from '@/pages/ContactPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
+import { BlogPage } from '@/pages/BlogPage'
+import { BlogDetailPage } from '@/pages/BlogDetailPage'
 
 // Priority links shown on mobile (short labels, horizontally scrollable)
 const mobileLinks = [
   { to: '/builds', label: 'Builds', end: false },
   { to: '/for-sale', label: 'For Sale', end: false },
   { to: '/services', label: 'Services', end: false },
+  { to: '/blog', label: 'Blog', end: false },
   { to: '/contact', label: 'Contact', end: false },
 ]
 
@@ -30,6 +33,7 @@ const desktopLinks = [
   { to: '/builds', label: 'Featured Builds', end: false },
   { to: '/for-sale', label: 'For Sale', end: false },
   { to: '/services', label: 'Services', end: false },
+  { to: '/blog', label: 'Blog', end: false },
   { to: '/about', label: 'About', end: false },
   { to: '/contact', label: 'Contact', end: false },
 ]
@@ -235,6 +239,8 @@ export default function App() {
             <Route path="/for-sale/:slug" element={<ForSaleDetailPage />} />
             <Route path="/services" element={<ServicesPage />} />
             <Route path="/services/:id" element={<ServiceDetailPage />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/blog/:slug" element={<BlogDetailPage />} />
             <Route path="/about" element={<AboutPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<NotFoundPage />} />

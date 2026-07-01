@@ -309,6 +309,61 @@ export function productNode(bike: ForSaleBike) {
   }
 }
 
+// ─── 9b. Blog Article (for /blog/:slug pages) ──────────────────────────────
+
+export function blogArticleNode(opts: {
+  url: string
+  headline: string
+  description: string
+  image: string
+  publishedAt: string
+  updatedAt: string
+  keywords: string[]
+}) {
+  const authorOrg = {
+    '@type': 'Organization',
+    '@id': BUSINESS_ID,
+    name: 'Lang Restorations',
+    url: BASE,
+    logo: { '@type': 'ImageObject', url: `${BASE}/images/logo.png` },
+  }
+  return {
+    '@type': 'Article',
+    '@id': `${opts.url}#article`,
+    headline: opts.headline,
+    description: opts.description,
+    url: opts.url,
+    mainEntityOfPage: { '@type': 'WebPage', '@id': `${opts.url}#webpage` },
+    image: {
+      '@type': 'ImageObject',
+      url: opts.image,
+      width: 1200,
+      height: 800,
+    },
+    author: authorOrg,
+    publisher: authorOrg,
+    datePublished: opts.publishedAt,
+    dateModified: opts.updatedAt,
+    keywords: opts.keywords.join(', '),
+    inLanguage: 'en-AU',
+    about: businessRef,
+  }
+}
+
+// ─── 9c. Blog FAQPage (article-scoped) ────────────────────────────────────
+
+export function articleFaqNode(url: string, faqs: Array<{ question: string; answer: string }>) {
+  return {
+    '@type': 'FAQPage',
+    '@id': `${url}#faq`,
+    mainEntity: faqs.map((f) => ({
+      '@type': 'Question',
+      name: f.question,
+      acceptedAnswer: { '@type': 'Answer', text: f.answer },
+    })),
+  }
+}
+
 // ─── 9. FAQPage ────────────────────────────────────────────────────────────
 
 export function faqNode(faqs: FaqItem[]) {

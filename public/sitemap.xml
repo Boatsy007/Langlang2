@@ -45,6 +45,25 @@
     <priority>0.7</priority>
   </url>
 
+  <!-- Blog -->
+  <url>
+    <loc>https://langrestorations.com.au/blog</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://langrestorations.com.au/blog/how-much-does-motorcycle-restoration-cost</loc>
+    <lastmod>2026-07-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/services/vintage-restoration.jpg</image:loc>
+      <image:title>How Much Does It Cost to Restore a Motorcycle? — Lang Restorations</image:title>
+      <image:caption>Vintage motorcycle restoration cost guide — engine rebuilds, vapour blasting, full restorations, Lang Restorations Traralgon Victoria</image:caption>
+    </image:image>
+  </url>
+
   <!-- Featured builds -->
   <url>
     <loc>https://langrestorations.com.au/builds/1996-honda-cr500-mcgrath-tribute</loc>
