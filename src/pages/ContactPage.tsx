@@ -18,22 +18,45 @@ function FadeIn({ children, delay = 0, className = '' }: { children: React.React
   )
 }
 
-export function ContactPage() {
-  const [submitted, setSubmitted] = useState(false)
+type FormState = 'idle' | 'loading' | 'success' | 'error'
 
-  function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+export function ContactPage() {
+  const [formState, setFormState] = useState<FormState>('idle')
+  const [errorMsg, setErrorMsg] = useState('')
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault()
+    setFormState('loading')
+    setErrorMsg('')
+
     const form = e.currentTarget
     const data = new FormData(form)
-    const subject = encodeURIComponent(`Restoration Enquiry — ${data.get('motorcycle') || 'General'}`)
-    const body = encodeURIComponent(
-      `Name: ${data.get('name')}\n` +
-      `Phone: ${data.get('phone') || 'Not provided'}\n\n` +
-      `Motorcycle: ${data.get('motorcycle') || 'Not specified'}\n\n` +
-      `Message:\n${data.get('message')}`,
-    )
-    window.location.href = `mailto:${business.email}?subject=${subject}&body=${body}`
-    setSubmitted(true)
+
+    try {
+      const res = await fetch('/api/enquiry', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.get('name'),
+          email: data.get('email'),
+          phone: data.get('phone'),
+          motorcycle: data.get('motorcycle'),
+          message: data.get('message'),
+        }),
+      })
+
+      const json = await res.json()
+
+      if (!res.ok) {
+        setErrorMsg(json.error ?? 'Something went wrong. Please try again.')
+        setFormState('error')
+      } else {
+        setFormState('success')
+      }
+    } catch {
+      setErrorMsg('Could not send your message. Please call or email us directly.')
+      setFormState('error')
+    }
   }
 
   const seo = pageSeo.contact
@@ -162,16 +185,20 @@ export function ContactPage() {
 
             {/* Right — form */}
             <FadeIn delay={150}>
-              {submitted ? (
+              {formState === 'success' ? (
                 <div className="rounded-2xl bg-zinc-900 ring-1 ring-zinc-800 p-10 text-center">
                   <div className="w-14 h-14 bg-white rounded-full flex items-center justify-center mx-auto mb-6">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" aria-hidden="true">
                       <path d="M5 12L9.5 16.5L19 7" stroke="#09090b" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                     </svg>
                   </div>
-                  <h2 className="text-2xl font-bold text-white mb-3">Message opening…</h2>
-                  <p className="text-zinc-400">Your email client should have opened. If it didn't, send us a message directly at{' '}
-                    <a href={`mailto:${business.email}`} className="text-white hover:text-zinc-300">{business.email}</a>.
+                  <h2 className="text-2xl font-bold text-white mb-3">Enquiry sent</h2>
+                  <p className="text-zinc-400">
+                    We've received your message and will be in touch soon. In the meantime you're
+                    welcome to call{' '}
+                    <a href={`tel:${business.phone.replace(/\s/g, '')}`} className="text-white hover:text-zinc-300">
+                      {business.phone}
+                    </a>.
                   </p>
                 </div>
               ) : (
@@ -189,7 +216,23 @@ export function ContactPage() {
                         type="text"
                         required
                         placeholder="Your name"
-                        className="w-full rounded-xl bg-zinc-800 ring-1 ring-zinc-700 px-4 py-3 text-white placeholder-zinc-600 text-sm focus:outline-none focus:ring-zinc-500 transition-shadow"
+                        disabled={formState === 'loading'}
+                        className="w-full rounded-xl bg-zinc-800 ring-1 ring-zinc-700 px-4 py-3 text-white placeholder-zinc-600 text-sm focus:outline-none focus:ring-zinc-500 transition-shadow disabled:opacity-50"
+                      />
+                    </div>
+
+                    <div>
+                      <label htmlFor="email" className="block text-sm font-medium text-zinc-400 mb-2">
+                        Email <span className="text-zinc-600">(required)</span>
+                      </label>
+                      <input
+                        id="email"
+                        name="email"
+                        type="email"
+                        required
+                        placeholder="you@example.com"
+                        disabled={formState === 'loading'}
+                        className="w-full rounded-xl bg-zinc-800 ring-1 ring-zinc-700 px-4 py-3 text-white placeholder-zinc-600 text-sm focus:outline-none focus:ring-zinc-500 transition-shadow disabled:opacity-50"
                       />
                     </div>
 
@@ -202,7 +245,8 @@ export function ContactPage() {
                         name="phone"
                         type="tel"
                         placeholder="0400 000 000"
-                        className="w-full rounded-xl bg-zinc-800 ring-1 ring-zinc-700 px-4 py-3 text-white placeholder-zinc-600 text-sm focus:outline-none focus:ring-zinc-500 transition-shadow"
+                        disabled={formState === 'loading'}
+                        className="w-full rounded-xl bg-zinc-800 ring-1 ring-zinc-700 px-4 py-3 text-white placeholder-zinc-600 text-sm focus:outline-none focus:ring-zinc-500 transition-shadow disabled:opacity-50"
                       />
                     </div>
 
@@ -215,7 +259,8 @@ export function ContactPage() {
                         name="motorcycle"
                         type="text"
                         placeholder="e.g. 1981 Honda CR250R"
-                        className="w-full rounded-xl bg-zinc-800 ring-1 ring-zinc-700 px-4 py-3 text-white placeholder-zinc-600 text-sm focus:outline-none focus:ring-zinc-500 transition-shadow"
+                        disabled={formState === 'loading'}
+                        className="w-full rounded-xl bg-zinc-800 ring-1 ring-zinc-700 px-4 py-3 text-white placeholder-zinc-600 text-sm focus:outline-none focus:ring-zinc-500 transition-shadow disabled:opacity-50"
                       />
                     </div>
 
@@ -229,20 +274,36 @@ export function ContactPage() {
                         required
                         rows={5}
                         placeholder="Tell us about your motorcycle and what you're hoping to achieve."
-                        className="w-full rounded-xl bg-zinc-800 ring-1 ring-zinc-700 px-4 py-3 text-white placeholder-zinc-600 text-sm focus:outline-none focus:ring-zinc-500 transition-shadow resize-none"
+                        disabled={formState === 'loading'}
+                        className="w-full rounded-xl bg-zinc-800 ring-1 ring-zinc-700 px-4 py-3 text-white placeholder-zinc-600 text-sm focus:outline-none focus:ring-zinc-500 transition-shadow resize-none disabled:opacity-50"
                       />
                     </div>
                   </div>
 
+                  {formState === 'error' && (
+                    <p className="text-sm text-red-400 text-center" role="alert">
+                      {errorMsg}
+                    </p>
+                  )}
+
                   <button
                     type="submit"
-                    className="w-full rounded-xl bg-white text-black text-sm font-semibold py-3.5 hover:bg-zinc-100 transition-colors"
+                    disabled={formState === 'loading'}
+                    className="w-full rounded-xl bg-white text-black text-sm font-semibold py-3.5 hover:bg-zinc-100 transition-colors disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                   >
-                    Send Enquiry
+                    {formState === 'loading' ? (
+                      <>
+                        <svg className="animate-spin" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+                          <circle cx="12" cy="12" r="10" strokeOpacity="0.25" />
+                          <path d="M12 2a10 10 0 0110 10" strokeLinecap="round" />
+                        </svg>
+                        Sending…
+                      </>
+                    ) : 'Send Enquiry'}
                   </button>
 
                   <p className="text-xs text-zinc-600 text-center">
-                    This will open your email client. Alternatively, call{' '}
+                    Or call us directly on{' '}
                     <a href={`tel:${business.phone.replace(/\s/g, '')}`} className="text-zinc-500 hover:text-zinc-300">
                       {business.phone}
                     </a>.
