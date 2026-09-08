@@ -448,6 +448,79 @@ Presented ready for display or collection. Documentation available on enquiry.`,
       '1970 Honda Z50 A K2 in GE Yellow for sale from Lang Restorations, Traralgon Victoria. Factory-correct restoration of an early, highly collectible Z50 Mini Trail.',
   },
 
+  // ── 1970 Honda Z50 A K2 GE Mexican Yellow / White (Resto Mod) ──────────────
+  {
+    slug: '1970-honda-z50a-k2-ge-mexican-yellow',
+    name: '1970 Honda Z50 A K2 — GE Mexican Yellow / White',
+    year: 1970,
+    brand: 'Honda',
+    model: 'Z50 A K2',
+    priceLabel: 'Contact for Price',
+    status: 'Available',
+    condition: 'Restored',
+
+    shortDescription:
+      'A 1970 Z50 A K2 General Export in Mexican Yellow with white side panel, restored in 2020 as a resto mod with chrome wheels and painted hubs. An early, highly collectible Mini Trail finished to a high standard.',
+
+    fullDescription: `The 1970 Honda Z50 A K2 in Mexican Yellow is an early General Export (GE) Mini Trail restored in 2020. Rather than a strictly factory-correct rebuild, this example was completed as a resto mod — retaining the character and proportions of the original K2 while incorporating chrome wheels and painted hubs for a distinctive, elevated finish.
+
+The K2 generation represents the second iteration of the Z50 A, a machine that had already established the Mini Trail formula that would remain in continuous production for over five decades. The vivid Mexican Yellow paintwork is presented over the correct K2 bodywork, complete with the white side stripe, chrome "Honda Mini Trail" tank badge, and polished alloy that define the period.
+
+Finished throughout to a high standard, the bike presents beautifully — bright yellow paint, chrome cycle parts, polished forks and yokes, and a correct black tuck-and-roll seat. Every detail has been considered, from the restored cockpit and speedometer through to the exhaust, controls, and running gear.
+
+The 1970 Z50 A K2 in any condition is an increasingly difficult machine to source. Restored as a resto mod in this specification, it is a genuine collector piece and a striking addition to any Honda Mini Trail collection. Suitable for display, collection, or occasional use.`,
+
+    heroImage: {
+      src: '/images/for-sale/1970-honda-z50a-k2-ge-mexican-yellow/hero.jpg',
+      alt: '1970 Honda Z50 A K2 Mexican Yellow resto mod — for sale, Lang Restorations',
+    },
+    galleryImages: [
+      {
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-mexican-yellow/left.jpg',
+        alt: '1970 Honda Z50 A K2 Mexican Yellow — left side profile',
+        caption: 'Left side profile — Mexican Yellow with chrome wheels',
+      },
+      {
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-mexican-yellow/right.jpg',
+        alt: '1970 Honda Z50 A K2 Mexican Yellow — right side three-quarter view',
+        caption: 'Right side three-quarter view',
+      },
+      {
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-mexican-yellow/front.jpg',
+        alt: '1970 Honda Z50 A K2 Mexican Yellow — front end and tank detail',
+        caption: 'Front end, forks and "Honda Mini Trail" tank badge',
+      },
+      {
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-mexican-yellow/cockpit.jpg',
+        alt: '1970 Honda Z50 A K2 Mexican Yellow — cockpit and speedometer',
+        caption: 'Restored cockpit and speedometer',
+      },
+      {
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-mexican-yellow/seat.jpg',
+        alt: '1970 Honda Z50 A K2 Mexican Yellow — Honda tuck-and-roll seat',
+        caption: 'Correct black tuck-and-roll Honda seat',
+      },
+    ],
+
+    specifications: [
+      { label: 'Year', value: '1970' },
+      { label: 'Brand', value: 'Honda' },
+      { label: 'Model', value: 'Z50 A K2 Mini Trail (General Export)' },
+      { label: 'Engine', value: '49cc four-stroke single' },
+      { label: 'Transmission', value: '3-speed semi-automatic' },
+      { label: 'Colour', value: 'Mexican Yellow with white side panel' },
+      { label: 'Style', value: 'Resto mod — chrome wheels, painted hubs' },
+      { label: 'Condition', value: 'Restored (2020)' },
+      { label: 'Location', value: 'Traralgon, Victoria' },
+    ],
+
+    enquiryCta: 'Enquire About This Motorcycle',
+
+    metaTitle: '1970 Honda Z50 A K2 GE Mexican Yellow For Sale | Lang Restorations',
+    metaDescription:
+      '1970 Honda Z50 A K2 General Export in Mexican Yellow for sale from Lang Restorations, Traralgon Victoria. Restored 2020 as a resto mod with chrome wheels and painted hubs.',
+  },
+
   // ── 1970 Honda Z50 A K2 GE Red ─────────────────────────────────────────────
   {
     slug: '1970-honda-z50a-k2-ge-red',
