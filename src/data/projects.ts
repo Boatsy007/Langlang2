@@ -688,6 +688,92 @@ The 1972 Honda Z50A U-Type that left the workshop is a machine that can hold its
   },
 
   {
+    slug: '1970-honda-z50a-k2-ge-candy-ruby-red',
+    name: '1970 Honda Z50A K2 — Candy Ruby Red',
+    year: 1970,
+    brand: 'Honda',
+    model: 'Z50A K2 (General Export)',
+    category: 'Vintage',
+    completionYear: 2021,
+    featured: false,
+
+    metaTitle: '1970 Honda Z50A K2 Candy Ruby Red Resto Mod | Vintage Honda Mini Trail — Lang Restorations Traralgon',
+    metaDescription:
+      'Resto-mod restoration of a 1970 Honda Z50A K2 General Export in Candy Ruby Red, completed 2021 by Lang Restorations in Traralgon, Victoria. Chrome wheels and painted hubs on an early Mini Trail.',
+
+    shortDescription:
+      'A 1970 Honda Z50A K2 General Export restored in 2021 as a resto mod — finished in Candy Ruby Red with chrome wheels and painted hubs, blending early Mini Trail character with an elevated, custom finish.',
+
+    story: `The 1970 Honda Z50A K2 sits at an important point in the Mini Trail's history. Honda's small folding-handlebar motorcycle had by this point established itself internationally, and the K2 marks the second iteration of the Z50 A — a machine already defining the formula that would keep the Mini Trail in continuous production for over five decades.
+
+This example is a General Export (GE) K2 that was restored in 2021. Rather than pursue a strictly factory-correct rebuild, it was completed as a resto mod: the original proportions, bodywork, and character of the K2 were retained, while chrome wheels and painted hubs were incorporated to give the machine a distinctive, elevated finish that sets it apart from a standard restoration.
+
+The bike was finished in deep Candy Ruby Red over correct K2 tinware, complete with the chrome tank badge and white side panel that define the period. Alloy components were detailed, cycle parts chromed, and the machine reassembled with a correct black tuck-and-roll seat and restored cockpit and speedometer.
+
+The result is a Honda Mini Trail that honours the early K2 while carrying a considered set of custom touches — a resto mod that stands out on presentation without losing the essential character that has made the Z50 so enduring.`,
+
+    heroImage: {
+      src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/hero.jpg',
+      alt: '1970 Honda Z50A K2 Candy Ruby Red resto mod — restoration by Lang Restorations, Traralgon Victoria',
+    },
+    galleryImages: [
+      {
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/hero.jpg',
+        alt: '1970 Honda Z50A K2 Candy Ruby Red — completed resto mod, right side profile',
+        caption: 'Completed 2021 — Candy Ruby Red with chrome wheels and painted hubs',
+      },
+      {
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/left.jpg',
+        alt: '1970 Honda Z50A K2 Candy Ruby Red — left side profile',
+        caption: 'Left side profile',
+      },
+      {
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/front.jpg',
+        alt: '1970 Honda Z50A K2 Candy Ruby Red — front view',
+        caption: 'Front view — chrome handlebars and headlight',
+      },
+      {
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/cockpit.jpg',
+        alt: '1970 Honda Z50A K2 Candy Ruby Red — cockpit and speedometer',
+        caption: 'Restored cockpit and speedometer',
+      },
+    ],
+    beforeImage: {
+      src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/left.jpg',
+      alt: '1970 Honda Z50A K2 Candy Ruby Red — left side, as restored',
+      caption: 'As restored — left side',
+    },
+    afterImage: {
+      src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/hero.jpg',
+      alt: '1970 Honda Z50A K2 Candy Ruby Red — completed resto mod by Lang Restorations',
+      caption: 'Completed 2021 — Lang Restorations, Traralgon',
+    },
+
+    specifications: [
+      { label: 'Engine', value: '49cc OHC four-stroke single' },
+      { label: 'Gearbox', value: '3-speed semi-automatic' },
+      { label: 'Colour', value: 'Candy Ruby Red' },
+      { label: 'Wheels', value: 'Chrome rims, painted hubs' },
+      { label: 'Front suspension', value: 'Telescopic forks' },
+      { label: 'Rear suspension', value: 'Swingarm with twin shocks' },
+      { label: 'Brakes', value: 'Drum — front and rear' },
+      { label: 'Restoration scope', value: 'Resto mod — completed 2021' },
+    ],
+
+    workCompleted: [
+      'Full disassembly and component inspection',
+      'Engine rebuild — seals, gaskets, internal inspection',
+      'Candy Ruby Red paintwork over correct K2 tinware',
+      'Chrome wheels fitted with painted hubs — resto-mod specification',
+      'Chrome cycle parts and polished alloy detailing',
+      'Correct black tuck-and-roll seat',
+      'Cockpit and speedometer restored',
+      'New cables, tyres, and consumables',
+      'Final assembly and inspection',
+    ],
+  },
+
+  {
     slug: '1997-99-honda-cr250-lusk-tribute',
     name: '1997/99 Honda CR250 — Lusk Tribute',
     year: 1997,

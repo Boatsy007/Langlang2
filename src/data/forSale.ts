@@ -515,6 +515,74 @@ This example presents as a correct, high-quality restoration of one of Honda's m
       '1970 Honda Z50 A K2 in GE Red for sale from Lang Restorations, Traralgon Victoria. Fully restored early Mini Trail in a desirable original factory colour.',
   },
 
+  // ── 1970 Honda Z50 A K2 GE Candy Ruby Red (Resto Mod) ──────────────────────
+  {
+    slug: '1970-honda-z50a-k2-ge-candy-ruby-red',
+    name: '1970 Honda Z50 A K2 — GE Candy Ruby Red',
+    year: 1970,
+    brand: 'Honda',
+    model: 'Z50 A K2',
+    priceLabel: 'Contact for Price',
+    status: 'Available',
+    condition: 'Restored',
+
+    shortDescription:
+      'A 1970 Z50 A K2 General Export in Candy Ruby Red, restored in 2021 as a resto mod with chrome wheels and painted hubs. An early, highly collectible Mini Trail finished to a high standard.',
+
+    fullDescription: `The 1970 Honda Z50 A K2 in Candy Ruby Red is an early General Export (GE) Mini Trail restored in 2021. Rather than a strictly factory-correct rebuild, this example was completed as a resto mod — retaining the character and proportions of the original K2 while incorporating chrome wheels and painted hubs for a distinctive, elevated finish.
+
+The K2 generation represents the second iteration of the Z50 A, a machine that had already established the Mini Trail formula that would remain in continuous production for over five decades. The Candy Ruby Red paintwork is presented over the correct K2 bodywork, complete with the chrome tank badge and white side panel that define the period.
+
+Finished throughout to a high standard, the bike presents beautifully — deep candy paint, polished alloy, chrome cycle parts, and a correct black tuck-and-roll seat. Every detail has been considered, from the restored cockpit and speedometer through to the exhaust, controls, and running gear.
+
+The 1970 Z50 A K2 in any condition is an increasingly difficult machine to source. Restored as a resto mod in this specification, it is a genuine collector piece and an eye-catching addition to any Honda Mini Trail collection. Suitable for display, collection, or occasional use.`,
+
+    heroImage: {
+      src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/hero.jpg',
+      alt: '1970 Honda Z50 A K2 Candy Ruby Red resto mod — for sale, Lang Restorations',
+    },
+    galleryImages: [
+      {
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/left.jpg',
+        alt: '1970 Honda Z50 A K2 Candy Ruby Red — left side profile',
+        caption: 'Left side profile — Candy Ruby Red with chrome wheels',
+      },
+      {
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/front.jpg',
+        alt: '1970 Honda Z50 A K2 Candy Ruby Red — front view',
+        caption: 'Front view — chrome handlebars and headlight',
+      },
+      {
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/cockpit.jpg',
+        alt: '1970 Honda Z50 A K2 Candy Ruby Red — cockpit and speedometer',
+        caption: 'Restored cockpit and speedometer',
+      },
+      {
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/seat.jpg',
+        alt: '1970 Honda Z50 A K2 Candy Ruby Red — Honda tuck-and-roll seat',
+        caption: 'Correct black tuck-and-roll Honda seat',
+      },
+    ],
+
+    specifications: [
+      { label: 'Year', value: '1970' },
+      { label: 'Brand', value: 'Honda' },
+      { label: 'Model', value: 'Z50 A K2 Mini Trail (General Export)' },
+      { label: 'Engine', value: '49cc four-stroke single' },
+      { label: 'Transmission', value: '3-speed semi-automatic' },
+      { label: 'Colour', value: 'Candy Ruby Red' },
+      { label: 'Style', value: 'Resto mod — chrome wheels, painted hubs' },
+      { label: 'Condition', value: 'Restored (2021)' },
+      { label: 'Location', value: 'Traralgon, Victoria' },
+    ],
+
+    enquiryCta: 'Enquire About This Motorcycle',
+
+    metaTitle: '1970 Honda Z50 A K2 GE Candy Ruby Red For Sale | Lang Restorations',
+    metaDescription:
+      '1970 Honda Z50 A K2 General Export in Candy Ruby Red for sale from Lang Restorations, Traralgon Victoria. Restored 2021 as a resto mod with chrome wheels and painted hubs.',
+  },
+
   // ── 1997/99 Honda CR250 Lusk Tribute ───────────────────────────────────────
   {
     slug: '1997-99-honda-cr250-lusk-tribute',
