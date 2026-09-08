@@ -5,7 +5,7 @@ import { BeforeAfter } from '@/components/BeforeAfter'
 import { Picture } from '@/components/Picture'
 import { SpecTable } from '@/components/SpecTable'
 import { ProjectCard } from '@/components/ProjectCard'
-import { CategoryBadge } from '@/components/Badge'
+import { CategoryBadge, ProgressBadge } from '@/components/Badge'
 import { Seo } from '@/components/Seo'
 import { Breadcrumb } from '@/components/Breadcrumb'
 import { buildGraph, businessNode, webPageNode, articleNode, breadcrumbNode } from '@/data/schema'
@@ -59,12 +59,20 @@ export function ProjectDetailPage() {
         <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
 
         <div className="absolute bottom-0 left-0 right-0 px-4 sm:px-8 lg:px-16 pb-10 max-w-7xl mx-auto">
-          <CategoryBadge category={project.category} className="mb-3" />
+          <div className="flex items-center gap-2 mb-3">
+            <CategoryBadge category={project.category} />
+            {project.status === 'In Progress' && <ProgressBadge />}
+          </div>
           <h1 className="text-4xl sm:text-6xl font-bold text-white tracking-tight mb-2">
             {project.name}
           </h1>
           <p className="text-lg text-zinc-400">
-            {project.year} {project.brand} {project.model} · Completed {project.completionYear}
+            {project.year} {project.brand} {project.model}
+            {project.status === 'In Progress'
+              ? ' · Restoration in progress'
+              : project.completionYear
+                ? ` · Completed ${project.completionYear}`
+                : ''}
           </p>
         </div>
       </div>
@@ -120,10 +128,12 @@ export function ProjectDetailPage() {
             </section>
 
             {/* Before / After */}
-            <section>
-              <h2 className="text-xl font-semibold text-white mb-4 tracking-tight">Before & After</h2>
-              <BeforeAfter before={project.beforeImage} after={project.afterImage} />
-            </section>
+            {project.beforeImage && project.afterImage && (
+              <section>
+                <h2 className="text-xl font-semibold text-white mb-4 tracking-tight">Before & After</h2>
+                <BeforeAfter before={project.beforeImage} after={project.afterImage} />
+              </section>
+            )}
 
           </div>
 
@@ -135,7 +145,9 @@ export function ProjectDetailPage() {
 
             {/* Work completed */}
             <section>
-              <h2 className="text-xl font-semibold text-white mb-4 tracking-tight">Work Completed</h2>
+              <h2 className="text-xl font-semibold text-white mb-4 tracking-tight">
+                {project.status === 'In Progress' ? 'Work Completed So Far' : 'Work Completed'}
+              </h2>
               <ul className="space-y-2">
                 {project.workCompleted.map((item) => (
                   <li key={item} className="flex items-start gap-2.5 text-sm text-zinc-400">

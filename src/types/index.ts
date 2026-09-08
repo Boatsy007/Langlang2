@@ -17,6 +17,9 @@ export interface Specification {
 
 export type ProjectCategory = 'Motocross' | 'Classic' | 'Vintage'
 
+// Builds default to 'Completed' when status is omitted.
+export type ProjectStatus = 'Completed' | 'In Progress'
+
 export interface Project {
   slug: Slug
   name: string
@@ -24,6 +27,7 @@ export interface Project {
   brand: string
   model: string
   category: ProjectCategory
+  status?: ProjectStatus
   completionYear?: number
   featured: boolean
 
@@ -32,8 +36,8 @@ export interface Project {
 
   heroImage: GalleryImage
   galleryImages: GalleryImage[]
-  beforeImage: GalleryImage
-  afterImage: GalleryImage
+  beforeImage?: GalleryImage
+  afterImage?: GalleryImage
 
   specifications: Specification[]
   workCompleted: string[]
