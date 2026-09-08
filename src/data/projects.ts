@@ -865,6 +865,60 @@ The result is a Honda Mini Trail that honours the early K2 while carrying a cons
   },
 
   {
+    slug: '1974-honda-z50a-k2-u-type-mexican-yellow',
+    name: '1974 Honda Z50A K2 U-Type — Mexican Yellow / White',
+    year: 1974,
+    brand: 'Honda',
+    model: 'Z50A K2 U-Type (General Export)',
+    category: 'Vintage',
+    status: 'In Progress',
+    featured: false,
+
+    metaTitle: '1974 Honda Z50A K2 U-Type Mexican Yellow Restoration (In Progress) | Lang Restorations Traralgon',
+    metaDescription:
+      'Current restoration project: a 1974 Honda Z50A K2 U-Type General Export in Mexican Yellow / White, under way at Lang Restorations in Traralgon, Victoria. Follow the build as it progresses.',
+
+    shortDescription:
+      'A 1974 Honda Z50A K2 U-Type General Export currently under restoration at Lang Restorations, finished in Mexican Yellow with a white side panel. A build in progress — follow it from bare frame to finished machine.',
+
+    story: `The 1974 Honda Z50A K2 U-Type is the latest Mini Trail to come through the Lang Restorations workshop, and this build is currently under way. The U-Type designation marks a specific General Export variant of the Z50 A that collectors track with particular care, and — like every Z50 restoration — getting the year- and variant-correct details right is central to the work.
+
+At this stage the frame has been stripped, prepared, and refinished in vivid Mexican Yellow, and the engine has been worked through and reassembled ready for fitting. The bare, freshly finished frame and detailed alloy engine give an early sense of where this build is heading: a clean, correct Mini Trail in the striking Mexican Yellow and white specification.
+
+From here the restoration moves on to reassembly — mounting the engine in the finished frame, fitting the tinware in Mexican Yellow with its white side panel and chrome "Honda Mini Trail" badge, and completing the cycle parts, wiring, and controls. This page will be updated with finished photography once the build is complete.`,
+
+    heroImage: {
+      src: '/images/projects/1974-honda-z50a-k2-u-type-mexican-yellow/hero.jpg',
+      alt: '1974 Honda Z50A K2 U-Type Mexican Yellow — restoration in progress at Lang Restorations, Traralgon Victoria',
+    },
+    galleryImages: [
+      {
+        src: '/images/projects/1974-honda-z50a-k2-u-type-mexican-yellow/hero.jpg',
+        alt: '1974 Honda Z50A K2 U-Type Mexican Yellow — freshly refinished frame and rebuilt engine',
+        caption: 'In progress — frame refinished in Mexican Yellow, engine reassembled and ready to fit',
+      },
+    ],
+
+    specifications: [
+      { label: 'Engine', value: '49cc OHC four-stroke single' },
+      { label: 'Gearbox', value: '3-speed semi-automatic' },
+      { label: 'Handlebars', value: 'Folding — U-Type specification' },
+      { label: 'Colour', value: 'Mexican Yellow with white side panel' },
+      { label: 'Front suspension', value: 'Telescopic forks' },
+      { label: 'Brakes', value: 'Drum — front and rear' },
+      { label: 'Restoration scope', value: 'Restoration in progress' },
+    ],
+
+    workCompleted: [
+      'Full disassembly and component inspection',
+      'Frame stripped, prepared and refinished in Mexican Yellow',
+      'Engine worked through, reassembled and ready for fitting',
+      'Alloy engine cases cleaned and detailed',
+      'Reassembly, tinware paint and final detailing still to come',
+    ],
+  },
+
+  {
     slug: '1997-99-honda-cr250-lusk-tribute',
     name: '1997/99 Honda CR250 — Lusk Tribute',
     year: 1997,

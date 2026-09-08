@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { clsx } from 'clsx'
-import { CategoryBadge } from '@/components/Badge'
+import { CategoryBadge, ProgressBadge } from '@/components/Badge'
 import { Picture } from '@/components/Picture'
 import type { Project } from '@/types'
 
@@ -34,10 +34,14 @@ export function ProjectCard({ project, featured = false, className }: ProjectCar
           {project.year}
         </span>
 
-        {project.featured && (
-          <span className="absolute top-3 left-3 text-xs font-semibold text-white bg-red-600 px-2.5 py-1 rounded-full">
-            Featured
-          </span>
+        {project.status === 'In Progress' ? (
+          <ProgressBadge className="absolute top-3 left-3" />
+        ) : (
+          project.featured && (
+            <span className="absolute top-3 left-3 text-xs font-semibold text-white bg-red-600 px-2.5 py-1 rounded-full">
+              Featured
+            </span>
+          )
         )}
       </div>
 

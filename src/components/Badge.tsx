@@ -31,6 +31,24 @@ export function StatusBadge({ status, className }: StatusBadgeProps) {
   )
 }
 
+interface ProgressBadgeProps {
+  className?: string
+}
+
+export function ProgressBadge({ className }: ProgressBadgeProps) {
+  return (
+    <span
+      className={clsx(
+        'inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-semibold tracking-wide uppercase bg-amber-500/15 text-amber-400 ring-1 ring-amber-500/30',
+        className,
+      )}
+    >
+      <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
+      In Progress
+    </span>
+  )
+}
+
 interface CategoryBadgeProps {
   category: ProjectCategory
   className?: string

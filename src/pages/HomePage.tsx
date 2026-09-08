@@ -303,7 +303,7 @@ export function HomePage() {
       </section>
 
       {/* ─── 6. Before & After Showcase ──────────────────────────────────────── */}
-      {showcaseBuild && (
+      {showcaseBuild && showcaseBuild.beforeImage && showcaseBuild.afterImage && (
         <section className="py-28 sm:py-36 bg-zinc-900/20 border-b border-zinc-900">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <FadeIn className="mb-12">
