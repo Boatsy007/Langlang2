@@ -481,6 +481,11 @@ The 1970 Z50 A K2 in any condition is an increasingly difficult machine to sourc
         caption: 'Left side profile — Mexican Yellow with chrome wheels',
       },
       {
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-mexican-yellow/right.jpg',
+        alt: '1970 Honda Z50 A K2 Mexican Yellow — right side three-quarter view',
+        caption: 'Right side three-quarter view',
+      },
+      {
         src: '/images/for-sale/1970-honda-z50a-k2-ge-mexican-yellow/front.jpg',
         alt: '1970 Honda Z50 A K2 Mexican Yellow — front end and tank detail',
         caption: 'Front end, forks and "Honda Mini Trail" tank badge',

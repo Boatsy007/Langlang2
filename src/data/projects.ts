@@ -814,6 +814,11 @@ The result is a Honda Mini Trail that honours the early K2 while carrying a cons
         caption: 'Left side profile',
       },
       {
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-mexican-yellow/right.jpg',
+        alt: '1970 Honda Z50A K2 Mexican Yellow — right side three-quarter view',
+        caption: 'Right side three-quarter view',
+      },
+      {
         src: '/images/for-sale/1970-honda-z50a-k2-ge-mexican-yellow/front.jpg',
         alt: '1970 Honda Z50A K2 Mexican Yellow — front end and tank detail',
         caption: 'Front end, forks and tank badge',
