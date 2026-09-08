@@ -713,38 +713,38 @@ The bike was finished in deep Candy Ruby Red over correct K2 tinware, complete w
 The result is a Honda Mini Trail that honours the early K2 while carrying a considered set of custom touches — a resto mod that stands out on presentation without losing the essential character that has made the Z50 so enduring.`,
 
     heroImage: {
-      src: '/images/projects/1970-honda-z50a-k2-ge-candy-ruby-red/hero.jpg',
+      src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/hero.jpg',
       alt: '1970 Honda Z50A K2 Candy Ruby Red resto mod — restoration by Lang Restorations, Traralgon Victoria',
     },
     galleryImages: [
       {
-        src: '/images/projects/1970-honda-z50a-k2-ge-candy-ruby-red/hero.jpg',
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/hero.jpg',
         alt: '1970 Honda Z50A K2 Candy Ruby Red — completed resto mod, right side profile',
         caption: 'Completed 2021 — Candy Ruby Red with chrome wheels and painted hubs',
       },
       {
-        src: '/images/projects/1970-honda-z50a-k2-ge-candy-ruby-red/left.jpg',
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/left.jpg',
         alt: '1970 Honda Z50A K2 Candy Ruby Red — left side profile',
         caption: 'Left side profile',
       },
       {
-        src: '/images/projects/1970-honda-z50a-k2-ge-candy-ruby-red/front.jpg',
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/front.jpg',
         alt: '1970 Honda Z50A K2 Candy Ruby Red — front view',
         caption: 'Front view — chrome handlebars and headlight',
       },
       {
-        src: '/images/projects/1970-honda-z50a-k2-ge-candy-ruby-red/cockpit.jpg',
+        src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/cockpit.jpg',
         alt: '1970 Honda Z50A K2 Candy Ruby Red — cockpit and speedometer',
         caption: 'Restored cockpit and speedometer',
       },
     ],
     beforeImage: {
-      src: '/images/projects/1970-honda-z50a-k2-ge-candy-ruby-red/left.jpg',
+      src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/left.jpg',
       alt: '1970 Honda Z50A K2 Candy Ruby Red — left side, as restored',
       caption: 'As restored — left side',
     },
     afterImage: {
-      src: '/images/projects/1970-honda-z50a-k2-ge-candy-ruby-red/hero.jpg',
+      src: '/images/for-sale/1970-honda-z50a-k2-ge-candy-ruby-red/hero.jpg',
       alt: '1970 Honda Z50A K2 Candy Ruby Red — completed resto mod by Lang Restorations',
       caption: 'Completed 2021 — Lang Restorations, Traralgon',
     },
