@@ -48,9 +48,20 @@
   <!-- Blog -->
   <url>
     <loc>https://langrestorations.com.au/blog</loc>
-    <lastmod>2026-07-01</lastmod>
+    <lastmod>2026-09-17</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://langrestorations.com.au/blog/how-much-does-motorcycle-engine-rebuild-cost</loc>
+    <lastmod>2026-09-17</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/services/engine-rebuild.jpg</image:loc>
+      <image:title>How Much Does an Engine Rebuild Cost for a Motorcycle? — Lang Restorations</image:title>
+      <image:caption>Motorcycle engine rebuild cost guide — two-stroke, four-stroke and vintage engine rebuilds, Lang Restorations Traralgon Victoria</image:caption>
+    </image:image>
   </url>
   <url>
     <loc>https://langrestorations.com.au/blog/how-much-does-motorcycle-restoration-cost</loc>

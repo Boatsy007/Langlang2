@@ -96,3 +96,16 @@
     max-width: 100%;
   }
 }
+
+/* Inline links within blog post content */
+.blog-content a {
+  color: #f87171;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+  transition: color 0.15s ease;
+}
+
+.blog-content a:hover {
+  color: #fca5a5;
+}
