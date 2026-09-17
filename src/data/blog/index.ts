@@ -1,10 +1,12 @@
 import type { BlogPost } from '@/types'
 import { motorcycleRestorationCost } from './posts/motorcycle-restoration-cost'
+import { motorcycleEngineRebuildCost } from './posts/motorcycle-engine-rebuild-cost'
 
 // ─── All posts (newest first) ─────────────────────────────────────────────────
 // To add a new post: import it here and add it to the array.
 
 export const blogPosts: BlogPost[] = [
+  motorcycleEngineRebuildCost,
   motorcycleRestorationCost,
 ]
 
