@@ -13,6 +13,7 @@ import { ForSaleDetailPage } from '@/pages/ForSaleDetailPage'
 import { ServicesPage } from '@/pages/ServicesPage'
 import { ServiceDetailPage } from '@/pages/ServiceDetailPage'
 import { AboutPage } from '@/pages/AboutPage'
+import { MotorbikeShopTraralgonPage } from '@/pages/MotorbikeShopTraralgonPage'
 import { ContactPage } from '@/pages/ContactPage'
 import { NotFoundPage } from '@/pages/NotFoundPage'
 import { BlogPage } from '@/pages/BlogPage'
@@ -320,6 +321,7 @@ export default function App() {
             <Route path="/blog" element={<BlogPage />} />
             <Route path="/blog/:slug" element={<BlogDetailPage />} />
             <Route path="/about" element={<AboutPage />} />
+            <Route path="/motorbike-shop-traralgon" element={<MotorbikeShopTraralgonPage />} />
             <Route path="/contact" element={<ContactPage />} />
             <Route path="*" element={<NotFoundPage />} />
           </Routes>
