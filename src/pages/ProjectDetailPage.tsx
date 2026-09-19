@@ -125,6 +125,20 @@ export function ProjectDetailPage() {
                   </p>
                 ))}
               </div>
+
+              {project.relatedArticle && (
+                <p className="mt-6">
+                  <Link
+                    to={project.relatedArticle.href}
+                    className="inline-flex items-center gap-2 text-sm font-medium text-red-400 hover:text-red-300 transition-colors"
+                  >
+                    {project.relatedArticle.label}
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true" className="transition-transform">
+                      <path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
+                    </svg>
+                  </Link>
+                </p>
+              )}
             </section>
 
             {/* Before / After */}

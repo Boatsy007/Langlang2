@@ -42,6 +42,9 @@ export interface Project {
   specifications: Specification[]
   workCompleted: string[]
 
+  /** Optional link to a related blog article (e.g. a model history / build story) */
+  relatedArticle?: { href: string; label: string }
+
   metaTitle: string
   metaDescription: string
 }
