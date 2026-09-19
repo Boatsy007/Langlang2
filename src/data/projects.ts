@@ -540,6 +540,11 @@ The 1954 BSA Bantam D3 Plunger that emerged from the workshop is a machine that 
       'New cables, tyres, and consumables',
       'Final assembly and inspection',
     ],
+
+    relatedArticle: {
+      href: '/blog/1954-bsa-bantam-d3-plunger-history-restoration',
+      label: 'Read the history of the 1954 BSA Bantam D3 Plunger',
+    },
   },
 
   {
