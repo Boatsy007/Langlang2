@@ -44,6 +44,17 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  <url>
+    <loc>https://langrestorations.com.au/motorbike-shop-traralgon</loc>
+    <lastmod>2026-09-19</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://langrestorations.com.au/images/services/vintage-restoration.jpg</image:loc>
+      <image:title>Motorbike Shop Traralgon — Lang Restorations</image:title>
+      <image:caption>Motorcycle restoration workshop Traralgon Victoria — Lang Restorations</image:caption>
+    </image:image>
+  </url>
 
   <!-- Blog -->
   <url>
