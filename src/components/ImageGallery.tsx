@@ -28,7 +28,7 @@ export function ImageGallery({ images, className }: ImageGalleryProps) {
           <Picture
             src={current.src}
             alt={current.alt}
-            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.02]"
+            className="w-full h-full object-contain transition-transform duration-500 group-hover:scale-[1.02]"
             loading="lazy"
           />
         </button>
