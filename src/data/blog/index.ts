@@ -3,11 +3,13 @@ import { motorcycleRestorationCost } from './posts/motorcycle-restoration-cost'
 import { motorcycleEngineRebuildCost } from './posts/motorcycle-engine-rebuild-cost'
 import { motorcycleRestorationTime } from './posts/motorcycle-restoration-time'
 import { isMotorcycleRestorationWorthTheCost } from './posts/is-motorcycle-restoration-worth-the-cost'
+import { hondaCr500HistoryMcgrathTribute } from './posts/honda-cr500-history-mcgrath-tribute'
 
 // ─── All posts (newest first) ─────────────────────────────────────────────────
 // To add a new post: import it here and add it to the array.
 
 export const blogPosts: BlogPost[] = [
+  hondaCr500HistoryMcgrathTribute,
   isMotorcycleRestorationWorthTheCost,
   motorcycleRestorationTime,
   motorcycleEngineRebuildCost,
