@@ -285,9 +285,17 @@ function Footer({ onOpenGame }: { onOpenGame: () => void }) {
   return (
     <footer className="border-t border-zinc-900 bg-zinc-950 py-8 px-4 sm:px-6 lg:px-8 mt-auto">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-        <p className="text-sm text-zinc-600">
-          © {new Date().getFullYear()} Lang Restorations. All rights reserved.
-        </p>
+        <div className="flex flex-col gap-1">
+          <p className="text-sm text-zinc-600">
+            © {new Date().getFullYear()} Lang Restorations. All rights reserved.
+          </p>
+          <NavLink
+            to="/motorbike-shop-traralgon"
+            className="text-xs text-zinc-600 hover:text-zinc-400 transition-colors"
+          >
+            Motorbike Shop Traralgon — Motorcycle Restoration &amp; Engine Rebuilds
+          </NavLink>
+        </div>
         <SocialIcons />
         <button
           onClick={onOpenGame}
