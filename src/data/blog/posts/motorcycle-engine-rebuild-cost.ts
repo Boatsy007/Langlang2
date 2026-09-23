@@ -170,6 +170,10 @@ export const motorcycleEngineRebuildCost: BlogPost = {
     { type: 'h2', id: 'whats-included', text: 'What Is Included in a Full Motorcycle Engine Rebuild?' },
     {
       type: 'p',
+      html: `The engine is only one part of a larger job — see <a href="/blog/whats-included-full-motorcycle-restoration">what's included in a full motorcycle restoration</a> for how it fits into the complete process.`,
+    },
+    {
+      type: 'p',
       html: `A proper rebuild normally begins with the engine being removed and completely dismantled so every major internal component can be inspected. The engine cases, crankshaft, cylinder, piston, bearings, gearbox, clutch and associated components can then be checked for wear or damage.`,
     },
     {

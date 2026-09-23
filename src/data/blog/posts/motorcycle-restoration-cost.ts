@@ -58,7 +58,7 @@ export const motorcycleRestorationCost: BlogPost = {
     },
     {
       type: 'p',
-      html: 'This article breaks down exactly what drives restoration costs, what each major service actually involves and costs, how to budget realistically, and how to avoid the mistakes that turn a $5,000 project into a $15,000 one.',
+      html: 'This article breaks down exactly what drives restoration costs, what each major service actually involves and costs, how to budget realistically, and how to avoid the mistakes that turn a $5,000 project into a $15,000 one. For the full step-by-step process, see <a href="/blog/whats-included-full-motorcycle-restoration">what\'s included in a full motorcycle restoration</a>.',
     },
 
     // ── Why costs vary ──────────────────────────────────────────────────

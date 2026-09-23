@@ -498,7 +498,7 @@ export const hondaZ50HistoryValueBuyingGuide: BlogPost = {
     },
     {
       type: 'p',
-      html: `By the time those costs are combined, a cheap project can become an expensive motorcycle — which is why buying the best starting point you can afford often makes financial sense. Our guides to <a href="/blog/how-much-does-motorcycle-restoration-cost">restoration cost</a> and <a href="/blog/how-long-does-a-motorcycle-restoration-take">how long a restoration takes</a> cover this in more depth.`,
+      html: `By the time those costs are combined, a cheap project can become an expensive motorcycle — which is why buying the best starting point you can afford often makes financial sense. Our guides to <a href="/blog/how-much-does-motorcycle-restoration-cost">restoration cost</a>, <a href="/blog/how-long-does-a-motorcycle-restoration-take">how long a restoration takes</a> and <a href="/blog/whats-included-full-motorcycle-restoration">what's included in a full restoration</a> cover this in more depth.`,
     },
     {
       type: 'p',

@@ -6,11 +6,13 @@ import { isMotorcycleRestorationWorthTheCost } from './posts/is-motorcycle-resto
 import { hondaCr500HistoryMcgrathTribute } from './posts/honda-cr500-history-mcgrath-tribute'
 import { hondaZ50HistoryValueBuyingGuide } from './posts/honda-z50-history-value-buying-guide'
 import { bsaBantamD3PlungerHistoryRestoration } from './posts/bsa-bantam-d3-plunger-history-restoration'
+import { whatsIncludedFullMotorcycleRestoration } from './posts/whats-included-full-motorcycle-restoration'
 
 // ─── All posts (newest first) ─────────────────────────────────────────────────
 // To add a new post: import it here and add it to the array.
 
 export const blogPosts: BlogPost[] = [
+  whatsIncludedFullMotorcycleRestoration,
   bsaBantamD3PlungerHistoryRestoration,
   hondaZ50HistoryValueBuyingGuide,
   hondaCr500HistoryMcgrathTribute,
