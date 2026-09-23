@@ -115,7 +115,7 @@ export const motorcycleRestorationTime: BlogPost = {
     { type: 'h2', id: 'what-happens', text: 'What Happens During a Full Motorcycle Restoration?' },
     {
       type: 'p',
-      html: `A full restoration normally involves several major stages. The process typically begins with documentation and assessment, followed by complete disassembly. The frame, engine, suspension, wheels, brakes, electrical system, bodywork, fasteners and smaller components are then inspected individually.`,
+      html: `A full restoration normally involves several major stages. The process typically begins with documentation and assessment, followed by complete disassembly. The frame, engine, suspension, wheels, brakes, electrical system, bodywork, fasteners and smaller components are then inspected individually. For a full breakdown of every stage, see <a href="/blog/whats-included-full-motorcycle-restoration">what's included in a full motorcycle restoration</a>.`,
     },
     {
       type: 'p',

@@ -261,7 +261,7 @@ export const hondaCr500HistoryMcgrathTribute: BlogPost = {
     },
     {
       type: 'p',
-      html: `The objective is not merely to create a motorcycle that photographs well. The goal is to produce a motorcycle that has been properly rebuilt — the engine in particular is a major undertaking on a big-bore two-stroke, as we cover in our <a href="/blog/how-much-does-motorcycle-engine-rebuild-cost">engine rebuild cost guide</a>.`,
+      html: `The objective is not merely to create a motorcycle that photographs well. The goal is to produce a motorcycle that has been properly rebuilt — the engine in particular is a major undertaking on a big-bore two-stroke, as we cover in our <a href="/blog/how-much-does-motorcycle-engine-rebuild-cost">engine rebuild cost guide</a>. To see everything a ground-up rebuild covers, read <a href="/blog/whats-included-full-motorcycle-restoration">what's included in a full motorcycle restoration</a>.`,
     },
 
     // ── Why build ───────────────────────────────────────────────────────

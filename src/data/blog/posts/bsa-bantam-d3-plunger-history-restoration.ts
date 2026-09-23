@@ -218,7 +218,7 @@ export const bsaBantamD3PlungerHistoryRestoration: BlogPost = {
     },
     {
       type: 'p',
-      html: `This bike is being carefully rebuilt with a strong focus on authenticity, detail and workmanship. Every component is being inspected, repaired, restored or replaced where necessary. This is not a quick cosmetic freshen-up — it is a complete restoration.`,
+      html: `This bike is being carefully rebuilt with a strong focus on authenticity, detail and workmanship. Every component is being inspected, repaired, restored or replaced where necessary. This is not a quick cosmetic freshen-up — it is a complete restoration. To see everything that involves, read <a href="/blog/whats-included-full-motorcycle-restoration">what's included in a full motorcycle restoration</a>.`,
     },
 
     { type: 'cta' },
