@@ -7,11 +7,13 @@ import { hondaCr500HistoryMcgrathTribute } from './posts/honda-cr500-history-mcg
 import { hondaZ50HistoryValueBuyingGuide } from './posts/honda-z50-history-value-buying-guide'
 import { bsaBantamD3PlungerHistoryRestoration } from './posts/bsa-bantam-d3-plunger-history-restoration'
 import { whatsIncludedFullMotorcycleRestoration } from './posts/whats-included-full-motorcycle-restoration'
+import { motorcycleWontStart10ThingsToCheck } from './posts/motorcycle-wont-start-10-things-to-check'
 
 // ─── All posts (newest first) ─────────────────────────────────────────────────
 // To add a new post: import it here and add it to the array.
 
 export const blogPosts: BlogPost[] = [
+  motorcycleWontStart10ThingsToCheck,
   whatsIncludedFullMotorcycleRestoration,
   bsaBantamD3PlungerHistoryRestoration,
   hondaZ50HistoryValueBuyingGuide,
