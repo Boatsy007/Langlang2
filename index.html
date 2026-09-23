@@ -54,11 +54,12 @@
       type="image/webp"
       fetchpriority="high" />
     <link rel="dns-prefetch" href="https://langrestorations.com.au" />
+    <!-- Trustindex floating Google reviews widget — load ASAP so it appears immediately, site-wide -->
+    <link rel="preconnect" href="https://cdn.trustindex.io" crossorigin />
+    <script async src="https://cdn.trustindex.io/loader.js?a55ddca82a66056fec0608d7c22"></script>
   </head>
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <!-- Trustindex floating Google reviews widget (loads once, site-wide) -->
-    <script defer async src="https://cdn.trustindex.io/loader.js?a55ddca82a66056fec0608d7c22"></script>
   </body>
 </html>
