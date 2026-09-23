@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { getFeaturedProjects, getFeaturedServices, getAvailableForSale } from '@/utils/data'
 import {
-  testimonials,
   business,
   whyItems,
   philosophyItems,
@@ -11,6 +10,7 @@ import {
   homepageFaq,
   homepageBeforeAfter,
 } from '@/data/siteContent'
+import { TrustindexReviews } from '@/components/TrustindexReviews'
 import { ProjectCard } from '@/components/ProjectCard'
 import { ForSaleCard } from '@/components/ForSaleCard'
 import { BeforeAfterSlider } from '@/components/BeforeAfterSlider'
@@ -441,36 +441,9 @@ export function HomePage() {
             </h2>
           </FadeIn>
 
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-            {testimonials.map((t, i) => (
-              <FadeIn key={t.author} delay={i * 120}>
-                <blockquote className="rounded-2xl bg-zinc-900 ring-1 ring-zinc-800 p-8 sm:p-10 h-full flex flex-col justify-between">
-                  <div>
-                    <svg
-                      width="36"
-                      height="26"
-                      viewBox="0 0 36 26"
-                      fill="none"
-                      aria-hidden="true"
-                      className="mb-6 text-red-900"
-                    >
-                      <path
-                        d="M0 26V15.636C0 13.394 0.395833 11.2576 1.1875 9.22727C1.97917 7.19697 3.0625 5.37879 4.4375 3.77273C5.8125 2.16667 7.41667 0.848485 9.25 -0.181818L13.5 3.63636C12.0417 4.57576 10.7604 5.78788 9.65625 7.27273C8.55208 8.75758 7.875 10.4545 7.625 12.3636H14V26H0ZM22 26V15.636C22 13.394 22.3958 11.2576 23.1875 9.22727C23.9792 7.19697 25.0625 5.37879 26.4375 3.77273C27.8125 2.16667 29.4167 0.848485 31.25 -0.181818L35.5 3.63636C34.0417 4.57576 32.7604 5.78788 31.6563 7.27273C30.5521 8.75758 29.875 10.4545 29.625 12.3636H36V26H22Z"
-                        fill="currentColor"
-                      />
-                    </svg>
-                    <p className="text-xl sm:text-2xl text-white font-light leading-relaxed mb-8">
-                      {t.quote}
-                    </p>
-                  </div>
-                  <footer>
-                    <p className="text-base font-semibold text-white">{t.author}</p>
-                    <p className="text-sm text-zinc-500">{t.role}</p>
-                  </footer>
-                </blockquote>
-              </FadeIn>
-            ))}
-          </div>
+          <FadeIn>
+            <TrustindexReviews />
+          </FadeIn>
         </div>
       </section>
 
