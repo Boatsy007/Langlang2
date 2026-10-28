@@ -349,17 +349,17 @@ The mini Trail range requires the same attention to detail as any larger restora
 
     heroImage: {
       src: '/images/projects/1986-honda-z50r/hero.jpg',
-      alt: '1986 Honda Z50R — ground-up classic mini bike restoration by Lang Restorations, Traralgon Victoria',
+      alt: '1986 Honda Z50R — completed OEM-style classic mini bike restoration by Lang Restorations, Traralgon Victoria',
     },
     galleryImages: [
       {
         src: '/images/projects/1986-honda-z50r/hero.jpg',
-        alt: '1986 Honda Z50R — in progress at Lang Restorations',
-        caption: 'In progress — Lang Restorations, Traralgon',
+        alt: '1986 Honda Z50R — completed restoration by Lang Restorations',
+        caption: 'Completed restoration — Lang Restorations, Traralgon',
       },
       {
         src: '/images/projects/1986-honda-z50r/before.jpg',
-        alt: '1986 Honda Z50R — as received',
+        alt: '1986 Honda Z50R — as received before restoration',
         caption: 'As received — before restoration',
       },
     ],
@@ -370,8 +370,8 @@ The mini Trail range requires the same attention to detail as any larger restora
     },
     afterImage: {
       src: '/images/projects/1986-honda-z50r/hero.jpg',
-      alt: '1986 Honda Z50R — in progress at Lang Restorations',
-      caption: 'In progress — Lang Restorations, Traralgon',
+      alt: '1986 Honda Z50R — completed restoration by Lang Restorations',
+      caption: 'Completed — Lang Restorations, Traralgon',
     },
 
     specifications: [
