@@ -31,7 +31,7 @@ const footer = `
     </p>
     <p style="margin:0;color:#777;font-size:12px;line-height:1.7;">
       Traralgon, Victoria<br>
-      info@langrestorations.com<br>
+      info@langrestorations.com.au<br>
       Premium motorcycle restorations
     </p>
   </div>
@@ -58,7 +58,7 @@ export default async function handler(req: any, res: any) {
     // Email to Lang Restorations
     await resend.emails.send({
       from: 'Lang Restorations <noreply@langrestorations.com>',
-      to: ['info@langrestorations.com'],
+      to: ['info@langrestorations.com.au'],
       replyTo: email,
       subject: `New Website Enquiry from ${safeName}`,
       html: `
@@ -113,7 +113,7 @@ export default async function handler(req: any, res: any) {
     await resend.emails.send({
       from: 'Lang Restorations <noreply@langrestorations.com>',
       to: [email],
-      replyTo: 'info@langrestorations.com',
+      replyTo: 'info@langrestorations.com.au',
       subject: 'We received your enquiry — Lang Restorations',
       html: `
         <div style="margin:0;padding:0;background:#050505;font-family:Arial,Helvetica,sans-serif;color:#ffffff;">
